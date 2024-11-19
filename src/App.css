@@ -1,0 +1,14 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#root {
+  margin: 0 auto;
+}
+
+
+.read-the-docs {
+  color: #888;
+}
