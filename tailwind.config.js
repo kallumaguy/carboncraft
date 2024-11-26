@@ -11,9 +11,11 @@ export default {
     colors: {
       text: "#040316",
       background: "#fbfbfe",
-      primary: "#D6603B",
-      secondary: "#FFE5CC",
+      primary: "#F96E2A",
+      secondary: "#FBF8EF",
       accent: "#D6603B",
+      "blue-prime": "#1B1871",
+      "blue-accent":"#97a1c8",
     },
     fontSize: {
       sm: "0.8rem",
@@ -27,6 +29,7 @@ export default {
     fontFamily: {
       heading: "Poppins",
       body: "Hind",
+      logo:"Montserrat"
     },
     fontWeight: {
       thin: '100',
@@ -45,11 +48,15 @@ export default {
         DEFAULT: "1rem",
         sm: "2rem",
         lg: "4rem",
-        xl: "5rem",
+        xl: "6rem",
         "2xl": "6rem",
       },
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'blue-gradient': ' linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 98.2% )',
+      },
+    },
   },
   // eslint-disable-next-line no-undef
   plugins: [require("flowbite/plugin")],

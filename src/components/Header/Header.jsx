@@ -6,8 +6,8 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <div className="fixed top-0 left-0 right-0 bg-white z-50">
-      <nav className="border-b border-gray-200 p-2 rounded">
-        <div className="container mx-auto flex flex-wrap items-center justify-between">
+      <nav className="border-b border-gray-200 p-3 rounded">
+        <div className=" mx-auto flex flex-wrap items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex">
             <img
@@ -20,6 +20,7 @@ const Header = () => {
             <span className="self-center text-lg font-heading font-semibold whitespace-nowrap">
               CarbonCraft
             </span>
+            
           </a>
 
           {/* Hamburger Button */}
@@ -76,13 +77,13 @@ const Header = () => {
                     ></path>
                   </svg>
                 </button>
-                <ul className="hidden group-hover:block md:absolute bg-white md:py-1 md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-6 md:border border-gray-200">
+                <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
                   <li>
                     <a
                       href="#"
                       className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
                     >
-                      Dashboard
+                      Rent Printers
                     </a>
                   </li>
                   <li>
@@ -90,7 +91,7 @@ const Header = () => {
                       href="#"
                       className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
                     >
-                      Settings
+                      AMC
                     </a>
                   </li>
                   <li>
@@ -98,7 +99,7 @@ const Header = () => {
                       href="#"
                       className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
                     >
-                      Earnings
+                      Office Essentials
                     </a>
                   </li>
                 </ul>
@@ -121,13 +122,13 @@ const Header = () => {
                     ></path>
                   </svg>
                 </button>
-                <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:py-1 md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-6">
+                <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
                   <li>
                     <a
                       href="#"
                       className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
                     >
-                      Dashboard
+                      Printers & Plotters
                     </a>
                   </li>
                   <li>
@@ -135,7 +136,7 @@ const Header = () => {
                       href="#"
                       className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
                     >
-                      Settings
+                      Desktops & Laptops
                     </a>
                   </li>
                   <li>
@@ -143,7 +144,7 @@ const Header = () => {
                       href="#"
                       className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
                     >
-                      Earnings
+                      Furnitures
                     </a>
                   </li>
                 </ul>

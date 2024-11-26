@@ -13,8 +13,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <footer className="bg-accent pt-12 pb-5">
-
+      <footer className="bg-primary pt-12 pb-5 relative z-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-3 md:mb-0">
@@ -60,17 +59,15 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row">
-            <div className="flex-1">
-              <img
-                className="img w-[300px] mx-sm-auto"
-                src="images/Footer/carbon-craft-logo-2.png"
-                alt="image"
-              />
+          <div className="flex flex-col md:flex-row"></div>
+          <div className="container-fluid flex flex-col md:flex-row items-center justify-center py-6 md:py-[4.5rem] text-[5.5rem] lg:text-[11rem]">
+            <div className="relative font-logo font-medium tracking-[-0.02em] text-secondary leading-[4rem] md:leading-[7rem]/[18.75rem]">
+              CARBON
             </div>
-            <div className="flex-1"></div>
+            <div className="relative font-logo font-bold tracking-[0.03em] text-secondary leading-[6rem]">
+              CRAFT
+            </div>
           </div>
-
 
           <div className="text-center mt-xl-0 mt-3">
             <p className="text-sm text-background">
