@@ -42,12 +42,11 @@ const Home = () => {
 
   return (
     <>
-      <div className="mt-[3.5rem]">
+      <div className="mt-[3.6rem]">
         {/* Hero section */}
         <section className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-background z-10">
           <div className="absolute top-10 right-0">
             <div className="absolute top-1/2 left-1/2 w-[30rem] h-[30rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
-
             <div className="absolute top-1/2 left-1/2 w-[26rem] h-[26rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-[22rem] h-[22rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-72 h-72 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
@@ -184,7 +183,7 @@ const Home = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="primary"
-                  className="size-14 stroke-blue-accent"
+                  className="size-14 stroke-blue-accent mb-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -210,7 +209,7 @@ const Home = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
-                  className="size-14 stroke-blue-accent"
+                  className="size-14 stroke-blue-accent mb-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -236,7 +235,7 @@ const Home = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
-                  className="size-14 stroke-blue-accent"
+                  className="size-14 stroke-blue-accent mb-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -359,53 +358,73 @@ const Home = () => {
           </div>
           <div className="mt-[4rem] sm:flex md:grid grid-cols-3 gap-4">
             <div className="mb-5 md:pb-0">
-              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg"
-                    src="images/Home/printers-plotters.png"
-                    alt=""
-                  />
-                </a>
-                <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      Printers & Plotters
-                    </h5>
-                  </a>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div
+                  className="bg-cover bg-center h-64"
+                  style={{
+                    backgroundImage: "url('images/Home/printers-plotters.png')",
+                  }}
+                ></div>
+
+                <div className="absolute inset-0 flex flex-col justify-end p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                    Printers & Plotters
+                  </h5>
+                  <p className="mb-3 font-normal">
                     Here are the biggest enterprise technology acquisitions of
                     2021 so far, in reverse chronological order.
                   </p>
+                </div>
+                <div className="p-5 md:hidden">
+                  <a href="#">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                      Printers & Plotters
+                    </h5>
+                    <p className="mb-3 font-normal">
+                      Here are the biggest enterprise technology acquisitions of
+                      2021 so far, in reverse chronological order.
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>
 
             <div className="mb-5 md:pb-0">
-              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg"
-                    src="images/Home/Desktops-Laptops.png"
-                    alt=""
-                  />
-                </a>
-                <div className="p-5">
+              <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div
+                  className="bg-cover bg-center h-64"
+                  style={{
+                    backgroundImage: "url('images/Home/Desktops-Laptops.png')",
+                  }}
+                ></div>
+                <div className="absolute inset-0 flex flex-col justify-end p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a href="#">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                      Desktops & Laptops
+                    </h5>
+
+                    <p className="mb-3 font-normal">
+                      Here are the biggest enterprise technology acquisitions of
+                      2021 so far, in reverse chronological order.
+                    </p>
+                  </a>
+                </div>
+                <div className="p-5 md:hidden">
                   <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Desktops & Laptops
                     </h5>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                      Here are the biggest enterprise technology acquisitions of
+                      2021 so far, in reverse chronological order.
+                    </p>
                   </a>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    Here are the biggest enterprise technology acquisitions of
-                    2021 so far, in reverse chronological order.
-                  </p>
                 </div>
               </div>
             </div>
 
             <div>
-              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div className="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-md ">
                 <a href="#">
                   <img
                     className="rounded-t-lg"
@@ -433,9 +452,14 @@ const Home = () => {
 
         {/* Brands */}
         <section className="container mx-auto py-[5.5rem]">
-          <h1 className="text-2xl md:text-4xl font-bold font-heading text-center color-text ">
-            Brands
-          </h1>
+          <div className="text-center">
+            <span className="text-xl font-heading font-bold text-primary mb-3">
+              Brands
+            </span>
+            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
+              Explore Our Brand Partners
+            </h1>
+          </div>
           <div className="mt-[4rem]">
             <Slider {...settings}>
               {logos.map((logo, index) => (
@@ -451,13 +475,6 @@ const Home = () => {
                 </div>
               ))}
             </Slider>
-          </div>
-        </section>
-
-        {/* Contact us */}
-        <section className="bg-blue-prime">
-          <div className="container mx-auto py-[6rem]">
-            <h2 className="text-white">Contact us</h2>
           </div>
         </section>
       </div>

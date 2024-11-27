@@ -12,8 +12,31 @@ import {
 
 const Footer = () => {
   return (
-    <>
-      <footer className="bg-primary pt-12 pb-5 relative z-20">
+    <footer className=" relative z-20">
+      <section className="bg-blue-prime">
+        <div className="container mx-auto px-4 py-[6rem]">
+          <div className="flex items-center">
+            <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading text-white leading-tight my-3 me-3">
+              Connect with us
+            </h1>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              className="size-10 stroke-white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary pt-12 pb-5">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-3 md:mb-0">
@@ -77,8 +100,8 @@ const Footer = () => {
           </div>
           <hr className="h-px my-3 bg-background border-0" />
         </div>
-      </footer>
-    </>
+      </section>
+    </footer>
   );
 };
 
