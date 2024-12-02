@@ -106,19 +106,34 @@ const Home = () => {
               </ul>
               <button
                 type="button"
-                className="text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mt-5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
               >
-                Enquire Now
+                Enquire Now{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-4 ms-1"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
               </button>
             </div>
 
             {/* Right Section */}
-            <div className="relative w-full md:w-1/2 mt-10 md:mt-0 hidden lg:flex align-center justify-center">
-              <div className=" bg-white border border-gray-200 rounded-2xl shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className="relative w-full md:w-1/2 mt-10 md:mt-0 hidden lg:flex items-center justify-center">
+              <div className="relative w-[28rem] h-[28rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
+                {/* Image for 3D effect */}
                 <img
-                  className="img rounded-2xl h-[24rem] w-full shrink-0 overflow-hidden object-cover lg:h-[30rem] lg:max-w-[30rem]"
-                  src="/images/Home/Carboncraft-office.png"
-                  alt="img"
+                  className=" bottom-8 max-w-[32rem] "
+                  src="/images/Home/hero-3d.png"
+                  alt="Office Image"
                 />
               </div>
             </div>
@@ -250,8 +265,8 @@ const Home = () => {
                 <p className="text-body text-white">
                   Our expert team is focused on understanding your specific
                   needs and delivering customized solutions. We aim for
-                  excellence in every interaction with prompt service and
-                  continuous support.
+                  excellence in every interaction with service and continuous
+                  support.
                 </p>
               </div>
             </div>
@@ -288,8 +303,7 @@ const Home = () => {
                       </h5>
                     </a>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Here are the biggest enterprise technology acquisitions of
-                      2021 so far, in reverse chronological order.
+                      Affordable Printer Rentals for Every Need.
                     </p>
                   </div>
                 </div>
@@ -311,8 +325,7 @@ const Home = () => {
                       </h5>
                     </a>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Here are the biggest enterprise technology acquisitions of
-                      2021 so far, in reverse chronological order.
+                      Comprehensive Annual Maintenance Contracts.
                     </p>
                   </div>
                 </div>
@@ -334,8 +347,7 @@ const Home = () => {
                       </h5>
                     </a>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Here are the biggest enterprise technology acquisitions of
-                      2021 so far, in reverse chronological order.
+                      Equip Your Workspace with Quality Supplies.
                     </p>
                   </div>
                 </div>
@@ -366,24 +378,16 @@ const Home = () => {
                   }}
                 ></div>
 
-                <div className="absolute inset-0 flex flex-col justify-end p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight">
                     Printers & Plotters
                   </h5>
-                  <p className="mb-3 font-normal">
-                    Here are the biggest enterprise technology acquisitions of
-                    2021 so far, in reverse chronological order.
-                  </p>
                 </div>
                 <div className="p-5 md:hidden">
                   <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight">
                       Printers & Plotters
                     </h5>
-                    <p className="mb-3 font-normal">
-                      Here are the biggest enterprise technology acquisitions of
-                      2021 so far, in reverse chronological order.
-                    </p>
                   </a>
                 </div>
               </div>
@@ -397,16 +401,11 @@ const Home = () => {
                     backgroundImage: "url('images/Home/Desktops-Laptops.png')",
                   }}
                 ></div>
-                <div className="absolute inset-0 flex flex-col justify-end p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight">
                       Desktops & Laptops
                     </h5>
-
-                    <p className="mb-3 font-normal">
-                      Here are the biggest enterprise technology acquisitions of
-                      2021 so far, in reverse chronological order.
-                    </p>
                   </a>
                 </div>
                 <div className="p-5 md:hidden">
@@ -414,34 +413,32 @@ const Home = () => {
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Desktops & Laptops
                     </h5>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Here are the biggest enterprise technology acquisitions of
-                      2021 so far, in reverse chronological order.
-                    </p>
                   </a>
                 </div>
               </div>
             </div>
 
             <div>
-              <div className="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-md ">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg"
-                    src="/images/Home/Furnitures.png"
-                    alt=""
-                  />
-                </a>
-                <div className="p-5">
+              <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div
+                  className="bg-cover bg-center h-64"
+                  style={{
+                    backgroundImage: "url('images/Home/Furnitures.png')",
+                  }}
+                ></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a href="#">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                      Furnitures
+                    </h5>
+                  </a>
+                </div>
+                <div className="p-5 md:hidden">
                   <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Furnitures
                     </h5>
                   </a>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    Here are the biggest enterprise technology acquisitions of
-                    2021 so far, in reverse chronological order.
-                  </p>
                 </div>
               </div>
             </div>
