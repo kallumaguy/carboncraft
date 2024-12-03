@@ -67,8 +67,8 @@ const Home = () => {
                 Our dedication to quality ensures the highest standards in all
                 our offerings.
               </p>
-              <ul className="text-lg text-gray-600 leading-tight">
-                <li className="flex">
+              <ul className="text-lg text-gray-600 leading-tight flex flex-col justify-center md:justify-start">
+                <li className="flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -85,7 +85,7 @@ const Home = () => {
                   </svg>{" "}
                   Trusted Provider of Quality Services
                 </li>
-                <li className="flex">
+                <li className="flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -140,7 +140,7 @@ const Home = () => {
           </div>
         </section>
       </div>
-      <div className="relative z-20 mt-[100vh] bg-background rounded-t-2xl">
+      <div className="relative z-20 mt-[100vh]  max-w-full overflow-hidden bg-background rounded-t-2xl">
         {/* Intro Section */}
         <section className="bg-blue-gradient rounded-t-2xl">
           <div className="container mx-auto flex flex-col md:flex-row py-5 md:py-[6rem]">
