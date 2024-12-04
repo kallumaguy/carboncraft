@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "flowbite";
 import { NavLink } from "react-router-dom";
+import  {  useRef, useEffect } from "react";
 
 const navLinks = [
   {
@@ -25,7 +26,7 @@ const navLinks = [
         display: "Desktops & Laptops",
       },
       {
-        path: "Furnitures",
+        path: "/Furnitures",
         display: "Furnitures",
       },
     ],
@@ -42,10 +43,25 @@ const navLinks = [
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setShowMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="fixed top-0 left-0 right-0 bg-white z-50">
       <nav className="border-b border-gray-200 p-3 rounded">
-        <div className=" mx-auto flex flex-wrap items-center justify-between">
+        <div className="mx-auto flex flex-wrap items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex">
             <img
@@ -83,180 +99,67 @@ const Header = () => {
 
           {/* Navbar Links */}
           <div
+            ref={menuRef}
             className={`${
               showMenu ? "block" : "hidden"
             } md:block w-full md:w-auto`}
           >
             <ul className="flex-col md:flex-row flex md:space-x-4 mt-4 md:mt-0 font-body font-medium">
-              {/* <li>
-                <NavLink
-                  className="block px-3 py-2 text-primary transition-all duration-200"
-                  to="/"
-                  end
-                >
-                  Home
-                </NavLink>
-              </li> */}
-
               {navLinks.map((link, index) => (
-                <li className={link.submenu && "relative group md:static"} key={index}>
-                  {link.submenu ? 
-                  <>
-                  <button className="flex items-center px-3 py-2 text-text hover:text-primary transition-all duration-200">
-                  Products
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                      ></path>
-                  </svg>
-                </button>
-                <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
-                  
-                      { link.submenu?.map((subLink,index) => (
-                  <li key={index}>
+                <li
+                  className={`relative group md:static ${
+                    link.submenu ? "hover-trigger" : ""
+                  }`}
+                  key={index}
+                >
+                  {link.submenu ? (
+                    <>
+                      <button className="flex items-center px-3 py-2 text-text hover:text-primary transition-all duration-200">
+                        {link.display}
+                        <svg
+                          className="w-4 h-4 ml-1"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          ></path>
+                        </svg>
+                      </button>
+                      <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
+                        {link.submenu.map((subLink, subIndex) => (
+                          <li key={subIndex}>
+                            <NavLink
+                              to={subLink.path}
+                              className={(navClass) =>
+                                navClass.isActive
+                                  ? "block px-4 py-2 text-sm bg-primary text-white transition-all duration-200"
+                                  : "block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
+                              }
+                            >
+                              {subLink.display}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
                     <NavLink
-                    to={subLink.path}
-                    className={(navClass) =>
-                      navClass.isActive ? "block px-4 py-2 text-sm bg-primary text-white transition-all duration-200" : "block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
-                    }>
-
-                      {subLink.display}
+                      to={link.path}
+                      className={(navClass) =>
+                        navClass.isActive
+                          ? "block px-3 py-2 text-primary"
+                          : "block px-3 py-2 text-text hover:text-primary transition-all duration-200"
+                      }
+                    >
+                      {link.display}
                     </NavLink>
-                    
-                  </li>
-                      ))}
-                  
-                </ul>
-                  </>
-                  :
-                  <NavLink
-                    to={link.path}
-                    className={(navClass) =>
-                      navClass.isActive
-                        ? "block px-3 py-2 text-primary "
-                        : "block px-3 py-2 text-text hover:text-primary transition-all duration-200"
-                    }
-                  >
-                    {link.display}
-                  </NavLink>
-}
+                  )}
                 </li>
               ))}
-
-              {/* Services Menu */}
-              {/* <li className="relative group md:static">
-                <button className="flex items-center px-3 py-2 text-text hover:text-primary transition-all duration-200">
-                  Services
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
-                <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
-                    >
-                      Rent Printers
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
-                    >
-                      AMC
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
-                    >
-                      Office Essentials
-                    </a>
-                  </li>
-                </ul>
-              </li> */}
-
-              {/* Products Menu */}
-              {/* <li className="relative group md:static">
-                <button className="flex items-center px-3 py-2 text-text hover:text-primary transition-all duration-200">
-                  Products
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
-                <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
-                    >
-                      Printers & Plotters
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
-                    >
-                      Desktops & Laptops
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
-                    >
-                      Furnitures
-                    </a>
-                  </li>
-                </ul>
-              </li> */}
-
-              {/* <li>
-                <NavLink
-                  className="block px-3 py-2 text-text hover:text-primary transition-all duration-200"
-                  to="/About"
-                  end
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-3 py-2 text-text hover:text-primary transition-all duration-200"
-                >
-                  Enquiry
-                </a>
-              </li> */}
             </ul>
           </div>
         </div>

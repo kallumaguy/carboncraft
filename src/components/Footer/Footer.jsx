@@ -14,9 +14,9 @@ const Footer = () => {
   return (
     <footer className=" relative z-20">
       <section className="bg-blue-prime">
-        <div className="container mx-auto px-4 py-[6rem]">
+        <div className="container mx-auto px-4 py-[4.8rem] md:py-[6rem]">
           <div className="flex items-center">
-            <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading text-white leading-tight my-3 me-3">
+            <h1 className="text-2xl md:text-[3.3rem] font-medium font-heading text-white leading-tight my-3 me-3">
               Connect with us
             </h1>
             <svg
@@ -24,7 +24,7 @@ const Footer = () => {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              className="size-10 stroke-white"
+              className="size-6 md:size-10 stroke-white"
             >
               <path
                 strokeLinecap="round"
@@ -94,7 +94,7 @@ const Footer = () => {
 
           <div className="text-center mt-xl-0 mt-3">
             <p className="text-sm text-background">
-              Carbon Craft Equipments Trading L.L.C-FZ © All Rights Reserved -
+              Carbon Craft Equipments Trading L.L.C-FZ <br className="md:hidden" /> © All Rights Reserved -
               2024
             </p>
           </div>

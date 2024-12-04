@@ -67,7 +67,7 @@ const Home = () => {
                 Our dedication to quality ensures the highest standards in all
                 our offerings.
               </p>
-              <ul className="text-lg text-gray-600 leading-tight flex flex-col justify-center md:justify-start">
+              <ul className="text-lg mx-5 lg:mx-0 text-gray-600 leading-tight flex flex-col items-center justify-center md:items-start">
                 <li className="flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const Home = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="size-6 me-2"
+                    className="size-6 me-2 hidden lg:block"
                   >
                     <path
                       strokeLinecap="round"
@@ -92,7 +92,7 @@ const Home = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="size-6 me-2"
+                    className="size-6 me-2 hidden lg:block"
                   >
                     <path
                       strokeLinecap="round"
@@ -103,27 +103,27 @@ const Home = () => {
                   Specializing in Printing, Office Equipment Rentals and
                   Transportation
                 </li>
-              </ul>
-              <button
-                type="button"
-                className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-              >
-                Enquire Now{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-4 ms-1"
+                <button
+                  type="button"
+                  className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                  />
-                </svg>
-              </button>
+                  Enquire Now{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-4 ms-1 "
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                    />
+                  </svg>
+                </button>
+              </ul>
             </div>
 
             {/* Right Section */}
@@ -378,17 +378,10 @@ const Home = () => {
                   }}
                 ></div>
 
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight">
                     Printers & Plotters
                   </h5>
-                </div>
-                <div className="p-5 md:hidden">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
-                      Printers & Plotters
-                    </h5>
-                  </a>
                 </div>
               </div>
             </div>
@@ -401,16 +394,9 @@ const Home = () => {
                     backgroundImage: "url('images/Home/Desktops-Laptops.png')",
                   }}
                 ></div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight">
-                      Desktops & Laptops
-                    </h5>
-                  </a>
-                </div>
-                <div className="p-5 md:hidden">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Desktops & Laptops
                     </h5>
                   </a>
@@ -426,16 +412,9 @@ const Home = () => {
                     backgroundImage: "url('images/Home/Furnitures.png')",
                   }}
                 ></div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight">
-                      Furnitures
-                    </h5>
-                  </a>
-                </div>
-                <div className="p-5 md:hidden">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Furnitures
                     </h5>
                   </a>
