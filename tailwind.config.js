@@ -55,6 +55,7 @@ export default {
     extend: {
       backgroundImage: {
         'blue-gradient': ' linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 98.2% )',
+        'services': "url('/images/Services/service-bg.png')"
       },
     },
   },

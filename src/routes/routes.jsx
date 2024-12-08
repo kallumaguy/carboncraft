@@ -5,6 +5,7 @@ import Home from '../pages/home';
 import About from '../pages/About';
 import Services from '../pages/Services';
 import PrintPlot from '../pages/Printers-and-Plotters';
+import Enquiry from '../pages/Enquiry';
 
 const Routers = () => {
     return (
@@ -13,6 +14,7 @@ const Routers = () => {
             <Route path="/About" element={<About/>} />
             <Route path='/Services' element={<Services />} />
             <Route path="Printers-and-Plotters" element={<PrintPlot/>} />
+            <Route path='/Enquiry' element={<Enquiry/>}/>
         </Routes>
     );
 };
