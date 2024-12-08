@@ -8,12 +8,14 @@ import "slick-carousel/slick/slick-theme.css";
 const PrintPlot = () => {
   return (
     <div className="mt-[3.6rem]">
-      <section className="py-[6rem] bg-blue-gradient">
-        <div className="container mx-auto">
-          <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading text-background leading-tight my-3">
-            Printers and <br />
-            Plotters
-          </h1>
+      <section className="bg-printplot bg-cover">
+        <div className="py-[6rem] ">
+          <div className="container mx-auto ">
+            <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading  text-background leading-tight my-3">
+              Printers and <br />
+              Plotters
+            </h1>
+          </div>
         </div>
       </section>
 

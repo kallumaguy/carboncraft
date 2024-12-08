@@ -66,27 +66,44 @@ const Enquiry = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 mt-[3.6rem]">
-      <h1 className="text-2xl font-bold mb-4">Enquiry Form</h1>
-      <ul className="grid grid-cols-2 md:grid-cols-4 gap-0 mb-6">
-        {Object.keys(forms).map((item) => (
-          <li key={item}>
-            <button
-              className={`px-4 py-2 rounded-md ${
-                selectedItem === item
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-700"
-              }`}
-              onClick={() => setSelectedItem(item)}
+    <div className="mt-[3.6rem]">
+      <section className="bg-services bg-cover">
+        <div className="py-[6rem] ">
+          <div className="container mx-auto ">
+            <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading  text-background leading-tight my-3">
+              Enquire <br />
+              Your needs
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section className="">
+        <div className="container mx-auto p-6">
+          <h1 className="text-2xl font-bold mb-4">Dynamic Form</h1>
+          {/* Dropdown for selecting list item */}
+          <div className="mb-6">
+            <label className="block mb-2 text-gray-700 font-medium">
+              Select an Item
+            </label>
+            <select
+              value={selectedItem}
+              onChange={(e) => setSelectedItem(e.target.value)}
+              className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             >
-              {item}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div className="p-4 border rounded-md shadow-md bg-gray-50">
-        {forms[selectedItem]}
-      </div>
+              {Object.keys(forms).map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
+          {/* Display the corresponding form */}
+          <div className="p-4 border rounded-md shadow-md bg-gray-50">
+            {forms[selectedItem]}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
