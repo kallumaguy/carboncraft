@@ -32,7 +32,7 @@ const PrintPlot = () => {
 
           <div className="mt-[2.5rem]">
             <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-              Printer brand name
+              Best in Class MFP&#39;s for Offices and Events
             </h1>
 
             <div className=" grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -47,13 +47,10 @@ const PrintPlot = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        Model Name
+                      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Canon imageRUNNER ADVANCE C256/C356
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Model Description
-                    </p>
                     <a
                       href="#"
                       className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
@@ -79,28 +76,46 @@ const PrintPlot = () => {
                 </div>
               </div>
               <div className="mb-5 md:pb-0">
-                <div className="max-w-sm bg-white border-2 border-white hover:border-primary rounded-2xl shadow-md">
+                <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <a href="#">
                     <img
                       className="rounded-3xl p-3"
-                      src="/images/Home/rent-printer.png"
+                      src="/images/Printers-Plotters/canon-2.png"
                       alt=""
                     />
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        Rent Printers
+                      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Canon imageRUNNER Advance C5500 Series
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Affordable Printer Rentals for Every Need.
-                    </p>
+                    <a
+                      href="#"
+                      className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
+                    >
+                      Enquire now
+                      <svg
+                        className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M1 5h12m0 0L9 1m4 4L9 9"
+                        />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
               <div className="mb-5 md:pb-0">
-                <div className="max-w-sm bg-white border-2 border-white hover:border-primary rounded-2xl shadow-md">
+                <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <a href="#">
                     <img
                       className="rounded-3xl p-3"
@@ -110,18 +125,36 @@ const PrintPlot = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        Rent Printers
+                      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Canon imageRUNNER Advance C5200 Series
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Affordable Printer Rentals for Every Need.
-                    </p>
+                    <a
+                      href="#"
+                      className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
+                    >
+                      Enquire now
+                      <svg
+                        className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M1 5h12m0 0L9 1m4 4L9 9"
+                        />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
               <div className="mb-5 md:pb-0">
-                <div className="max-w-sm bg-white border-2 border-white hover:border-primary rounded-2xl shadow-md">
+                <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <a href="#">
                     <img
                       className="rounded-3xl p-3"
@@ -131,13 +164,31 @@ const PrintPlot = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        Rent Printers
+                      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Konica Minolta C554, C654, C754
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      Affordable Printer Rentals for Every Need.
-                    </p>
+                    <a
+                      href="#"
+                      className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
+                    >
+                      Enquire now
+                      <svg
+                        className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M1 5h12m0 0L9 1m4 4L9 9"
+                        />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>

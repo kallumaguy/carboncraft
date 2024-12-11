@@ -6,6 +6,8 @@ import About from '../pages/About';
 import Services from '../pages/Services';
 import PrintPlot from '../pages/Printers-and-Plotters';
 import Enquiry from '../pages/Enquiry';
+import Furnitures from '../pages/Furnitures';
+import DeskLap from '../pages/Desktops-and-Laptops';
 
 const Routers = () => {
     return (
@@ -14,6 +16,8 @@ const Routers = () => {
             <Route path="/About" element={<About/>} />
             <Route path='/Services' element={<Services />} />
             <Route path="Printers-and-Plotters" element={<PrintPlot/>} />
+            <Route path="Desktops-and-Laptops" element={<DeskLap />} />
+            <Route path="Furnitures" element={<Furnitures/>} />
             <Route path='/Enquiry' element={<Enquiry/>}/>
         </Routes>
     );
