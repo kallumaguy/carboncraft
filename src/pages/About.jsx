@@ -5,13 +5,10 @@ import "flowbite";
 const About = () => {
   return (
     <main className="mt-[3.5rem]">
-      <div className="w-full h-screen flex items-center justify-center bg-background ">
-        <div className="text-center">
-          <span className="text-xl font-heading font-bold text-primary ">
-            Latest Services
-          </span>
-          <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
-            Discover what we can do for you
+      <div className="w-full h-screen flex items-end justify-center bg-about-bg-mob md:bg-about-bg bg-cover md:bg-bottom ">
+        <div className=" flex flex-col items-center">
+          <h1 className="text-4xl font-medium font-heading text-gray-800 leading-tight mb-[7rem] mx-6 md:mx-0">
+            Elevate your workspace effortlessly
           </h1>
         </div>
       </div>
@@ -106,7 +103,7 @@ const About = () => {
                   </h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  We&#39;re here to help. 
+                  We&#39;re here to help.
                 </p>
               </div>
             </div>
@@ -136,11 +133,11 @@ const About = () => {
 
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Visit us
+                    Our Premises
                   </h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Visit our Office HQ.
+                  Our Service Zones.
                 </p>
               </div>
             </div>

@@ -84,15 +84,15 @@ const PrintPlot = () => {
                       alt=""
                     />
                   </a>
-                  <div className="p-5">
+                  <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
                         Canon imageRUNNER Advance C5500 Series
                       </h5>
                     </a>
                     <a
                       href="#"
-                      className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
+                      className="inline-flex items-center px-2 md:px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
                     >
                       Enquire now
                       <svg

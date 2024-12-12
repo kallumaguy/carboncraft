@@ -17,11 +17,16 @@ const Furnitures = () => {
 
       <section className="py-[6rem]">
         <div className="container mx-auto">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            Find your perfect workstation
+          </h1>
+        </div>
           <div className="flex flex-col md:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <a href="#" className="p-3 md:p-5">
               <img
                 className="md:max-w-xl rounded-2xl border-2  "
-                src="/images/Services/AMC.png"
+                src="/images/Furnitures/office-furnitures.png"
                 alt="Rent Printer"
               />
             </a>

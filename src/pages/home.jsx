@@ -58,10 +58,10 @@ const Home = () => {
             {/* Left Section */}
             <div className="w-full md:w-1/2 text-center md:text-left font-heading">
               <span className="text-xl font-heading font-bold text-primary mb-3">
-                Print Solutions
+                Office Solutions
               </span>
-              <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight">
-                Rent Printers, Enhance Your Workspace <br />
+              <h1 className="text-4xl md:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight">
+                Rent Equipments, <br />Enhance Your Workspace 
               </h1>
               <p className="text-xl text-gray-600 my-3">
                 Our dedication to quality ensures the highest standards in all
@@ -128,10 +128,10 @@ const Home = () => {
 
             {/* Right Section */}
             <div className="relative w-full md:w-1/2 mt-10 md:mt-0 hidden lg:flex items-center justify-center">
-              <div className="relative w-[28rem] h-[28rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
+              <div className="relative w-[27rem] h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
                 {/* Image for 3D effect */}
                 <img
-                  className=" bottom-8 max-w-[32rem] "
+                  className=" bottom-8 max-w-[42rem] "
                   src="/images/Home/hero-3d.png"
                   alt="Office Image"
                 />
@@ -140,7 +140,7 @@ const Home = () => {
           </div>
         </section>
       </div>
-      <div className="relative z-20 mt-[100vh]  max-w-full overflow-hidden bg-background rounded-t-2xl">
+      <div className="relative z-20 mt-[100vh] max-w-full overflow-hidden bg-background rounded-t-2xl">
         {/* Intro Section */}
         <section className="bg-blue-gradient rounded-t-2xl">
           <div className="container mx-auto flex flex-col md:flex-row py-5 md:py-[6rem]">
@@ -161,7 +161,7 @@ const Home = () => {
                     Get to Know us!
                   </span>
                   <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3">
-                    We’re UAE Based Printing Solutions Company
+                    We’re UAE Based Office Solutions Company
                   </h1>
                   <p className="font-heading text-xl text-background">
                     Welcome to Carbon Craft, your trusted partner for office and
@@ -210,7 +210,7 @@ const Home = () => {
                 <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
                   All-in-One
                 </h3>
-                <p className="text-body text-white">
+                <p className="font-body text-white">
                   We offer a broad range of solutions including printer, copier,
                   plotter, laptop, computer, and office furniture rentals and
                   sales, as well as annual maintenance contracts (AMC).
@@ -236,7 +236,7 @@ const Home = () => {
                 <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
                   Premium Products
                 </h3>
-                <p className="text-body text-white">
+                <p className="font-body text-white">
                   Our inventory features top-tier printers, copiers, computers,
                   laptops, and office furniture from well-known brands, ensuring
                   dependable performance.
@@ -262,7 +262,7 @@ const Home = () => {
                 <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
                   Customer-Centric
                 </h3>
-                <p className="text-body text-white">
+                <p className="font-body text-white">
                   Our expert team is focused on understanding your specific
                   needs and delivering customized solutions. We aim for
                   excellence in every interaction with service and continuous
@@ -282,7 +282,7 @@ const Home = () => {
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Latest Services
               </span>
-              <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+              <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
                 Discover what we can do for you
               </h1>
             </div>
@@ -298,11 +298,11 @@ const Home = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                         Rent Printers
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                       Affordable Printer Rentals for Every Need.
                     </p>
                   </div>
@@ -320,11 +320,11 @@ const Home = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                         AMC
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                       Comprehensive Annual Maintenance Contracts.
                     </p>
                   </div>
@@ -342,11 +342,11 @@ const Home = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                         Office Essentials
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                       Equip Your Workspace with Quality Supplies.
                     </p>
                   </div>
@@ -379,7 +379,7 @@ const Home = () => {
                 ></div>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                  <h5 className="mb-2 text-2xl font-semibold font-heading tracking-tight">
                     Printers & Plotters
                   </h5>
                 </div>
@@ -396,7 +396,7 @@ const Home = () => {
                 ></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                    <h5 className="mb-2 text-2xl font-semibold font-heading tracking-tight">
                       Desktops & Laptops
                     </h5>
                   </a>
@@ -414,7 +414,7 @@ const Home = () => {
                 ></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                    <h5 className="mb-2 text-2xl font-semibold font-heading tracking-tight">
                       Furnitures
                     </h5>
                   </a>
@@ -433,7 +433,7 @@ const Home = () => {
               Brands
             </span>
             <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-              Explore Our Brand Partners
+              Top Brands We Provide
             </h1>
           </div>
           <div className="mt-[4rem]">

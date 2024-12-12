@@ -56,7 +56,9 @@ export default {
       backgroundImage: {
         'blue-gradient': 'linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 98.2% )',
         'services': "url('/images/Services/service-bg.png')",
-        'printplot':"url('/images/Printers-Plotters/printplot-bg.png')"
+        'printplot':"url('/images/Printers-Plotters/printplot-bg.png')",
+        'about-bg':"url('/images/About/about-bg.jpg')",
+        'about-bg-mob':"url('/images/About/about-bg-mob.jpg')"
       },
     },
   },

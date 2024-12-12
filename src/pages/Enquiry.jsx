@@ -80,11 +80,11 @@ const Enquiry = () => {
 
       <section className="">
         <div className="container mx-auto p-6">
-          <h1 className="text-2xl font-bold mb-4">Dynamic Form</h1>
+          <h1 className="text-2xl font-bold mb-4">Enquiry Form</h1>
           {/* Dropdown for selecting list item */}
           <div className="mb-6">
             <label className="block mb-2 text-gray-700 font-medium">
-              Select an Item
+              Enquire for:
             </label>
             <select
               value={selectedItem}

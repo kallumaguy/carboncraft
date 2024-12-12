@@ -51,11 +51,11 @@ const Services = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                      <h5 className="mb-2 text-2xl font-heading font-bold tracking-tight text-white">
                         For Office
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-white">
+                    <p className="mb-3 font-body font-normal text-white">
                       Streamline your office tasks with our efficient printer
                       rentals. Designed for reliability and high performance,
                       they handle all your business printing needs with ease and
@@ -89,25 +89,25 @@ const Services = () => {
                 <div className="max-w-lg bg-primary rounded-2xl shadow-md">
                   <a href="#">
                     <img
-                      className="rounded-3xl p-3"
+                      className="rounded-3xl p-3 "
                       src="/images/Home/amc.png"
                       alt="AMC"
                     />
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                      <h5 className="mb-2 text-2xl font-heading font-bold tracking-tight text-white">
                         For Events
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal text-white">
+                    <p className="mb-3 font-body font-normal text-white">
                       Ensure smooth event operations with our portable printer
                       rentals. Perfect for tickets, registrations, or documents,
                       they offer convenience and reliability for any event size.
                     </p>
                     <button
                       type="button"
-                      className="flex text-white bg-primary border-2 border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5"
+                      className="flex text-white font-body bg-primary border-2 border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5"
                     >
                       Enquire Now{" "}
                       <svg
@@ -147,7 +147,7 @@ const Services = () => {
             </h1>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-1 bg-primary rounded-2xl shadow-md my-[4rem]">
+          <div className="flex flex-col md:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <a href="#">
               <img
                 className="md:max-w-lg rounded-3xl p-3 md:p-5"
@@ -155,7 +155,7 @@ const Services = () => {
                 alt="Rent Printer"
               />
             </a>
-            <p className="text-xl font-normal text-white p-5">
+            <p className="text-xl font-body font-normal text-white p-5">
               Our Annual Maintenance Contract for printers and photocopiers is
               designed to ensure your equipment remains in top condition,
               offering long-lasting durability and consistent performance. With
