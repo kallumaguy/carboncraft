@@ -179,6 +179,48 @@ const Services = () => {
               take care of the rest.
             </p>
           </div>
+
+          <div className="flex flex-col md:flex-row items-center gap-1 bg-white rounded-3xl shadow-md my-[4rem]">
+            <a href="#">
+              <img
+                className="md:max-w-lg rounded-3xl p-3 md:p-5"
+                src="/images/Services/AMC.png"
+                alt="Rent Printer"
+              />
+            </a>
+            <div className="p-5">
+              <span className="text-xl font-heading font-bold text-primary mb-3">
+                Contract Info
+              </span>
+              <h1 className="text-2xl md:text-4xl font-bold font-heading  text-gray-800 leading-tight my-3">
+                Our AMC includes
+              </h1>
+              <p className="text-xl font-body font-normal text-gray-700">
+                <ul className=" mt-2 space-y-2">
+                  {[
+                    "Periodic check-up to ensure trouble-free operation.",
+                    "Services and Consumables covered under the contract.",
+                    "Payment terms and conditions.",
+                    "Conditions for contract termination.",
+                    "Agreed Seal and signatures of both parties.",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      {/* Custom SVG arrow */}
+                      <svg
+                        className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#1B1871"
+                      >
+                        <path d="M10 17l5-5-5-5v10z" />
+                      </svg>
+                      <span className="ml-2 text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
