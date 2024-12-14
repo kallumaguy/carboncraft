@@ -10,11 +10,14 @@ const Home = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 4000, // Adjust for smooth scrolling
     slidesToShow: 5, // Default for large screens
     slidesToScroll: 1,
     centerMode: true, // Enables padding around slides
     centerPadding: "30px", // Adjusts the gap between slides
+    autoplay: true, // Enables autoplay
+    autoplaySpeed: 0, // Continuous scroll
+    cssEase: "linear", // Smooth linear motion
     responsive: [
       {
         breakpoint: 1024, // Tablet breakpoint
@@ -31,13 +34,59 @@ const Home = () => {
     ],
   };
 
+  const settingsOpposite = {
+    dots: false,
+    infinite: true,
+    speed: 4000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "30px",
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    rtl: true, // Set rtl to true to move in the opposite direction
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   const logos = [
-    "/images/Home/Logos/acer.png",
-    "/images/Home/Logos/amd.png",
-    "/images/Home/Logos/apple.png",
-    "/images/Home/Logos/asus.png",
-    "/images/Home/Logos/brother.png",
     "/images/Home/Logos/canon.png",
+    "/images/Home/Logos/konica.png",
+    "/images/Home/Logos/ricoh.png",
+    "/images/Home/Logos/hp.png",
+    "/images/Home/Logos/kyocera.png",
+    "/images/Home/Logos/brother.png",
+    "/images/Home/Logos/xerox.png",
+    "/images/Home/Logos/triumph.png",
+    "/images/Home/Logos/sharp.png",
+    "/images/Home/Logos/epson.png",
+    "/images/Home/Logos/samsung.png",
+  ];
+
+  const secondLogos = [
+    "/images/Home/Logos/dell.png",
+    "/images/Home/Logos/apple.png",
+    "/images/Home/Logos/lenovo.png",
+    "/images/Home/Logos/microsoft.png",
+    "/images/Home/Logos/toshiba.png",
+    "/images/Home/Logos/asus.png",
+    "/images/Home/Logos/intel.png",
+    "/images/Home/Logos/amd.png",
+    "/images/Home/Logos/msi.png",
+    "/images/Home/Logos/acer.png",
   ];
 
   return (
@@ -45,7 +94,7 @@ const Home = () => {
       <div className="mt-[3.6rem]">
         {/* Hero section */}
         <section className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-background z-10">
-          <div className="absolute top-10 right-0">
+          <div className="absolute top-10 right-0 z-0">
             <div className="absolute top-1/2 left-1/2 w-[30rem] h-[30rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-[26rem] h-[26rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-[22rem] h-[22rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
@@ -54,20 +103,21 @@ const Home = () => {
             <div className="absolute top-1/2 left-1/2 w-40 h-40 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-24 h-24 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-1"></div>
           </div>
-          <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between ">
+          <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between z-10">
             {/* Left Section */}
-            <div className="w-full md:w-1/2 text-center md:text-left font-heading">
+            <div className="w-full md:w-1/2 text-center lg:text-left font-heading">
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Office Solutions
               </span>
               <h1 className="text-4xl md:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight">
-                Rent Equipments, <br />Enhance Your Workspace 
+                Rent Equipments, <br />
+                Enhance Your Workspace
               </h1>
               <p className="text-xl text-gray-600 my-3">
                 Our dedication to quality ensures the highest standards in all
                 our offerings.
               </p>
-              <ul className="text-lg mx-5 lg:mx-0 text-gray-600 leading-tight flex flex-col items-center justify-center md:items-start">
+              <ul className="text-lg mx-5 lg:mx-0 text-gray-600 leading-tight flex flex-col items-center justify-center lg:items-start">
                 <li className="flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -143,8 +193,8 @@ const Home = () => {
       <div className="relative z-20 mt-[100vh] max-w-full overflow-hidden bg-background rounded-t-2xl">
         {/* Intro Section */}
         <section className="bg-blue-gradient rounded-t-2xl">
-          <div className="container mx-auto flex flex-col md:flex-row py-5 md:py-[6rem]">
-            <div className="md:w-5/12 w-full">
+          <div className="container mx-auto flex flex-col lg:flex-row md:gap-4 xl:gap-0 py-5 md:py-[6rem]">
+            <div className="lg:w-5/12 w-full">
               <div className="rounded-2xl">
                 <img
                   className="img rounded-2xl h-[26rem] w-full shrink-0 overflow-hidden object-cover lg:h-[30rem] lg:max-w-[30rem]"
@@ -153,7 +203,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="md:w-7/12 w-full flex flex-col justify-center items-center">
+            <div className="lg:w-7/12 w-full flex flex-col justify-center items-center">
               <div className="relative w-full px-4 m my-5 md:my-0">
                 {/* Title Section */}
                 <div className="relative inline-block">
@@ -163,7 +213,7 @@ const Home = () => {
                   <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3">
                     We’re UAE Based Office Solutions Company
                   </h1>
-                  <p className="font-heading text-xl text-background">
+                  <p className="font-heading text-xl md:text-base xl:text-xl text-background">
                     Welcome to Carbon Craft, your trusted partner for office and
                     event solutions across the UAE. We are dedicated to
                     excellence and customer satisfaction, providing high-quality
@@ -189,8 +239,8 @@ const Home = () => {
               Best Choice For Rentals
             </h1>
           </div>
-          <div className="container mx-auto flex flex-col md:flex-row text-left mt-[4rem]">
-            <div className="flex-1 mb-5 md:pb-0">
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]">
+            <div className="col-span-1">
               <div className="mx-4 bg-blue-prime rounded-2xl p-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +256,6 @@ const Home = () => {
                     d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                   />
                 </svg>
-
                 <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
                   All-in-One
                 </h3>
@@ -217,7 +266,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="flex-1 mb-5 md:pb-0">
+            <div className="col-span-1">
               <div className="mx-4 bg-blue-prime rounded-2xl p-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +281,6 @@ const Home = () => {
                     d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
                   />
                 </svg>
-
                 <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
                   Premium Products
                 </h3>
@@ -243,7 +291,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="flex-1 border-solid">
+            <div className="col-span-1 ">
               <div className="mx-4 bg-blue-prime rounded-2xl p-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -258,7 +306,6 @@ const Home = () => {
                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
                   />
                 </svg>
-
                 <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
                   Customer-Centric
                 </h3>
@@ -286,7 +333,7 @@ const Home = () => {
                 Discover what we can do for you
               </h1>
             </div>
-            <div className="mt-[4rem] sm:flex md:grid grid-cols-3 gap-4">
+            <div className="mt-[4rem] sm:flex lg:grid grid-cols-3 gap-4">
               <div className="mb-5 md:pb-0">
                 <div className="max-w-sm bg-white border-2 border-white hover:border-primary rounded-2xl shadow-md">
                   <a href="#">
@@ -379,7 +426,7 @@ const Home = () => {
                 ></div>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h5 className="mb-2 text-2xl font-semibold font-heading tracking-tight">
+                  <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
                     Printers & Plotters
                   </h5>
                 </div>
@@ -396,7 +443,7 @@ const Home = () => {
                 ></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href="#">
-                    <h5 className="mb-2 text-2xl font-semibold font-heading tracking-tight">
+                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
                       Desktops & Laptops
                     </h5>
                   </a>
@@ -414,7 +461,7 @@ const Home = () => {
                 ></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href="#">
-                    <h5 className="mb-2 text-2xl font-semibold font-heading tracking-tight">
+                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
                       Furnitures
                     </h5>
                   </a>
@@ -446,6 +493,24 @@ const Home = () => {
                   <img
                     src={logo}
                     alt={`Logo ${index + 1}`}
+                    className="bg-white border-2 rounded-md h-auto w-auto"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          <div className="mt-[1rem]">
+            {/* Second Slider */}
+            <Slider {...settingsOpposite}>
+              {secondLogos.map((logo, index) => (
+                <div
+                  key={`slider2-${index}`}
+                  className="p-3 flex items-center justify-center"
+                >
+                  <img
+                    src={logo}
+                    alt={`Second Logo ${index + 1}`}
                     className="bg-white border-2 rounded-md h-auto w-auto"
                   />
                 </div>

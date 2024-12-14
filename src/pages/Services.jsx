@@ -180,11 +180,11 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-1 bg-white rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col md:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]">
             <a href="#">
               <img
                 className="md:max-w-lg rounded-3xl p-3 md:p-5"
-                src="/images/Services/AMC.png"
+                src="/images/Services/contract-info.png"
                 alt="Rent Printer"
               />
             </a>

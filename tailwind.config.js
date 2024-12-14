@@ -47,8 +47,9 @@ export default {
       padding: {
         DEFAULT: "1rem",
         sm: "2rem",
-        lg: "4rem",
-        xl: "6rem",
+        md:"2rem",
+        lg: "3rem",
+        xl: "5rem",
         "2xl": "6rem",
       },
     },
@@ -57,8 +58,11 @@ export default {
         'blue-gradient': 'linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 98.2% )',
         'services': "url('/images/Services/service-bg.png')",
         'printplot':"url('/images/Printers-Plotters/printplot-bg.png')",
+        "desklap":"url('/images/Desktops-Laptops/desklap-bg.png')",
+        "furniture-bg":"url('/images/Furnitures/furniture-bg.png')",
         'about-bg':"url('/images/About/about-bg.jpg')",
-        'about-bg-mob':"url('/images/About/about-bg-mob.jpg')"
+        'about-bg-mob':"url('/images/About/about-bg-mob.jpg')",
+        'enquiry-bg':"url('/images/Enquiry/enquiry-bg.png')"
       },
     },
   },

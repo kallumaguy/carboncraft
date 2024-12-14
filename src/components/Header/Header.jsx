@@ -129,7 +129,7 @@ const Header = () => {
                           ></path>
                         </svg>
                       </button>
-                      <ul className="hidden group-hover:block md:absolute bg-white shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
+                      <ul className="hidden group-hover:block md:absolute bg-white md:shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
                         {link.submenu.map((subLink, subIndex) => (
                           <li key={subIndex}>
                             <NavLink

@@ -5,7 +5,7 @@ import "flowbite";
 const Furnitures = () => {
   return (
     <div className="mt-[3.6rem]">
-      <section className="bg-printplot bg-cover">
+      <section className="bg-furniture-bg bg-center bg-cover">
         <div className="py-[6rem] ">
           <div className="container mx-auto ">
             <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading  text-background leading-tight my-3">

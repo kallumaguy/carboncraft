@@ -13,7 +13,8 @@ import {
 const Footer = () => {
   return (
     <footer className=" relative z-20">
-      <section className="bg-blue-prime">
+      <section className="bg-blue-prime hover:bg-[#1e3a8a]">
+        <a href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0">
         <div className="container mx-auto px-4 py-[4.8rem] md:py-[6rem]">
           <div className="flex items-center">
             <h1 className="text-2xl md:text-[3.3rem] font-medium font-heading text-white leading-tight my-3 me-3">
@@ -34,6 +35,7 @@ const Footer = () => {
             </svg>
           </div>
         </div>
+        </a>
       </section>
 
       <section className="bg-primary pt-12 pb-5">
@@ -64,16 +66,16 @@ const Footer = () => {
               </ul>
             </div>
             <div className="flex space-x-5 text-background">
-              <a href="">
+              <a href="https://www.linkedin.com/company/carboncraftequipments">
                 <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
               </a>
-              <a>
+              <a href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0">
                 <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6" />
               </a>
-              <a href="">
+              <a href="https://www.facebook.com/people/Carbon-Craft-Equipments-Trading/61563072509008/?mibextid=ZbWKwL">
                 <FontAwesomeIcon icon={faFacebook} className="w-6 h-6" />
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/carboncraft_uae/">
                 <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
               </a>
               <a href="">
@@ -83,7 +85,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col md:flex-row"></div>
-          <div className="container-fluid flex flex-col md:flex-row items-center justify-center py-6 md:py-[3.5rem] text-[4.5rem] md:text-[5.5rem] lg:text-[11rem]">
+          <div className="container-fluid flex flex-col md:flex-row items-center justify-center py-6 md:py-[3.5rem] text-[4.5rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[11rem]">
             <div className="relative font-logo font-medium tracking-[-0.02em] text-orange-200 leading-none md:leading-[7rem]/[18.75rem]">
               CARBON
             </div>

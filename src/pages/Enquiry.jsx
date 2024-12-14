@@ -8,9 +8,9 @@ import "slick-carousel/slick/slick-theme.css";
 const Enquiry = () => {
   const [selectedItem, setSelectedItem] = useState("item1");
 
-  // Updated `forms` to match `itemDisplayNames` keys
   const forms = {
     item1: (
+      //Printer Form
       <form className="space-y-4 font-body">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -184,6 +184,7 @@ const Enquiry = () => {
       </form>
     ),
     item2: (
+      //Desktop/laptop form
       <form className="space-y-4 font-body">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -397,7 +398,7 @@ const Enquiry = () => {
     ),
     item3: (
       // Furniture Form
-      <form className="space-y-4">
+      <form className="space-y-4 font-body">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -489,9 +490,9 @@ const Enquiry = () => {
           </div>
         </label>
 
-        {/* Type Furniture */}
+        {/* Furniture Type */}
         <label className="block mt-4">
-          <span className="text-gray-800 font-semibold">Type Furniture</span>
+          <span className="text-gray-800 font-semibold">Furniture Type</span>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
             {["Office", "Outdoor", "Custom"].map((furniture, index) => (
               <div key={index} className="flex items-center">
@@ -586,7 +587,8 @@ const Enquiry = () => {
       </form>
     ),
     item4: (
-      <form className="space-y-4">
+      //Other form
+      <form className="space-y-4 font-body">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -708,7 +710,7 @@ const Enquiry = () => {
 
   return (
     <div className="mt-[3.6rem]">
-      <section className="bg-services bg-cover">
+      <section className="bg-enquiry-bg bg-center bg-cover">
         <div className="py-[6rem]">
           <div className="container mx-auto">
             <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading text-background leading-tight my-3">
