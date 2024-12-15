@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "flowbite";
 import { NavLink } from "react-router-dom";
-import  {  useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const navLinks = [
   {
@@ -43,12 +43,25 @@ const navLinks = [
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [activeSubMenu, setActiveSubMenu] = useState(null);
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target)
+    ) {
       setShowMenu(false);
+      setActiveSubMenu(null);
     }
+  };
+
+  const handleMenuItemClick = () => {
+    setShowMenu(false);
+    setActiveSubMenu(null);
   };
 
   useEffect(() => {
@@ -78,9 +91,10 @@ const Header = () => {
 
           {/* Hamburger Button */}
           <button
+            ref={buttonRef}
             type="button"
             className="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-            onClick={() => setShowMenu(!showMenu)}
+            onClick={() => setShowMenu((prev) => !prev)}
           >
             <span className="sr-only">Toggle Menu</span>
             <svg
@@ -114,7 +128,14 @@ const Header = () => {
                 >
                   {link.submenu ? (
                     <>
-                      <button className="flex items-center px-3 py-2 text-text hover:text-primary transition-all duration-200">
+                      <button
+                        className="flex items-center px-3 py-2 text-text hover:text-primary transition-all duration-200"
+                        onClick={() =>
+                          setActiveSubMenu((prev) =>
+                            prev === index ? null : index
+                          )
+                        }
+                      >
                         {link.display}
                         <svg
                           className="w-4 h-4 ml-1"
@@ -129,7 +150,11 @@ const Header = () => {
                           ></path>
                         </svg>
                       </button>
-                      <ul className="hidden group-hover:block md:absolute bg-white md:shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100">
+                      <ul
+                        className={`${
+                          activeSubMenu === index ? "block" : "hidden"
+                        } md:absolute bg-white md:shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100`}
+                      >
                         {link.submenu.map((subLink, subIndex) => (
                           <li key={subIndex}>
                             <NavLink
@@ -139,6 +164,7 @@ const Header = () => {
                                   ? "block px-4 py-2 text-sm bg-primary text-white transition-all duration-200"
                                   : "block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
                               }
+                              onClick={handleMenuItemClick}
                             >
                               {subLink.display}
                             </NavLink>
@@ -154,6 +180,7 @@ const Header = () => {
                           ? "block px-3 py-2 text-primary"
                           : "block px-3 py-2 text-text hover:text-primary transition-all duration-200"
                       }
+                      onClick={handleMenuItemClick}
                     >
                       {link.display}
                     </NavLink>

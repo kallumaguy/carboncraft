@@ -333,12 +333,12 @@ const Home = () => {
                 Discover what we can do for you
               </h1>
             </div>
-            <div className="mt-[4rem] grid gap-4">
+            <div className="mt-[4rem] flex flex-col md:grid gap-4">
               <div className="col-span-1">
-                <div className="max-w-full flex flex-col items-center md:flex-row bg-white border-2 border-white  rounded-2xl shadow-md">
+                <div className="max-w-full flex flex-col md:items-center md:flex-row bg-white border-2 border-white  rounded-2xl shadow-md">
                   <a href="#">
                     <img
-                      className="rounded-3xl max-w-sm xl:max-w-xl p-3"
+                      className="rounded-3xl md:max-w-sm xl:max-w-xl p-3"
                       src="/images/Home/rent-printer.png"
                       alt=""
                     />
@@ -356,9 +356,9 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="md:grid md:grid-cols-2 md:gap-4">
+              <div className="sm:flex md:grid md:grid-cols-2 md:gap-4">
                 <div className="mb-5 md:mb-0">
-                  <div className="max-w-full bg-white border-2 border-white  rounded-2xl shadow-md">
+                  <div className="max-w-full bg-white border-2 border-white rounded-2xl shadow-md">
                     <a href="#">
                       <img
                         className="rounded-3xl p-3"
@@ -380,7 +380,7 @@ const Home = () => {
                 </div>
 
                 <div>
-                  <div className="max-w-full bg-white border-2 border-white  rounded-2xl shadow-md">
+                  <div className=" max-w-full bg-white border-2 border-white  rounded-2xl shadow-md">
                     <a href="#">
                       <img
                         className="rounded-3xl p-3"
