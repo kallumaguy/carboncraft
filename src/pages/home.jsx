@@ -5,10 +5,12 @@ import "flowbite";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 4000, // Adjust for smooth scrolling
     slidesToShow: 5, // Default for large screens
@@ -28,7 +30,7 @@ const Home = () => {
       {
         breakpoint: 640, // Mobile breakpoint
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
@@ -36,6 +38,7 @@ const Home = () => {
 
   const settingsOpposite = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 4000,
     slidesToShow: 5,
@@ -56,7 +59,7 @@ const Home = () => {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
@@ -153,26 +156,28 @@ const Home = () => {
                   Specializing in Printing, Office Equipment Rentals and
                   Transportation
                 </li>
-                <button
-                  type="button"
-                  className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5"
-                >
-                  Enquire Now{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-4 ms-1 "
+                <NavLink to="/Enquiry">
+                  <button
+                    type="button"
+                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                    />
-                  </svg>
-                </button>
+                    Enquire Now{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-4 ms-1 "
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </button>
+                </NavLink>
               </ul>
             </div>
 
@@ -235,13 +240,13 @@ const Home = () => {
             <span className="text-xl font-heading font-bold text-primary mb-3">
               What set&#39;s us apart
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
               Best Choice For Rentals
             </h1>
           </div>
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]">
             <div className="col-span-1">
-              <div className="mx-4 bg-blue-prime rounded-2xl p-5">
+              <div className="mx-4 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -267,7 +272,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-span-1">
-              <div className="mx-4 bg-blue-prime rounded-2xl p-5">
+              <div className="mx-4 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -291,8 +296,8 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="col-span-1 ">
-              <div className="mx-4 bg-blue-prime rounded-2xl p-5">
+            <div className="col-span-1">
+              <div className="mx-4 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -419,56 +424,64 @@ const Home = () => {
           </div>
           <div className="mt-[4rem] sm:flex md:grid grid-cols-3 gap-4">
             <div className="mb-5 md:pb-0">
-              <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
-                <div
-                  className="bg-cover bg-center h-64"
-                  style={{
-                    backgroundImage: "url('images/Home/printers-plotters.png')",
-                  }}
-                ></div>
+              <NavLink to="/Printers-and-Plotters">
+                <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                  <div
+                    className="bg-cover bg-center h-64"
+                    style={{
+                      backgroundImage:
+                        "url('images/Home/printers-plotters.png')",
+                    }}
+                  ></div>
 
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
-                    Printers & Plotters
-                  </h5>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
+                      Printers & Plotters
+                    </h5>
+                  </div>
                 </div>
-              </div>
+              </NavLink>
             </div>
 
             <div className="mb-5 md:pb-0">
-              <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
-                <div
-                  className="bg-cover bg-center h-64"
-                  style={{
-                    backgroundImage: "url('images/Home/Desktops-Laptops.png')",
-                  }}
-                ></div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
-                      Desktops & Laptops
-                    </h5>
-                  </a>
+              <NavLink to="/Desktops-and-Laptops">
+                <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                  <div
+                    className="bg-cover bg-center h-64"
+                    style={{
+                      backgroundImage:
+                        "url('images/Home/Desktops-Laptops.png')",
+                    }}
+                  ></div>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a href="#">
+                      <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
+                        Desktops & Laptops
+                      </h5>
+                    </a>
+                  </div>
                 </div>
-              </div>
+              </NavLink>
             </div>
 
             <div>
-              <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
-                <div
-                  className="bg-cover bg-center h-64"
-                  style={{
-                    backgroundImage: "url('images/Home/Furnitures.png')",
-                  }}
-                ></div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
-                      Furnitures
-                    </h5>
-                  </a>
+              <NavLink to="/Furnitures">
+                <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                  <div
+                    className="bg-cover bg-center h-64"
+                    style={{
+                      backgroundImage: "url('images/Home/Furnitures.png')",
+                    }}
+                  ></div>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a href="#">
+                      <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
+                        Furnitures
+                      </h5>
+                    </a>
+                  </div>
                 </div>
-              </div>
+              </NavLink>
             </div>
           </div>
         </section>
@@ -476,7 +489,9 @@ const Home = () => {
         <div className="h-[0.12rem] w-full bg-gray-200"></div>
 
         {/* Brands */}
-        <section className="container mx-auto py-[5.5rem]">
+        <section className="bg-secondary py-[5.5rem]">
+          <div className="container mx-auto">
+
           <div className="text-center">
             <span className="text-xl font-heading font-bold text-primary mb-3">
               Brands
@@ -494,6 +509,8 @@ const Home = () => {
                 >
                   <img
                     src={logo}
+                    loading="lazy"
+                    decoding="async"
                     alt={`Logo ${index + 1}`}
                     className="bg-white border-2 rounded-md h-auto w-auto"
                   />
@@ -501,7 +518,6 @@ const Home = () => {
               ))}
             </Slider>
           </div>
-
           <div className="mt-[1rem]">
             {/* Second Slider */}
             <Slider {...settingsOpposite}>
@@ -512,12 +528,15 @@ const Home = () => {
                 >
                   <img
                     src={logo}
+                    loading="lazy"
+                    decoding="async"
                     alt={`Second Logo ${index + 1}`}
                     className="bg-white border-2 rounded-md h-auto w-auto"
                   />
                 </div>
               ))}
             </Slider>
+          </div>
           </div>
         </section>
       </div>

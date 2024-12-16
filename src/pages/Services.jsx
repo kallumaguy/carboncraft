@@ -147,10 +147,10 @@ const Services = () => {
             </h1>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <a href="#">
               <img
-                className="md:max-w-lg rounded-3xl p-3 md:p-5"
+                className="lg:max-w-lg rounded-3xl p-3 md:p-5"
                 src="/images/Services/AMC.png"
                 alt="Rent Printer"
               />
@@ -180,10 +180,10 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]">
+          <div className="flex flex-col lg:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]">
             <a href="#">
               <img
-                className="md:max-w-lg rounded-3xl p-3 md:p-5"
+                className="lg:max-w-lg rounded-3xl p-3 md:p-5"
                 src="/images/Services/contract-info.png"
                 alt="Rent Printer"
               />
@@ -237,7 +237,7 @@ const Services = () => {
             </h1>
           </div>
 
-          <div className="mt-[4rem] sm:flex md:grid grid-cols-4 gap-4">
+          <div className="mt-[4rem] sm:flex md:grid  grid-cols-2 xl:grid-cols-4 gap-4">
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-blue-prime rounded-2xl shadow-md">
                 <a href="#">

@@ -9,32 +9,33 @@ import {
   faWhatsapp,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className=" relative z-20">
       <section className="bg-blue-prime hover:bg-[#1e3a8a]">
         <a href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0">
-        <div className="container mx-auto px-4 py-[4.8rem] md:py-[6rem]">
-          <div className="flex items-center">
-            <h1 className="text-2xl md:text-[3.3rem] font-medium font-heading text-white leading-tight my-3 me-3">
-              Connect with us
-            </h1>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              className="size-6 md:size-10 stroke-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-              />
-            </svg>
+          <div className="container mx-auto px-4 py-[4.8rem] md:py-[6rem]">
+            <div className="flex items-center">
+              <h1 className="text-2xl md:text-[3.3rem] font-medium font-heading text-white leading-tight my-3 me-3">
+                Connect with us
+              </h1>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                className="size-6 md:size-10 stroke-white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
         </a>
       </section>
 
@@ -44,24 +45,16 @@ const Footer = () => {
             <div className="mb-3 md:mb-0">
               <ul className="flex md:space-x-4 justify-center space-x-2 font-heading text-background">
                 <li className="">
-                  <a href="/index.html" className="nav-link px-1 px-xl-3">
-                    Home
-                  </a>
+                  <NavLink to="/">Home</NavLink>
                 </li>
                 <li className="">
-                  <a href="/safari.html" className="nav-link px-1 px-xl-3">
-                    Products
-                  </a>
+                  <NavLink to="/Products">Products</NavLink>
                 </li>
                 <li className="">
-                  <a href="/safari.html" className="nav-link px-1 px-xl-3">
-                    About
-                  </a>
+                  <NavLink to="/About">About</NavLink>
                 </li>
                 <li className="">
-                  <a href="/contact.html" className="nav-link px-1 px-xl-3">
-                    Contact
-                  </a>
+                  <NavLink to="/Enquiry">Enquire</NavLink>
                 </li>
               </ul>
             </div>
@@ -96,8 +89,8 @@ const Footer = () => {
 
           <div className="text-center mt-xl-0 mt-3">
             <p className="text-sm text-background">
-              Carbon Craft Equipments Trading L.L.C-FZ <br className="md:hidden" /> © All Rights Reserved -
-              2024
+              Carbon Craft Equipments Trading L.L.C-FZ{" "}
+              <br className="md:hidden" /> © All Rights Reserved - 2024
             </p>
           </div>
           <hr className="h-px my-3 bg-background border-0" />

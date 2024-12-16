@@ -22,7 +22,7 @@ const Furnitures = () => {
             Find your perfect workstation
           </h1>
         </div>
-          <div className="flex flex-col md:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <a href="#" className="p-3 md:p-5">
               <img
                 className="md:max-w-xl rounded-2xl border-2  "
@@ -38,7 +38,7 @@ const Furnitures = () => {
             </p>
           </div>
 
-          <div className="flex flex-col-reverse md:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <p className="text-xl font-normal text-white p-5">
               Explore our range of outdoor furniture, perfect for creating a
               stylish and comfortable outdoor space. From durable seating and
@@ -55,7 +55,7 @@ const Furnitures = () => {
             </a>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <a href="#" className="p-3 md:p-5">
               <img
                 className="md:max-w-xl rounded-2xl border-2  "

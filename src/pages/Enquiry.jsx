@@ -63,7 +63,7 @@ const Enquiry = () => {
             {[
               "Abu Dhabi",
               "Abu Dhabi (Al Ain)",
-              "Abu Dhabi (Western Region)",
+              "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",
               "Ajman",
@@ -237,7 +237,7 @@ const Enquiry = () => {
             {[
               "Abu Dhabi",
               "Abu Dhabi (Al Ain)",
-              "Abu Dhabi (Western Region)",
+              "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",
               "Ajman",
@@ -450,7 +450,7 @@ const Enquiry = () => {
             {[
               "Abu Dhabi",
               "Abu Dhabi (Al Ain)",
-              "Abu Dhabi (Western Region)",
+              "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",
               "Ajman",
@@ -640,7 +640,7 @@ const Enquiry = () => {
             {[
               "Abu Dhabi",
               "Abu Dhabi (Al Ain)",
-              "Abu Dhabi (Western Region)",
+              "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",
               "Ajman",

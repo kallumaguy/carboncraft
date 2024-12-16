@@ -22,9 +22,6 @@ const DeskLap = () => {
             <span className="text-xl font-heading font-bold text-primary mb-3">
               Desktops & Laptops
             </span>
-            {/* <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-              Printer Rentals Made Easy
-            </h1> */}
           </div>
 
           <div className="mt-[2.5rem]">
@@ -33,7 +30,7 @@ const DeskLap = () => {
             </h1>
           </div>
 
-          <div className=" grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                 <a href="#">
