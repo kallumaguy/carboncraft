@@ -246,7 +246,7 @@ const Home = () => {
           </div>
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]">
             <div className="col-span-1">
-              <div className="mx-4 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
+              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -261,7 +261,7 @@ const Home = () => {
                     d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                   />
                 </svg>
-                <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
+                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary">
                   All-in-One
                 </h3>
                 <p className="font-body text-white">
@@ -272,7 +272,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-span-1">
-              <div className="mx-4 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
+              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -286,7 +286,7 @@ const Home = () => {
                     d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
                   />
                 </svg>
-                <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
+                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary">
                   Premium Products
                 </h3>
                 <p className="font-body text-white">
@@ -297,7 +297,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-span-1">
-              <div className="mx-4 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
+              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -311,7 +311,7 @@ const Home = () => {
                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
                   />
                 </svg>
-                <h3 className="text-2xl md:text-2xl font-bold font-heading text-primary">
+                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary">
                   Customer-Centric
                 </h3>
                 <p className="font-body text-white">
@@ -350,18 +350,22 @@ const Home = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="mb-2 text-2xl md:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                         Rent Printers
                       </h5>
                     </a>
-                    <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                      Affordable Printer Rentals for Every Need.
+                    <p className="mb-3 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-normal">
+                      Affordable Printer Rentals for Every Need - Delivering
+                      Cost-Effective, Flexible, and High Quality Printing
+                      Solutions for Homes, Offices, Corporate Events,
+                      Institutions, Large-Scale Business Operations, Trade
+                      Shows, Conferences, and Temporary Projects.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="sm:flex md:grid md:grid-cols-2 md:gap-4">
+              <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4">
                 <div className="mb-5 md:mb-0">
                   <div className="max-w-full bg-white border-2 border-white rounded-2xl shadow-md">
                     <a href="#">
@@ -373,12 +377,15 @@ const Home = () => {
                     </a>
                     <div className="p-5">
                       <a href="#">
-                        <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="mb-2 text-2xl md:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                           AMC
                         </h5>
                       </a>
                       <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                        Comprehensive Annual Maintenance Contracts.
+                        Annual Maintenance Contracts Designed to Ensure Seamless
+                        Operations - Providing Expert Support, Regular
+                        Servicing, and Prompt Repairs for Residential,
+                        Commercial, and Industrial Needs Across Various Sectors.
                       </p>
                     </div>
                   </div>
@@ -395,12 +402,16 @@ const Home = () => {
                     </a>
                     <div className="p-5">
                       <a href="#">
-                        <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="mb-2 text-2xl md:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                           Office Essentials
                         </h5>
                       </a>
                       <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                        Equip Your Workspace with Quality Supplies.
+                        Transform Your Workspace with Premium Supplies -
+                        Offering a Comprehensive Range of Office Products
+                        including Furniture, Stationery, Technology Accessories,
+                        and Organizational Tools to Create a Comfortable and
+                        Productive Environment.
                       </p>
                     </div>
                   </div>
@@ -422,10 +433,10 @@ const Home = () => {
               Check out various items
             </h1>
           </div>
-          <div className="mt-[4rem] sm:flex md:grid grid-cols-3 gap-4">
-            <div className="mb-5 md:pb-0">
+          <div className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="sm:mb-5 md:pb-0">
               <NavLink to="/Printers-and-Plotters">
-                <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
                     className="bg-cover bg-center h-64"
                     style={{
@@ -443,9 +454,9 @@ const Home = () => {
               </NavLink>
             </div>
 
-            <div className="mb-5 md:pb-0">
+            <div className="sm:mb-5 md:pb-0">
               <NavLink to="/Desktops-and-Laptops">
-                <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
                     className="bg-cover bg-center h-64"
                     style={{
@@ -466,7 +477,7 @@ const Home = () => {
 
             <div>
               <NavLink to="/Furnitures">
-                <div className="max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
                     className="bg-cover bg-center h-64"
                     style={{
@@ -491,52 +502,51 @@ const Home = () => {
         {/* Brands */}
         <section className="bg-secondary py-[5.5rem]">
           <div className="container mx-auto">
-
-          <div className="text-center">
-            <span className="text-xl font-heading font-bold text-primary mb-3">
-              Brands
-            </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-              Top Brands We Provide
-            </h1>
-          </div>
-          <div className="mt-[4rem]">
-            <Slider {...settings}>
-              {logos.map((logo, index) => (
-                <div
-                  key={index}
-                  className="p-3 flex items-center justify-center "
-                >
-                  <img
-                    src={logo}
-                    loading="lazy"
-                    decoding="async"
-                    alt={`Logo ${index + 1}`}
-                    className="bg-white border-2 rounded-md h-auto w-auto"
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
-          <div className="mt-[1rem]">
-            {/* Second Slider */}
-            <Slider {...settingsOpposite}>
-              {secondLogos.map((logo, index) => (
-                <div
-                  key={`slider2-${index}`}
-                  className="p-3 flex items-center justify-center"
-                >
-                  <img
-                    src={logo}
-                    loading="lazy"
-                    decoding="async"
-                    alt={`Second Logo ${index + 1}`}
-                    className="bg-white border-2 rounded-md h-auto w-auto"
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
+            <div className="text-center">
+              <span className="text-xl font-heading font-bold text-primary mb-3">
+                Brands
+              </span>
+              <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
+                Top Brands We Provide
+              </h1>
+            </div>
+            <div className="mt-[4rem]">
+              <Slider {...settings}>
+                {logos.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="p-3 flex items-center justify-center "
+                  >
+                    <img
+                      src={logo}
+                      loading="lazy"
+                      decoding="async"
+                      alt={`Logo ${index + 1}`}
+                      className="bg-white border-2 rounded-md h-auto w-auto"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+            <div className="mt-[1rem]">
+              {/* Second Slider */}
+              <Slider {...settingsOpposite}>
+                {secondLogos.map((logo, index) => (
+                  <div
+                    key={`slider2-${index}`}
+                    className="p-3 flex items-center justify-center"
+                  >
+                    <img
+                      src={logo}
+                      loading="lazy"
+                      decoding="async"
+                      alt={`Second Logo ${index + 1}`}
+                      className="bg-white border-2 rounded-md h-auto w-auto"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
         </section>
       </div>
