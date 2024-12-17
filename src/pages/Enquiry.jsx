@@ -1,17 +1,18 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "flowbite";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useParams } from "react-router-dom";
 
 const Enquiry = () => {
-  const [selectedItem, setSelectedItem] = useState("item1");
+  // const [selectedItem, setSelectedItem] = useState("default");
 
   const forms = {
-    item1: (
+    Printers: (
       //Printer Form
-      <form className="space-y-4 font-body">
+      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -185,7 +186,7 @@ const Enquiry = () => {
     ),
     item2: (
       //Desktop/laptop form
-      <form className="space-y-4 font-body">
+      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -398,7 +399,7 @@ const Enquiry = () => {
     ),
     item3: (
       // Furniture Form
-      <form className="space-y-4 font-body">
+      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -588,7 +589,7 @@ const Enquiry = () => {
     ),
     item4: (
       //Other form
-      <form className="space-y-4 font-body">
+      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -702,11 +703,24 @@ const Enquiry = () => {
   };
 
   const itemDisplayNames = {
-    item1: "Printers",
+    default: "Choose a product",
+    Printers: "Printers",
     item2: "Desktops/Laptops",
     item3: "Furnitures",
     item4: "Other Equipments",
   };
+
+  const { item } = useParams(); // Get the path parameter
+  const [selectedItem, setSelectedItem] = useState("default");
+
+  useEffect(() => {
+    // Set item only if it is valid
+    if (item && itemDisplayNames[item]) {
+      setSelectedItem(item);
+    } else {
+      setSelectedItem("default");
+    }
+  }, [item]);
 
   return (
     <div className="mt-[3.6rem]">
@@ -735,15 +749,21 @@ const Enquiry = () => {
               onChange={(e) => setSelectedItem(e.target.value)}
               className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             >
-              {Object.keys(itemDisplayNames).map((key) => (
-                <option key={key} value={key}>
-                  {itemDisplayNames[key]}
-                </option>
-              ))}
+              <option value="default" disabled>
+                {itemDisplayNames["default"]}
+              </option>
+              {Object.keys(itemDisplayNames).map(
+                (key) =>
+                  key !== "default" && (
+                    <option key={key} value={key}>
+                      {itemDisplayNames[key]}
+                    </option>
+                  )
+              )}
             </select>
           </div>
-          <div className="p-4 border rounded-md shadow-md bg-gray-50">
-            {forms[selectedItem]}
+          <div className="">
+            {selectedItem !== "default" && forms[selectedItem]}
           </div>
         </div>
       </section>

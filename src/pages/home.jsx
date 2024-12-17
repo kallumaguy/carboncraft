@@ -204,6 +204,8 @@ const Home = () => {
                 <img
                   className="img rounded-2xl h-[26rem] w-full shrink-0 overflow-hidden object-cover lg:h-[30rem] lg:max-w-[30rem]"
                   src="/images/Home/Carboncraft-office.png"
+                  loading="lazy"
+                  decoding="async"
                   alt="img"
                 />
               </div>
@@ -445,7 +447,7 @@ const Home = () => {
                     }}
                   ></div>
 
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
                       Printers & Plotters
                     </h5>
@@ -464,7 +466,7 @@ const Home = () => {
                         "url('images/Home/Desktops-Laptops.png')",
                     }}
                   ></div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <a href="#">
                       <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
                         Desktops & Laptops
@@ -484,7 +486,7 @@ const Home = () => {
                       backgroundImage: "url('images/Home/Furnitures.png')",
                     }}
                   ></div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/65 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <a href="#">
                       <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
                         Furnitures

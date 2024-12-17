@@ -11,10 +11,10 @@ export default {
     colors: {
       text: "#040316",
       background: "#fbfbfe",
-      primary: "#F96E2A",
+      primary: "#d6603b",
       secondary: "#FBF8EF",
       accent: "#D6603B",
-      "blue-prime": "#1B1871",
+      "blue-prime": "#242659",
       "blue-accent":"#97a1c8",
     },
     fontSize: {
@@ -56,6 +56,7 @@ export default {
     extend: {
       backgroundImage: {
         'blue-gradient': 'linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 98.2% )',
+        'orange-gradient':'linear-gradient(90deg, rgba(235,138,63,1) 0%, rgba(214,96,59,1) 80%)',
         'services': "url('/images/Services/service-bg.png')",
         'printplot':"url('/images/Printers-Plotters/printplot-bg.png')",
         "desklap":"url('/images/Desktops-Laptops/desklap-bg.png')",

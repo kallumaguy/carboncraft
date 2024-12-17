@@ -79,10 +79,10 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row"></div>
           <div className="container-fluid flex flex-col md:flex-row items-center justify-center py-6 md:py-[3.5rem] text-[4.5rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[11rem]">
-            <div className="relative font-logo font-medium tracking-[-0.02em] text-orange-200 leading-none md:leading-[7rem]/[18.75rem]">
+            <div className="relative font-logo font-medium tracking-[-0.02em] text-[#efc3b4] leading-none md:leading-[7rem]/[18.75rem]">
               CARBON
             </div>
-            <div className="relative font-logo font-bold tracking-[0.03em] text-orange-200 leading-none md:leading-[6rem]">
+            <div className="relative font-logo font-bold tracking-[0.03em] text-[#efc3b4] leading-none md:leading-[6rem]">
               CRAFT
             </div>
           </div>

@@ -19,6 +19,7 @@ const Routers = () => {
             <Route path="Desktops-and-Laptops" element={<DeskLap />} />
             <Route path="Furnitures" element={<Furnitures/>} />
             <Route path='/Enquiry' element={<Enquiry/>}/>
+            <Route path="/enquire/:item" element={<Enquiry />} />
         </Routes>
     );
 };

@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState ,useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "flowbite";
 import { NavLink } from "react-router-dom";
 
@@ -75,9 +75,11 @@ const Header = () => {
       <nav className="border-b border-gray-200 p-3 rounded">
         <div className="mx-auto flex flex-wrap items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex">
+          <NavLink to="/" className="flex">
             <img
               className="img"
+              loading="lazy"
+              decoding="async"
               src="images/Header/navbar-icon.png"
               width={50}
               height={40}
@@ -86,7 +88,7 @@ const Header = () => {
             <span className="self-center text-lg font-heading font-semibold whitespace-nowrap">
               CarbonCraft
             </span>
-          </a>
+          </NavLink>
 
           {/* Hamburger Button */}
           <button
