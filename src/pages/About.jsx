@@ -1,8 +1,12 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import "flowbite";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="mt-[3.5rem]">
       <div className="w-full h-screen flex items-end justify-center bg-about-bg-mob md:bg-about-bg bg-cover md:bg-bottom ">

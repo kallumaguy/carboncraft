@@ -1,8 +1,12 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import "flowbite";
 
 const DeskLap = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="mt-[3.6rem]">
       <section className="bg-desklap bg-cover">
@@ -140,7 +144,11 @@ const DeskLap = () => {
                     Discover our high-performance Gaming PC’s, built for
                     immersive gameplay. With powerful processors, advanced
                     graphics, and custom designs, these PCs are perfect for
-                    Gamers and Graphic Designers
+                    Gamers &{" "}
+                    <span className="lg:hidden">
+                      , video editors and graphic
+                    </span>{" "}
+                    Designers.
                   </p>
                   <a
                     href="#"
@@ -182,10 +190,10 @@ const DeskLap = () => {
                     </h5>
                   </a>
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                    Explore our range of fast, affordable Chromebooks. Perfect
-                    for work or study, these reliable laptops offer long battery
-                    life, quick performance, and easy cloud access. Get yours
-                    today!
+                    Explore our extensive range of fast, affordable Chromebooks
+                    today. Perfect for work or study, these reliable and durable
+                    laptops offer long battery life, quick performance, and easy
+                    cloud access. Get yours now!
                   </p>
                   <a
                     href="#"
@@ -227,9 +235,10 @@ const DeskLap = () => {
                     </h5>
                   </a>
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                    Browse our selection of highperformance tablets, perfect for
-                    work, entertainment. Sleek, portable, and powerful, our
-                    tablets offer versatility and convenience at great prices.
+                    Browse our selection of high-performance tablets, perfect
+                    for work, entertainment, and beyond. Sleek, portable, and
+                    incredibly powerful, our tablets offer versatility,
+                    convenience and value at great prices.
                   </p>
                   <a
                     href="#"

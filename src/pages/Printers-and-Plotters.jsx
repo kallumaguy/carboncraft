@@ -1,11 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import "flowbite";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const PrintPlot = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="mt-[3.6rem]">
       <section className="bg-printplot bg-cover">
@@ -47,7 +51,7 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
                         Canon imageRUNNER ADVANCE C256/C356
                       </h5>
                     </a>
@@ -86,7 +90,7 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
                         Canon imageRUNNER Advance C5500 Series
                       </h5>
                     </a>
@@ -125,7 +129,7 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
                         Canon imageRUNNER Advance C5200 Series
                       </h5>
                     </a>
@@ -164,8 +168,9 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
-                        Konica Minolta C554, C654, C754
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
+                        Konica Minolta <br />
+                        C554, C654, C754
                       </h5>
                     </a>
                     <a
@@ -192,7 +197,6 @@ const PrintPlot = () => {
                   </div>
                 </div>
               </div>
-
               <div className="mb-5 md:pb-0">
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <a href="#">
@@ -204,8 +208,9 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
-                        RICOH Pro <br />C7100s, C7110s
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
+                        RICOH Pro <br />
+                        C7100s, C7110s
                       </h5>
                     </a>
                     <a
@@ -243,7 +248,7 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
                         Brother MFC-L3760 Color LaserJet Printer
                       </h5>
                     </a>
@@ -282,7 +287,7 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
                         HP Colour LaserJet Pro MFP M477 fwd
                       </h5>
                     </a>
@@ -321,7 +326,7 @@ const PrintPlot = () => {
                   </a>
                   <div className="flex flex-col items-center md:items-start p-5 pt-1">
                     <a href="#">
-                      <h5 className="mb-2 text-sm md:text-md lg:text-xl font-heading font-semibold tracking-tight text-gray-900">
+                      <h5 className="mb-2 text-sm md:text-md lg:text-md xl:text-xl text-center lg:text-left font-heading font-semibold tracking-tight text-gray-900">
                         Kyocera TASKalpha 5003i, 5004i
                       </h5>
                     </a>

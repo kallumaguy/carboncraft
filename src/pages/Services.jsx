@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import "flowbite";
 
 import "slick-carousel/slick/slick.css";
@@ -7,6 +7,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from "react-router-dom";
 
 const Services = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="mt-[3.6rem]">
       <section className="bg-services bg-cover">

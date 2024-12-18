@@ -94,7 +94,7 @@ const Header = () => {
           <button
             ref={buttonRef}
             type="button"
-            className="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
+            className="md:hidden ml-3 text-gray-900  rounded-lg inline-flex items-center justify-center"
             onClick={() => setShowMenu((prev) => !prev)}
           >
             <span className="sr-only">Toggle Menu</span>

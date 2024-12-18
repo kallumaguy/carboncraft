@@ -1,9 +1,13 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import "flowbite";
 import { NavLink } from "react-router-dom";
 
 const Furnitures = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="mt-[3.6rem]">
       <section className="bg-furniture-bg bg-center bg-cover">
@@ -26,7 +30,7 @@ const Furnitures = () => {
           <div className="flex flex-col lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <div className="p-3 md:p-5">
               <img
-                className="md:max-w-xl rounded-2xl border-2  "
+                className="lg:max-w-md xl:max-w-xl rounded-2xl border-2  "
                 src="/images/Furnitures/office-furnitures.png"
                 alt="Rent Printer"
               />
@@ -103,7 +107,7 @@ const Furnitures = () => {
             </div>
             <div className="p-3 md:p-5">
               <img
-                className="md:max-w-xl rounded-2xl border-2  "
+                className="lg:max-w-md xl:max-w-xl rounded-2xl border-2  "
                 src="/images/Furnitures/outdoor-furnitures.png"
                 alt="Rent Printer"
               />
@@ -113,7 +117,7 @@ const Furnitures = () => {
           <div className="flex flex-col lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
             <div className="p-3 md:p-5">
               <img
-                className="md:max-w-xl rounded-2xl border-2  "
+                className="lg:max-w-md xl:max-w-xl rounded-2xl border-2  "
                 src="/images/Furnitures/customized-furnitures.png"
                 alt="Rent Printer"
               />

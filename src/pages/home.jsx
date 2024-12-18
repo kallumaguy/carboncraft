@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import "flowbite";
 
 import "slick-carousel/slick/slick.css";
@@ -8,6 +8,10 @@ import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const settings = {
     dots: false,
     arrows: false,

@@ -9,6 +9,10 @@ import { useParams } from "react-router-dom";
 const Enquiry = () => {
   // const [selectedItem, setSelectedItem] = useState("default");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const forms = {
     Printers: (
       //Printer Form
