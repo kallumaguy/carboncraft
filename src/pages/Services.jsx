@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from "react-router-dom";
 
 const Services = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -65,7 +64,7 @@ const Services = () => {
                     <NavLink to="/enquire/Printers">
                       <button
                         type="button"
-                        className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
+                        className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
                       >
                         Enquire Now{" "}
                         <svg
@@ -104,26 +103,28 @@ const Services = () => {
                       rentals. Perfect for tickets, registrations, or documents,
                       they offer convenience and reliability for any event size.
                     </p>
-                    <button
-                      type="button"
-                      className="flex text-white font-body bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
-                    >
-                      Enquire Now{" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="size-4 ms-1 "
+                    <NavLink to="/enquire/Printers">
+                      <button
+                        type="button"
+                        className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                        />
-                      </svg>
-                    </button>
+                        Enquire Now{" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="size-4 ms-1"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                          />
+                        </svg>
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -158,7 +159,7 @@ const Services = () => {
               <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight text-white">
                 Annual Maintainance Contract
               </h5>
-              <p className="text-lg font-body font-normal text-white leading-normal">
+              <p className="mb-2 text-lg font-body font-normal text-white leading-normal">
                 Our contract for printers and photocopiers is designed to ensure
                 your equipment remains in top condition, offering long-lasting
                 durability and consistent performance. With regular servicing
@@ -166,6 +167,27 @@ const Services = () => {
                 lifespan of your devices, providing you with peace of mind and
                 reliable operation over time.
               </p>
+              <a
+                href=""
+                className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-blue-prime rounded-lg shadow-md focus:ring-1 focus:outline-none focus:ring-gray-300"
+              >
+                Get Quote
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -245,44 +267,48 @@ const Services = () => {
           <div className="mt-[4rem] flex flex-col md:grid grid-cols-2 xl:grid-cols-4 gap-4">
             <div className="mb-5 md:pb-0">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
-                <img
-                  className="rounded-3xl p-3"
-                  src="/images/Services/desktops-and-laptops.png"
-                  alt="Rent Printer"
-                />
-                <div className="p-5">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Desktops & Laptops
-                  </h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    Top-quality desktops and laptops for sale or rent,
-                    customized to meet your business requirements. Whether you
-                    need reliable devices for short-term projects or long-term
-                    solutions, we offer flexible options to keep your operations
-                    running smoothly.
-                  </p>
-                </div>
+                <NavLink to="/Desktops-and-Laptops">
+                  <img
+                    className="rounded-3xl p-3"
+                    src="/images/Services/desktops-and-laptops.png"
+                    alt="Rent Printer"
+                  />
+                  <div className="p-5">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      Desktops & Laptops
+                    </h5>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                      Top-quality desktops and laptops for sale or rent,
+                      customized to meet your business requirements. Whether you
+                      need reliable devices for short-term projects or long-term
+                      solutions, we offer flexible options to keep your
+                      operations running smoothly.
+                    </p>
+                  </div>
+                </NavLink>
               </div>
             </div>
 
             <div className="mb-5 md:pb-0">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
-                <img
-                  className="rounded-3xl p-3"
-                  src="/images/Services/furnitures.png"
-                  alt="Rent Printer"
-                />
-                <div className="p-5">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Furnitures
-                  </h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    Discover our range of ergonomic chairs and modern desks,
-                    thoughtfully designed to provide maximum comfort and improve
-                    productivity. Perfect for creating a workspace that supports
-                    focus, efficiency, and overall well-being.
-                  </p>
-                </div>
+                <NavLink to="/Furnitures">
+                  <img
+                    className="rounded-3xl p-3"
+                    src="/images/Services/furnitures.png"
+                    alt="Rent Printer"
+                  />
+                  <div className="p-5">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      Furnitures
+                    </h5>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                      Discover our range of ergonomic chairs and modern desks,
+                      thoughtfully designed to provide maximum comfort and
+                      improve productivity. Perfect for creating a workspace
+                      that supports focus, efficiency, and overall well-being.
+                    </p>
+                  </div>
+                </NavLink>
               </div>
             </div>
 

@@ -7,7 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useParams } from "react-router-dom";
 
 const Enquiry = () => {
-  // const [selectedItem, setSelectedItem] = useState("default");
+  const { item } = useParams(); // Get the path parameter
+  const [selectedItem, setSelectedItem] = useState("default");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -188,7 +189,7 @@ const Enquiry = () => {
         </button>
       </form>
     ),
-    item2: (
+    Systems: (
       //Desktop/laptop form
       <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
         {/* First Row: Name and Organization */}
@@ -401,7 +402,7 @@ const Enquiry = () => {
         </button>
       </form>
     ),
-    item3: (
+    Furnitures: (
       // Furniture Form
       <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
         {/* First Row: Name and Organization */}
@@ -709,13 +710,10 @@ const Enquiry = () => {
   const itemDisplayNames = {
     default: "Choose a product",
     Printers: "Printers",
-    item2: "Desktops/Laptops",
-    item3: "Furnitures",
+    Systems: "Desktops/Laptops",
+    Furnitures: "Furnitures",
     item4: "Other Equipments",
   };
-
-  const { item } = useParams(); // Get the path parameter
-  const [selectedItem, setSelectedItem] = useState("default");
 
   useEffect(() => {
     // Set item only if it is valid

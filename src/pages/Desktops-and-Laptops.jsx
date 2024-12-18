@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import "flowbite";
+import { NavLink } from "react-router-dom";
 
 const DeskLap = () => {
   useEffect(() => {
@@ -37,27 +38,25 @@ const DeskLap = () => {
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Desktops-Laptops/laptop-pc.png"
-                    alt=""
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Desktops-Laptops/laptop-pc.png"
+                  alt=""
+                />
+
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                      Laptop PC&#39;s
-                    </h5>
-                  </a>
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Laptop PC&#39;s
+                  </h5>
+
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     Explore our range of Laptop PCs, offering powerful
                     performance and sleek designs. Whether for business or
                     personal use, find the perfect laptop to meet your needs
                     with reliable, high-quality options.
                   </p>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/enquire/Systems"
                     className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     Enquire now
@@ -76,33 +75,31 @@ const DeskLap = () => {
                         d="M1 5h12m0 0L9 1m4 4L9 9"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Desktops-Laptops/desktop-pc.png"
-                    alt=""
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Desktops-Laptops/desktop-pc.png"
+                  alt=""
+                />
+
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                      Desktop PC&#39;s
-                    </h5>
-                  </a>
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Desktop PC&#39;s
+                  </h5>
+
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     Shop our selection of Desktop PCs, featuring
                     high-performance models for any business or home office.
                     From reliable everyday use to powerful workstations, find
                     the perfect desktop to suit your needs.
                   </p>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/enquire/Systems"
                     className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     Enquire now
@@ -121,25 +118,23 @@ const DeskLap = () => {
                         d="M1 5h12m0 0L9 1m4 4L9 9"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Desktops-Laptops/gaming-system.png"
-                    alt=""
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Desktops-Laptops/gaming-system.png"
+                  alt=""
+                />
+
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                      Gaming Systems
-                    </h5>
-                  </a>
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Gaming Systems
+                  </h5>
+
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     Discover our high-performance Gaming PC’s, built for
                     immersive gameplay. With powerful processors, advanced
@@ -150,8 +145,8 @@ const DeskLap = () => {
                     </span>{" "}
                     Designers.
                   </p>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/enquire/Systems"
                     className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     Enquire now
@@ -170,33 +165,30 @@ const DeskLap = () => {
                         d="M1 5h12m0 0L9 1m4 4L9 9"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Desktops-Laptops/chromebook.png"
-                    alt=""
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Desktops-Laptops/chromebook.png"
+                  alt=""
+                />
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                      Chromebooks
-                    </h5>
-                  </a>
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Chromebooks
+                  </h5>
+
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     Explore our extensive range of fast, affordable Chromebooks
                     today. Perfect for work or study, these reliable and durable
                     laptops offer long battery life, quick performance, and easy
                     cloud access. Get yours now!
                   </p>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/enquire/Systems"
                     className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     Enquire now
@@ -215,33 +207,31 @@ const DeskLap = () => {
                         d="M1 5h12m0 0L9 1m4 4L9 9"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Desktops-Laptops/tablets.png"
-                    alt=""
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Desktops-Laptops/tablets.png"
+                  alt=""
+                />
+
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                      Tablets
-                    </h5>
-                  </a>
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Tablets
+                  </h5>
+
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     Browse our selection of high-performance tablets, perfect
                     for work, entertainment, and beyond. Sleek, portable, and
                     incredibly powerful, our tablets offer versatility,
                     convenience and value at great prices.
                   </p>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/enquire/Systems"
                     className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     Enquire now
@@ -260,33 +250,31 @@ const DeskLap = () => {
                         d="M1 5h12m0 0L9 1m4 4L9 9"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
             <div className="mb-5 md:pb-0">
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Desktops-Laptops/server-systems.png"
-                    alt=""
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Desktops-Laptops/server-systems.png"
+                  alt=""
+                />
+
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                      Server System
-                    </h5>
-                  </a>
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Server System
+                  </h5>
+
                   <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     Boost your business with our reliable server systems.
                     Designed for performance and scalability, our servers offer
                     secure, efficient solutions to meet your company’s growing
                     needs. Reliable, highquality server systems!
                   </p>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/enquire/Systems"
                     className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     Enquire now
@@ -305,7 +293,7 @@ const DeskLap = () => {
                         d="M1 5h12m0 0L9 1m4 4L9 9"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>

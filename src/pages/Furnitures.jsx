@@ -45,10 +45,10 @@ const Furnitures = () => {
                 we offer stylish and functional pieces designed to improve
                 comfort and productivity in any workspace.
               </p>
-              <NavLink to="/enquire/Printers">
+              <NavLink to="/enquire/Furnitures">
                 <button
                   type="button"
-                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
+                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
                 >
                   Enquire Now{" "}
                   <svg
@@ -82,10 +82,10 @@ const Furnitures = () => {
                 pieces designed to withstand the elements while adding elegance
                 to your patio, garden, or balcony.
               </p>
-              <NavLink to="/enquire/Printers">
+              <NavLink to="/enquire/Furnitures">
                 <button
                   type="button"
-                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
+                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
                 >
                   Enquire Now{" "}
                   <svg
@@ -133,10 +133,10 @@ const Furnitures = () => {
                 more, ensuring a unique and functional design that fits your
                 space perfectly
               </p>
-              <NavLink to="/enquire/Printers">
+              <NavLink to="/enquire/Furnitures">
                 <button
                   type="button"
-                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium rounded-xl shadow-sm text-sm px-4 py-2.5 me-2 mt-5"
+                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium rounded-xl shadow-sm text-sm px-4 py-2.5 me-2 mt-5"
                 >
                   Enquire Now{" "}
                   <svg
