@@ -44,34 +44,34 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-3 md:mb-0">
               <ul className="flex md:space-x-4 justify-center space-x-2 font-heading text-background">
-                <li className="">
+                <li className="font-medium hover:text-gray-800">
                   <NavLink to="/">Home</NavLink>
                 </li>
-                <li className="">
-                  <NavLink to="/Products">Products</NavLink>
+                <li className="font-medium hover:text-gray-800">
+                  <NavLink to="/Services">Services</NavLink>
                 </li>
-                <li className="">
+                <li className="font-medium hover:text-gray-800">
                   <NavLink to="/About">About</NavLink>
                 </li>
-                <li className="">
+                <li className="font-medium hover:text-gray-800">
                   <NavLink to="/Enquiry">Enquire</NavLink>
                 </li>
               </ul>
             </div>
             <div className="flex space-x-5 text-background">
-              <a href="https://www.linkedin.com/company/carboncraftequipments">
+              <a href="https://www.linkedin.com/company/carboncraftequipments" className="hover:text-gray-800">
                 <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
               </a>
-              <a href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0">
+              <a href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0" className="hover:text-gray-800">
                 <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6" />
               </a>
-              <a href="https://www.facebook.com/people/Carbon-Craft-Equipments-Trading/61563072509008/?mibextid=ZbWKwL">
+              <a href="https://www.facebook.com/people/Carbon-Craft-Equipments-Trading/61563072509008/?mibextid=ZbWKwL" className="hover:text-gray-800">
                 <FontAwesomeIcon icon={faFacebook} className="w-6 h-6" />
               </a>
-              <a href="https://www.instagram.com/carboncraft_uae/">
+              <a href="https://www.instagram.com/carboncraft_uae/" className="hover:text-gray-800">
                 <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
               </a>
-              <a href="">
+              <a href="https://x.com/CarbonCraft_UAE" className="hover:text-gray-800">
                 <FontAwesomeIcon icon={faXTwitter} className="w-6 h-6" />
               </a>
             </div>

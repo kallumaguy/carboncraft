@@ -63,6 +63,18 @@ const Header = () => {
     setActiveSubMenu(null);
   };
 
+  const handleSubMenuClick = (index) => {
+    setActiveSubMenu((prev) => (prev === index ? null : index));
+  };
+
+  const handleSubMenuHover = (index) => {
+    if (!showMenu) setActiveSubMenu(index);
+  };
+
+  const handleSubMenuLeave = () => {
+    if (!showMenu) setActiveSubMenu(null);
+  };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -74,7 +86,6 @@ const Header = () => {
     <div className="fixed top-0 left-0 right-0 bg-white z-50">
       <nav className="border-b border-gray-200 p-3 rounded">
         <div className="mx-auto flex flex-wrap items-center justify-between">
-          {/* Logo */}
           <NavLink to="/" className="flex">
             <img
               className="img"
@@ -89,12 +100,10 @@ const Header = () => {
               CarbonCraft
             </span>
           </NavLink>
-
-          {/* Hamburger Button */}
           <button
             ref={buttonRef}
             type="button"
-            className="md:hidden ml-3 text-gray-900  rounded-lg inline-flex items-center justify-center"
+            className="md:hidden ml-3 text-gray-900 rounded-lg inline-flex items-center justify-center"
             onClick={() => setShowMenu((prev) => !prev)}
           >
             <span className="sr-only">Toggle Menu</span>
@@ -111,8 +120,6 @@ const Header = () => {
               ></path>
             </svg>
           </button>
-
-          {/* Navbar Links */}
           <div
             ref={menuRef}
             className={`${
@@ -122,20 +129,23 @@ const Header = () => {
             <ul className="flex-col md:flex-row flex md:space-x-4 mt-4 md:mt-0 font-body font-medium">
               {navLinks.map((link, index) => (
                 <li
-                  className={`relative group md:static ${
-                    link.submenu ? "hover-trigger" : ""
-                  }`}
                   key={index}
+                  className="relative group"
+                  onMouseEnter={() => handleSubMenuHover(index)}
+                  onMouseLeave={handleSubMenuLeave}
                 >
                   {link.submenu ? (
                     <>
                       <button
-                        className="flex items-center px-3 py-2 text-text hover:text-primary transition-all duration-200"
-                        onClick={() =>
-                          setActiveSubMenu((prev) =>
-                            prev === index ? null : index
+                        className={`flex items-center px-3 py-2 transition-all duration-200 ${
+                          activeSubMenu === index ||
+                          link.submenu.some((subLink) =>
+                            window.location.pathname.startsWith(subLink.path)
                           )
-                        }
+                            ? "text-primary"
+                            : "text-text hover:text-primary"
+                        }`}
+                        onClick={() => handleSubMenuClick(index)}
                       >
                         {link.display}
                         <svg
@@ -154,7 +164,7 @@ const Header = () => {
                       <ul
                         className={`${
                           activeSubMenu === index ? "block" : "hidden"
-                        } md:absolute bg-white md:shadow-lg md:w-48 space-y-1 md:space-y-0 md:pl-0 pl-md-3 md:border border-gray-100`}
+                        } md:absolute bg-white md:shadow-lg md:w-48 space-y-1 md:space-y-0 lg:border`}
                       >
                         {link.submenu.map((subLink, subIndex) => (
                           <li key={subIndex}>
@@ -162,8 +172,8 @@ const Header = () => {
                               to={subLink.path}
                               className={(navClass) =>
                                 navClass.isActive
-                                  ? "block px-4 py-2 text-sm bg-primary text-white transition-all duration-200"
-                                  : "block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white transition-all duration-200"
+                                  ? "block px-4 py-2 text-sm bg-primary text-white"
+                                  : "block px-4 py-2 text-sm text-text hover:bg-primary hover:text-white"
                               }
                               onClick={handleMenuItemClick}
                             >
@@ -179,7 +189,7 @@ const Header = () => {
                       className={(navClass) =>
                         navClass.isActive
                           ? "block px-3 py-2 text-primary"
-                          : "block px-3 py-2 text-text hover:text-primary transition-all duration-200"
+                          : "block px-3 py-2 text-text hover:text-primary"
                       }
                       onClick={handleMenuItemClick}
                     >

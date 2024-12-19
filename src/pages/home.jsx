@@ -1,15 +1,24 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "flowbite";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { NavLink } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 900, // Animation duration in milliseconds
+      once: false, // Whether animation should happen only once
+      offset: 50, // Offset (in pixels) from the original trigger point
+    });
   }, []);
 
   const settings = {
@@ -163,7 +172,7 @@ const Home = () => {
                 <NavLink to="/Enquiry">
                   <button
                     type="button"
-                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-5 py-2.5 me-2 mt-5"
+                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-2.5 me-2 mt-5"
                   >
                     Enquire Now{" "}
                     <svg
@@ -242,7 +251,7 @@ const Home = () => {
 
         {/* Specialities */}
         <section className="py-[6rem]">
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up">
             <span className="text-xl font-heading font-bold text-primary mb-3">
               What set&#39;s us apart
             </span>
@@ -250,8 +259,11 @@ const Home = () => {
               Best Choice For Rentals
             </h1>
           </div>
-          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]">
-            <div className="col-span-1">
+          <div
+            className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]"
+            data-aos="fade-up"
+          >
+            <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
               <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -259,7 +271,7 @@ const Home = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="primary"
-                  className="size-14 stroke-blue-accent mb-5"
+                  className="size-14 stroke-blue-accent mb-5 transition-transform duration-300 group-hover:-rotate-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -277,14 +289,15 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="col-span-1">
+
+            <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
               <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
-                  className="size-14 stroke-blue-accent mb-5"
+                  className="size-14 stroke-blue-accent mb-5 transition-transform duration-300 group-hover:-rotate-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -302,14 +315,14 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="col-span-1">
+            <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
               <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
-                  className="size-14 stroke-blue-accent mb-5"
+                  className="size-14 stroke-blue-accent mb-5 transition-transform duration-300 group-hover:-rotate-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -336,7 +349,7 @@ const Home = () => {
         {/* Our Services */}
         <section className="py-[6rem] bg-blue-gradient">
           <div className="container mx-auto">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up">
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Latest Services
               </span>
@@ -344,7 +357,10 @@ const Home = () => {
                 Discover what we can do for you
               </h1>
             </div>
-            <div className="mt-[4rem] flex flex-col md:grid gap-4">
+            <div
+              className="mt-[4rem] flex flex-col md:grid gap-4"
+              data-aos="fade-up"
+            >
               <div className="col-span-1">
                 <div className="max-w-full flex flex-col md:items-center md:flex-row bg-white border-2 border-white  rounded-2xl shadow-md">
                   <a href="#">
@@ -432,14 +448,17 @@ const Home = () => {
         {/* Our Products */}
         <section className="container mx-auto py-[6rem]">
           <div className="text-center">
-            <span className="text-xl font-heading font-bold text-primary mb-3">
+            <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
               Our Products
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
+            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3" data-aos="fade-up">
               Check out various items
             </h1>
           </div>
-          <div className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div
+            className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4"
+            data-aos="fade-up"
+          >
             <div className="sm:mb-5 md:pb-0">
               <NavLink to="/Printers-and-Plotters">
                 <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
@@ -516,42 +535,44 @@ const Home = () => {
                 Top Brands We Provide
               </h1>
             </div>
-            <div className="mt-[4rem]">
-              <Slider {...settings}>
-                {logos.map((logo, index) => (
-                  <div
-                    key={index}
-                    className="p-3 flex items-center justify-center "
-                  >
-                    <img
-                      src={logo}
-                      loading="lazy"
-                      decoding="async"
-                      alt={`Logo ${index + 1}`}
-                      className="bg-white border-2 rounded-md h-auto w-auto"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-            <div className="mt-[1rem]">
-              {/* Second Slider */}
-              <Slider {...settingsOpposite}>
-                {secondLogos.map((logo, index) => (
-                  <div
-                    key={`slider2-${index}`}
-                    className="p-3 flex items-center justify-center"
-                  >
-                    <img
-                      src={logo}
-                      loading="lazy"
-                      decoding="async"
-                      alt={`Second Logo ${index + 1}`}
-                      className="bg-white border-2 rounded-md h-auto w-auto"
-                    />
-                  </div>
-                ))}
-              </Slider>
+            <div>
+              <div className="mt-[4rem]">
+                <Slider {...settings}>
+                  {logos.map((logo, index) => (
+                    <div
+                      key={index}
+                      className="p-3 flex items-center justify-center "
+                    >
+                      <img
+                        src={logo}
+                        loading="lazy"
+                        decoding="async"
+                        alt={`Logo ${index + 1}`}
+                        className="bg-white border-2 rounded-md h-auto w-auto"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+              <div className="mt-[1rem]">
+                {/* Second Slider */}
+                <Slider {...settingsOpposite}>
+                  {secondLogos.map((logo, index) => (
+                    <div
+                      key={`slider2-${index}`}
+                      className="p-3 flex items-center justify-center"
+                    >
+                      <img
+                        src={logo}
+                        loading="lazy"
+                        decoding="async"
+                        alt={`Second Logo ${index + 1}`}
+                        className="bg-white border-2 rounded-md h-auto w-auto"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             </div>
           </div>
         </section>

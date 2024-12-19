@@ -1,17 +1,29 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import "flowbite";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 900, // Animation duration in milliseconds
+      once: false, // Whether animation should happen only once
+      offset: 50, // Offset (in pixels) from the original trigger point
+      easing: 'ease-in-out',
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <main className="mt-[3.5rem]">
       <div className="w-full h-screen flex items-end justify-center bg-about-bg-mob md:bg-about-bg bg-cover md:bg-bottom ">
         <div className=" flex flex-col items-center">
-          <h1 className="text-4xl font-medium font-heading text-gray-800 leading-tight mb-[7rem] mx-6 md:mx-0">
+          <h1 className="text-4xl font-medium font-heading text-gray-800 leading-tight mb-[7rem] mx-6 md:mx-0" data-aos="fade-up">
             Elevate your workspace effortlessly
           </h1>
         </div>
@@ -20,14 +32,23 @@ const About = () => {
       {/* About us */}
       <section className="container mx-auto py-6 md:py-[6rem]">
         <div className="">
-          <span className="text-xl font-heading font-bold text-primary mb-3">
+          <span
+            className="text-xl font-heading font-bold text-primary mb-3"
+            data-aos="fade-up"
+          >
             About us
           </span>
-          <h1 className="text-2xl md:text-[2.5rem] font-bold font-heading text-gray-800 leading-tight my-3">
+          <h1
+            className="text-2xl md:text-[2.5rem] font-bold font-heading text-gray-800 leading-tight my-3"
+            data-aos="fade-up"
+          >
             We simplify your workspace needs with comprehensive rental services
             for printers, copiers and other office equipments.
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 font-heading">
+          <p
+            className="text-lg md:text-xl text-gray-700 font-heading"
+            data-aos="fade-up"
+          >
             Our mission is to eliminate downtime and the stress of equipment
             ownership by offering hassle-free contracts that include free
             maintenance, spare parts, and toners. We are dedicated to enhancing
@@ -46,15 +67,21 @@ const About = () => {
       <section className="bg-background py-5 md:py-[6rem]">
         <div className="container mx-auto">
           <div className="text-center">
-            <span className="text-xl font-heading font-bold text-primary mb-3">
+            <span
+              className="text-xl font-heading font-bold text-primary mb-3"
+              data-aos="fade-up"
+            >
               Contact us
             </span>
-            <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            <h1
+              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              data-aos="fade-up"
+            >
               Let us know how we can help
             </h1>
           </div>
 
-          <div className="mt-[4rem] sm:flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="mt-[4rem] sm:flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4" data-aos="fade-up">
             <div className="mb-5 md:pb-0">
               <a href="tel:+971 543917731">
                 <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md">
@@ -114,7 +141,7 @@ const About = () => {
               </a>
             </div>
             <div className="mb-5 md:pb-0">
-              <a href="#">
+              <a href="https://www.google.com/maps/d/u/4/viewer?mid=1i25rbWlSZtvGYkvabvAx68JF_xnD8MI&ll=24.73145818186758%2C55.01983265&z=8">
                 <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md">
                   <div className="p-5">
                     <svg

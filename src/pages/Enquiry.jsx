@@ -738,7 +738,7 @@ const Enquiry = () => {
       </section>
       <section className="bg-secondary">
         <div className="container mx-auto p-6">
-          <h1 className="text-2xl  font-body font-semibold my-4 leading-tight">
+          <h1 className="text-2xl font-body  font-semibold my-4 leading-tight">
             Kindly fill the form, we will be sharing you the lease/rental
             quotation shortly!
           </h1>
