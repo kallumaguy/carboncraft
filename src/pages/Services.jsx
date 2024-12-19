@@ -64,7 +64,7 @@ const Services = () => {
                     <NavLink to="/enquire/Printers">
                       <button
                         type="button"
-                        className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
+                        className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
                       >
                         Enquire Now{" "}
                         <svg
@@ -148,13 +148,13 @@ const Services = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
-            <a className="p-3 md:p-5">
+            <div className="p-3 md:p-5">
               <img
                 className="lg:max-w-lg rounded-2xl"
                 src="/images/Services/AMC.png"
                 alt="Rent Printer"
               />
-            </a>
+            </div>
             <div className="p-5 lg:p-6">
               <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight text-white">
                 Annual Maintainance Contract
@@ -169,7 +169,7 @@ const Services = () => {
               </p>
               <a
                 href=""
-                className="inline-flex items-center px-3 py-2 text-sm font-body font-medium text-center text-white bg-blue-prime rounded-lg shadow-md focus:ring-1 focus:outline-none focus:ring-gray-300"
+                className="inline-flex items-center px-3 py-2 text-md font-body font-medium text-center text-white bg-blue-prime rounded-lg shadow-md focus:ring-1 focus:outline-none focus:ring-gray-300"
               >
                 Get Quote
                 <svg

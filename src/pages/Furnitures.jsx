@@ -85,7 +85,7 @@ const Furnitures = () => {
               <NavLink to="/enquire/Furnitures">
                 <button
                   type="button"
-                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
+                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
                 >
                   Enquire Now{" "}
                   <svg
@@ -136,7 +136,7 @@ const Furnitures = () => {
               <NavLink to="/enquire/Furnitures">
                 <button
                   type="button"
-                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium rounded-xl shadow-sm text-sm px-4 py-2.5 me-2 mt-5"
+                  className="flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 mt-5"
                 >
                   Enquire Now{" "}
                   <svg
