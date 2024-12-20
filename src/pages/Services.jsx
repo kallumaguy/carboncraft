@@ -43,7 +43,7 @@ const Services = () => {
           </div>
 
           <div className="flex justify-center items-center mt-[4rem]">
-            <div className="sm:flex md:grid grid-cols-2 gap-4">
+            <div className="flex flex-col md:grid grid-cols-2 gap-4">
               <div className="mb-5 md:pb-0">
                 <div className="max-w-xl bg-orange-gradient rounded-2xl shadow-md">
                   <img

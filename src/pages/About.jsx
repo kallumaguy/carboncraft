@@ -64,7 +64,7 @@ const About = () => {
       <div className="h-[0.12rem] w-full bg-gray-200"></div>
 
       {/* Contact us */}
-      <section className="bg-background py-5 md:py-[6rem]">
+      <section className="bg-background pt-[6rem] pb-[5.5rem]">
         <div className="container mx-auto">
           <div className="text-center">
             <span
