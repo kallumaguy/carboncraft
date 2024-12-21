@@ -264,7 +264,7 @@ const Home = () => {
             data-aos="fade-up"
           >
             <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
-              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
+              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -291,7 +291,7 @@ const Home = () => {
             </div>
 
             <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
-              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
+              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -316,7 +316,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
-              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[360px] xl:min-h-[260px]">
+              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -406,8 +406,9 @@ const Home = () => {
                       <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                         Annual Maintenance Contracts Designed to Ensure Seamless
                         Operations - Providing Expert Support, Regular
-                        Servicing, and Prompt Repairs for Residential,
-                        Commercial, and Industrial Needs Across Various Sectors.
+                        Servicing, Timely Prompt Repairs, and Proactive
+                        Solutions for Residential, Commercial, and Industrial
+                        Needs Across Various Sectors.
                       </p>
                     </div>
                   </div>
@@ -448,10 +449,16 @@ const Home = () => {
         {/* Our Products */}
         <section className="container mx-auto py-[6rem]">
           <div className="text-center">
-            <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
+            <span
+              className="text-xl font-heading font-bold text-primary mb-3"
+              data-aos="fade-up"
+            >
               Our Products
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3" data-aos="fade-up">
+            <h1
+              className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3"
+              data-aos="fade-up"
+            >
               Check out various items
             </h1>
           </div>

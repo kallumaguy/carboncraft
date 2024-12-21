@@ -7,7 +7,7 @@ const Furnitures = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <div className="mt-[3.6rem]">
       <section className="bg-furniture-bg bg-center bg-cover">
@@ -27,12 +27,17 @@ const Furnitures = () => {
               Find your perfect workstation
             </h1>
           </div>
-          <div className="flex flex-col lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col lg:flex-row items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]">
             <div className="p-3 md:p-5">
               <img
-                className="lg:max-w-md xl:max-w-xl rounded-2xl border-2  "
+                className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2"
                 src="/images/Furnitures/office-furnitures.png"
                 alt="Rent Printer"
+              />
+              <img
+                className=" block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
+                src="/images/Furnitures/office-furnitures-mob.png"
+                alt=""
               />
             </div>
             <div className="p-5">
@@ -70,7 +75,7 @@ const Furnitures = () => {
             </div>
           </div>
 
-          <div className="flex flex-col-reverse lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]">
             <div className="p-5">
               <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight text-white">
                 Outdoor Furnitures
@@ -114,7 +119,7 @@ const Furnitures = () => {
             </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col lg:flex-row items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]">
             <div className="p-3 md:p-5">
               <img
                 className="lg:max-w-md xl:max-w-xl rounded-2xl border-2  "

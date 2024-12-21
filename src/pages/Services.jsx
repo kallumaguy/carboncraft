@@ -147,7 +147,7 @@ const Services = () => {
             </h1>
           </div>
 
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-primary rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]">
             <div className="p-3 md:p-5">
               <img
                 className="lg:max-w-lg rounded-2xl"
