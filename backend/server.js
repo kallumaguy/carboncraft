@@ -9,6 +9,8 @@ dotenv.config(); // Load environment variables
 const app = express();
 const PORT = 5000;
 
+// SendGrid setup
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
 app.use(cors());
