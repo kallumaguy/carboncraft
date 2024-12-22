@@ -5,19 +5,66 @@ import "flowbite";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const Enquiry = () => {
   const { item } = useParams(); // Get the path parameter
   const [selectedItem, setSelectedItem] = useState("default");
+  const [formData, setFormData] = useState({
+    name: "",
+    organization: "",
+    email: "",
+    phone: "",
+    emirates: [],
+    leasingPurpose: "",
+    equipmentBrand: "",
+    specialRequirements: "",
+    monthlyUsage: "",
+    files: [],
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Handle form input changes
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(formData);
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+
+      if(formData.emirates.length === 0){
+        alert("Please select at least one Emirate.");
+        return;
+      }
+
+      // Send the form data to the backend (Node.js with SendGrid)
+      await axios.post("http://localhost:5000/send-email", {
+        formName: selectedItem,
+        formData: formData,
+      });
+
+      alert("Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send email.");
+    }
+  };
+
   const forms = {
     Printers: (
       //Printer Form
-      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
+      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -25,6 +72,8 @@ const Enquiry = () => {
             <input
               type="text"
               required
+              name="name"
+              onChange={handleChange}
               placeholder="Enter your name"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
@@ -33,6 +82,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Organization</span>
             <input
               type="text"
+              name="organization"
+              onChange={handleChange}
               required
               placeholder="Enter your organization"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -46,6 +97,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Email</span>
             <input
               type="email"
+              name="email"
+              onChange={handleChange}
               placeholder="Enter your email"
               required
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -55,6 +108,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Phone</span>
             <input
               type="text"
+              name="phone"
+              onChange={handleChange}
               required
               placeholder="Enter your phone number"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -68,7 +123,7 @@ const Enquiry = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
-              "Abu Dhabi (Al Ain)",
+              "Al Ain",
               "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",
@@ -79,6 +134,9 @@ const Enquiry = () => {
               <div key={index} className="flex items-center">
                 <input
                   type="checkbox"
+                  name="emirates"
+                  value={emirate}
+                  onChange={handleChange}
                   id={`emirate-${index}`}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
@@ -191,7 +249,7 @@ const Enquiry = () => {
     ),
     Systems: (
       //Desktop/laptop form
-      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
+      <form className="space-y-4 font-body p-4 ">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -242,7 +300,7 @@ const Enquiry = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
-              "Abu Dhabi (Al Ain)",
+              "Al Ain",
               "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",
@@ -404,7 +462,7 @@ const Enquiry = () => {
     ),
     Furnitures: (
       // Furniture Form
-      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
+      <form className="space-y-4 font-body p-4 ">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -455,7 +513,7 @@ const Enquiry = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
-              "Abu Dhabi (Al Ain)",
+              "Al Ain",
               "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",
@@ -594,7 +652,7 @@ const Enquiry = () => {
     ),
     item4: (
       //Other form
-      <form className="space-y-4 font-body p-4 border rounded-md shadow-md bg-gray-50">
+      <form className="space-y-4 font-body p-4 ">
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -645,7 +703,7 @@ const Enquiry = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
-              "Abu Dhabi (Al Ain)",
+              "Al Ain",
               "Abu Dhabi (West)",
               "Dubai",
               "Sharjah",

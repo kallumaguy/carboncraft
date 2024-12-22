@@ -35,7 +35,7 @@ const Furnitures = () => {
                 alt="Rent Printer"
               />
               <img
-                className=" block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
+                className="block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
                 src="/images/Furnitures/office-furnitures-mob.png"
                 alt=""
               />
@@ -112,9 +112,15 @@ const Furnitures = () => {
             </div>
             <div className="p-3 md:p-5">
               <img
-                className="lg:max-w-md xl:max-w-xl rounded-2xl border-2  "
-                src="/images/Furnitures/outdoor-furnitures.png"
+                className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2"
+                src="/images/Furnitures/outdoor-furnitures-lg.png"
                 alt="Rent Printer"
+              />
+
+              <img
+                className=" block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
+                src="/images/Furnitures/outdoor-furnitures.png"
+                alt=""
               />
             </div>
           </div>
@@ -122,13 +128,18 @@ const Furnitures = () => {
           <div className="flex flex-col lg:flex-row items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]">
             <div className="p-3 md:p-5">
               <img
-                className="lg:max-w-md xl:max-w-xl rounded-2xl border-2  "
-                src="/images/Furnitures/customized-furnitures.png"
+                className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2"
+                src="/images/Furnitures/customized-furnitures-lg.png"
                 alt="Rent Printer"
+              />
+              <img
+                className=" block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
+                src="/images/Furnitures/customized-furnitures.png"
+                alt=""
               />
             </div>
             <div className="p-5">
-              <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight text-white">
+              <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight text-white leading-normal">
                 Customised Furnitures
               </h5>
               <p className="text-base font-body font-normal text-white">

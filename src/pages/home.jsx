@@ -372,7 +372,7 @@ const Home = () => {
                   </a>
                   <div className="p-5">
                     <a href="#">
-                      <h5 className="mb-2 text-2xl md:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                         Rent Printers
                       </h5>
                     </a>
@@ -399,7 +399,7 @@ const Home = () => {
                     </a>
                     <div className="p-5">
                       <a href="#">
-                        <h5 className="mb-2 text-2xl md:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                           AMC
                         </h5>
                       </a>
@@ -424,11 +424,9 @@ const Home = () => {
                       />
                     </a>
                     <div className="p-5">
-                      <a href="#">
-                        <h5 className="mb-2 text-2xl md:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                          Office Essentials
-                        </h5>
-                      </a>
+                      <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                        Office Essentials
+                      </h5>
                       <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                         Transform Your Workspace with Premium Supplies -
                         Offering a Comprehensive Range of Office Products
