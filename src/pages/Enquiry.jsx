@@ -42,8 +42,7 @@ const Enquiry = () => {
     e.preventDefault();
 
     try {
-
-      if(formData.emirates.length === 0){
+      if (formData.emirates.length === 0) {
         alert("Please select at least one Emirate.");
         return;
       }
@@ -64,7 +63,10 @@ const Enquiry = () => {
   const forms = {
     Printers: (
       //Printer Form
-      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
+      <form
+        className="space-y-4 font-body p-4 "
+        onSubmit={(e) => handleSubmit(e)}
+      >
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -118,7 +120,7 @@ const Enquiry = () => {
         </div>
 
         {/* Emirate */}
-        <label className="block">
+        <div className="block">
           <span className="text-gray-800 font-semibold">Emirate</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
@@ -134,19 +136,22 @@ const Enquiry = () => {
               <div key={index} className="flex items-center">
                 <input
                   type="checkbox"
-                  name="emirates"
-                  value={emirate}
-                  onChange={handleChange}
                   id={`emirate-${index}`}
+                  name="emirate"
+                  onChange={handleChange}
+                  value={emirate}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`emirate-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`emirate-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {emirate}
                 </label>
               </div>
             ))}
           </div>
-        </label>
+        </div>
 
         {/* Purpose of Leasing */}
         <label className="block font-semibold text-gray-800">
@@ -158,20 +163,22 @@ const Enquiry = () => {
               type="radio"
               name="leasingPurpose"
               value="business"
-              className="form-radio text-blue-500 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              className="form-radio text-gray-700 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               required
             />
-            <span className="ml-2">For Office use (Long Term)</span>
+            <span className="ml-2 text-gray-700">
+              For Office use (Long Term)
+            </span>
           </label>
           <label className="inline-flex items-center">
             <input
               type="radio"
               name="leasingPurpose"
               value="personal"
-              className="form-radio text-blue-500 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              className="form-radio text-gray-700 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               required
             />
-            <span className="ml-2">For Events (Short Term)</span>
+            <span className="ml-2 text-gray-700">For Events (Short Term)</span>
           </label>
         </div>
 
@@ -182,19 +189,32 @@ const Enquiry = () => {
             Select the preferred brands and we will send you different quotes
             for each brand you select.
           </p>
-          <select className="block w-auto px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-            <option value="" disabled selected>
-              Select a brand
-            </option>
-            <option value="brand1">HP</option>
-            <option value="brand2">Canon</option>
-            <option value="brand3">Epson</option>
-            <option value="brand4">Brother</option>
-            <option value="brand5">Xerox</option>
-            <option value="brand6">Ricoh</option>
-            <option value="brand7">Kyocera</option>
-            <option value="brand8">Samsung</option>
-          </select>
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
+            {[
+              "HP",
+              "Canon",
+              "Epson",
+              "Brother",
+              "Xerox",
+              "Ricoh",
+              "Kyocera",
+              "Samsung",
+            ].map((brand, index) => (
+              <div key={index} className="flex items-center">
+                <input
+                  type="checkbox"
+                  name="brands"
+                  value={brand}
+                  onChange={handleChange}
+                  id={`brand-${index}`}
+                  className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                />
+                <label htmlFor={`brand-${index}`} className="text-gray-700">
+                  {brand}
+                </label>
+              </div>
+            ))}
+          </div>
         </label>
 
         {/* Special Requirements */}

@@ -10,6 +10,7 @@ const app = express();
 const PORT = 5000;
 
 // SendGrid setup
+// eslint-disable-next-line no-undef
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
