@@ -42,10 +42,10 @@ const Enquiry = () => {
     e.preventDefault();
 
     try {
-      if (formData.emirates.length === 0) {
-        alert("Please select at least one Emirate.");
-        return;
-      }
+      // if (formData.emirates.length === 0) {
+      //   alert("Please select at least one Emirate.");
+      //   return;
+      // }
 
       // Send the form data to the backend (Node.js with SendGrid)
       await axios.post("http://localhost:5000/send-email", {
@@ -162,7 +162,8 @@ const Enquiry = () => {
             <input
               type="radio"
               name="leasingPurpose"
-              value="business"
+              onChange={handleChange}
+              value="Office Use"
               className="form-radio text-gray-700 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               required
             />
@@ -174,7 +175,8 @@ const Enquiry = () => {
             <input
               type="radio"
               name="leasingPurpose"
-              value="personal"
+              value="Event use"
+              onChange={handleChange}
               className="form-radio text-gray-700 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               required
             />
@@ -224,6 +226,8 @@ const Enquiry = () => {
           </span>
           <textarea
             placeholder="Enter any special requirements here"
+            name="specialRequirements"
+            onChange={handleChange}
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
@@ -236,6 +240,8 @@ const Enquiry = () => {
           </span>
           <input
             type="text"
+            name="monthlyUsage"
+            onChange={handleChange}
             placeholder="Enter the approximate number of monthly prints/copies"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
@@ -252,6 +258,8 @@ const Enquiry = () => {
           </p>
           <input
             type="file"
+            name="files"
+            onChange={handleChange}
             accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
             multiple
             className="block w-full mt-1 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
