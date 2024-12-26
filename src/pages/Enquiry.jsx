@@ -15,7 +15,7 @@ const Enquiry = () => {
     organization: "",
     email: "",
     phone: "",
-    emirates: [],
+    emirate: [],
     leasingPurpose: "",
     equipmentBrand: "",
     specialRequirements: "",
@@ -27,12 +27,39 @@ const Enquiry = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Handle form input changes
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value, checked, type, files } = e.target;
+
+    if (type === "file") {
+      // Handling file input
+      setFormData({
+        ...formData,
+        [name]: files,
+      });
+    } else if (type === "checkbox") {
+      // Handling checkbox input
+      const currentValues = formData[name] || []; // Retrieve existing values for the checkbox group
+
+      if (checked) {
+        // Add value to the array if checked
+        setFormData({
+          ...formData,
+          [name]: [...currentValues, value],
+        });
+      } else {
+        // Remove value from the array if unchecked
+        setFormData({
+          ...formData,
+          [name]: currentValues.filter((v) => v !== value),
+        });
+      }
+    } else {
+      // Handling other inputs
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   console.log(formData);
@@ -205,7 +232,7 @@ const Enquiry = () => {
               <div key={index} className="flex items-center">
                 <input
                   type="checkbox"
-                  name="brands"
+                  name="equipmentBrand"
                   value={brand}
                   onChange={handleChange}
                   id={`brand-${index}`}
