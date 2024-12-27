@@ -20,22 +20,48 @@ const Enquiry = () => {
     equipmentBrand: "",
     specialRequirements: "",
     monthlyUsage: "",
-    files: [],
+    files: "",
   });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleFileChange = async (e) => {
+    const selectedFile = e.target.files[0]; // Get the selected file
+    if (selectedFile) {
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+      formData.append("upload_preset", "carbon_preset"); // Replace with your Cloudinary upload preset
+
+      try {
+        const response = await axios.post(
+          "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload", // Replace with your Cloudinary URL
+          formData
+        );
+        const imageUrl = response.data.secure_url; // Extract the uploaded image URL
+
+        // Update the formData state with the image URL, keeping the other fields intact
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          files: [...prevFormData.files, imageUrl], // Add the image URL to the `files` array
+        }));
+
+        alert("Image uploaded successfully!");
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        alert("Failed to upload image.");
+      }
+    }
+  };
+
   const handleChange = (e) => {
+    // eslint-disable-next-line no-unused-vars
     const { name, value, checked, type, files } = e.target;
 
     if (type === "file") {
-      // Handling file input
-      setFormData({
-        ...formData,
-        [name]: files,
-      });
+      // If the input type is file, handle the file change separately
+      handleFileChange(e);
     } else if (type === "checkbox") {
       // Handling checkbox input
       const currentValues = formData[name] || []; // Retrieve existing values for the checkbox group
@@ -54,7 +80,7 @@ const Enquiry = () => {
         });
       }
     } else {
-      // Handling other inputs
+      // Handling other inputs (text, radio, etc.)
       setFormData({
         ...formData,
         [name]: value,
@@ -69,11 +95,6 @@ const Enquiry = () => {
     e.preventDefault();
 
     try {
-      // if (formData.emirates.length === 0) {
-      //   alert("Please select at least one Emirate.");
-      //   return;
-      // }
-
       // Send the form data to the backend (Node.js with SendGrid)
       await axios.post("http://localhost:5000/send-email", {
         formName: selectedItem,
@@ -212,12 +233,8 @@ const Enquiry = () => {
         </div>
 
         {/* Equipment Brand */}
-        <label className="block">
+        <div className="block">
           <span className="text-gray-800 font-semibold">Equipment Brand *</span>
-          <p className="text-sm text-gray-500 mb-2">
-            Select the preferred brands and we will send you different quotes
-            for each brand you select.
-          </p>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "HP",
@@ -232,19 +249,22 @@ const Enquiry = () => {
               <div key={index} className="flex items-center">
                 <input
                   type="checkbox"
-                  name="equipmentBrand"
-                  value={brand}
-                  onChange={handleChange}
                   id={`brand-${index}`}
+                  name="equipmentBrand"
+                  onChange={handleChange}
+                  value={brand}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`brand-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`brand-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {brand}
                 </label>
               </div>
             ))}
           </div>
-        </label>
+        </div>
 
         {/* Special Requirements */}
         <label className="block">
