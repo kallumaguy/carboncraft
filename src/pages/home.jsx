@@ -166,8 +166,7 @@ const Home = () => {
                       d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
                     />
                   </svg>{" "}
-                  Specializing in Printing, Office Equipment Rentals and
-                  Transportation
+                  Specialized in Office Equipments sales & Rental
                 </li>
                 <NavLink to="/Enquiry">
                   <button
@@ -208,6 +207,7 @@ const Home = () => {
           </div>
         </section>
       </div>
+      
       <div className="relative z-20 mt-[100vh] max-w-full overflow-hidden bg-background rounded-t-2xl">
         {/* Intro Section */}
         <section className="bg-blue-gradient rounded-t-2xl">

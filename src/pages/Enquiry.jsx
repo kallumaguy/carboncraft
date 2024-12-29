@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { IoIosCheckmarkCircle } from "react-icons/io"; // Tick icon
 
 const Enquiry = () => {
   const { item } = useParams(); // Get the path parameter
@@ -23,36 +24,60 @@ const Enquiry = () => {
     files: "",
   });
 
+  const [isUploading, setIsUploading] = useState(false); // State to track upload progress
+  const [fileUrl, setFileUrl] = useState(""); // State to store the uploaded file URL
+  const [uploadError, setUploadError] = useState(""); // State to store upload errors
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleFileChange = async (e) => {
-    const selectedFile = e.target.files[0]; // Get the selected file
-    if (selectedFile) {
+    const selectedFiles = Array.from(e.target.files); // Convert FileList to Array
+    const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+    const maxSize = 5 * 1024 * 1024; // 5MB
+
+    setIsUploading(true); // Set uploading state to true to show loading UI
+
+    selectedFiles.forEach(async (file) => {
+      if (!allowedTypes.includes(file.type)) {
+        alert(
+          `Invalid file type: ${file.name}. Only images and PDFs are allowed.`
+        );
+        setIsUploading(false); // Stop loading spinner on error
+        return;
+      }
+
+      if (file.size > maxSize) {
+        alert(`File size exceeds the 5MB limit: ${file.name}`);
+        setIsUploading(false); // Stop loading spinner on error
+        return;
+      }
+
       const formData = new FormData();
-      formData.append("file", selectedFile);
-      formData.append("upload_preset", "carbon_preset"); // Replace with your Cloudinary upload preset
+      formData.append("file", file);
+      formData.append("upload_preset", "carbon_preset");
 
       try {
         const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload", // Replace with your Cloudinary URL
+          "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload",
           formData
         );
-        const imageUrl = response.data.secure_url; // Extract the uploaded image URL
+        const fileUrl = response.data.secure_url;
 
-        // Update the formData state with the image URL, keeping the other fields intact
         setFormData((prevFormData) => ({
           ...prevFormData,
-          files: [...prevFormData.files, imageUrl], // Add the image URL to the `files` array
+          files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
         }));
 
-        alert("Image uploaded successfully!");
+        setFileUrl(fileUrl); // Save the uploaded file URL
+        setIsUploading(false); // Stop the loading UI after upload
       } catch (error) {
-        console.error("Error uploading image:", error);
-        alert("Failed to upload image.");
+        console.error(`Error uploading ${file.name}:`, error);
+        setUploadError(`Failed to upload ${file.name}.`);
+        setIsUploading(false); // Stop loading spinner on error
       }
-    }
+    });
   };
 
   const handleChange = (e) => {
@@ -60,27 +85,23 @@ const Enquiry = () => {
     const { name, value, checked, type, files } = e.target;
 
     if (type === "file") {
-      // If the input type is file, handle the file change separately
-      handleFileChange(e);
+      handleFileChange(e); // Handle file upload change
     } else if (type === "checkbox") {
       // Handling checkbox input
-      const currentValues = formData[name] || []; // Retrieve existing values for the checkbox group
-
+      const currentValues = formData[name] || [];
       if (checked) {
-        // Add value to the array if checked
         setFormData({
           ...formData,
           [name]: [...currentValues, value],
         });
       } else {
-        // Remove value from the array if unchecked
         setFormData({
           ...formData,
           [name]: currentValues.filter((v) => v !== value),
         });
       }
     } else {
-      // Handling other inputs (text, radio, etc.)
+      // Handling other input types (text, radio, etc.)
       setFormData({
         ...formData,
         [name]: value,
@@ -237,14 +258,14 @@ const Enquiry = () => {
           <span className="text-gray-800 font-semibold">Equipment Brand *</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
-              "HP",
               "Canon",
-              "Epson",
+              "Konika Minolta",
+              "Kyocera",
+              "HP",
               "Brother",
               "Xerox",
               "Ricoh",
-              "Kyocera",
-              "Samsung",
+              "Epson",
             ].map((brand, index) => (
               <div key={index} className="flex items-center">
                 <input
@@ -300,23 +321,47 @@ const Enquiry = () => {
             Upload your Trade License & TRN Certificate
           </span>
           <p className="text-sm text-gray-500 mb-2">
-            Upload up to 5 supported files: PDF, document, or image. Max 10 MB
-            per file.
+            Upload supported image files (JPEG, PNG), Max size 5 MB per file.
           </p>
           <input
             type="file"
             name="files"
+            accept=".jpg,.jpeg,.png,.pdf"
             onChange={handleChange}
-            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
             multiple
             className="block w-full mt-1 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
         </label>
 
+        {/* Loading UI while file is uploading */}
+        {isUploading && (
+          <div className="mt-4 text-center">
+            <div className="spinner-border animate-spin" role="status">
+              <span className="sr-only">Uploading...</span>
+            </div>
+            <p className="text-sm text-gray-600">Uploading...</p>
+          </div>
+        )}
+
+        {/* Success: Show tick icon after file is uploaded */}
+        {fileUrl && !isUploading && (
+          <div className="mt-2 flex items-center space-x-2">
+            <IoIosCheckmarkCircle className="text-green-500 w-9 h-9 " />
+            <p className="text-sm text-gray-600">File selected!</p>
+          </div>
+        )}
+
+        {/* Error message */}
+        {uploadError && (
+          <div className="mt-2">
+            <p className="text-sm text-red-600">{uploadError}</p>
+          </div>
+        )}
+
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow hover:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
         >
           Submit
         </button>
@@ -401,7 +446,7 @@ const Enquiry = () => {
         <label className="block mt-4">
           <span className="text-gray-800 font-semibold">Rental Period</span>
           <div className="flex items-center space-x-4 mt-2">
-            {["Long Term", "Short Term", "Purchase"].map((period, index) => (
+            {["Short Term", "Long Term", "Purchase"].map((period, index) => (
               <div key={index} className="flex items-center">
                 <input
                   type="checkbox"
@@ -422,11 +467,11 @@ const Enquiry = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Laptop",
-              "Gaming Laptop",
+              "Gaming System",
               "Chromebook",
               "Tablet",
               "Desktop",
-              "Server ",
+              "Server System",
             ].map((product, index) => (
               <div key={index} className="flex items-center">
                 <input
@@ -610,11 +655,11 @@ const Enquiry = () => {
           </div>
         </label>
 
-        {/* Rental Period */}
+        {/* Enquire for */}
         <label className="block mt-4">
-          <span className="text-gray-800 font-semibold">Rental Period</span>
+          <span className="text-gray-800 font-semibold">Enquire for</span>
           <div className="flex items-center space-x-4 mt-2">
-            {["Long Term", "Short Term", "Purchase"].map((period, index) => (
+            {["Rental", "Purchase"].map((period, index) => (
               <div key={index} className="flex items-center">
                 <input
                   type="checkbox"
@@ -683,7 +728,7 @@ const Enquiry = () => {
             Specify Requirements
           </span>
           <textarea
-            placeholder="Specify Requirements for furniture"
+            placeholder="Specify your requirements here"
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
