@@ -370,11 +370,11 @@ const Home = () => {
                       alt=""
                     />
                   </a>
-                  <div className="p-5 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
+                  <div className="p-5 xl:p-6 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
                     <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
                       Rent Printers
                     </h5>
-                    <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-normal lg:text-white">
+                    <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-snug lg:text-white">
                       Affordable Printer Rentals for Every Need - Delivering
                       Cost-Effective, Flexible, and High Quality Printing
                       Solutions for Homes, Offices, Corporate Events,
@@ -384,7 +384,7 @@ const Home = () => {
                     <NavLink to="/services">
                       <button
                         type="button"
-                        className="flex md:hidden lg:flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2"
+                        className="flex md:hidden lg:flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
                       >
                         Know more{" "}
                         <svg
