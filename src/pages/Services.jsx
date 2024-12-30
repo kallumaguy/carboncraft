@@ -4,12 +4,23 @@ import "flowbite";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Services = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
 
   return (
     <div className="mt-[3.6rem]">
@@ -136,7 +147,7 @@ const Services = () => {
       <div className="h-[0.12rem] w-full bg-gray-200"></div>
 
       {/* AMC */}
-      <section className="py-[6rem] bg-secondary">
+      <section id="amc" className="py-[6rem] bg-secondary">
         <div className="container mx-auto ">
           <div className="text-center mb-6">
             <span className="text-xl font-heading font-bold text-primary mb-3">
@@ -168,7 +179,7 @@ const Services = () => {
                 reliable operation over time.
               </p>
               <a
-                href=""
+                href="https://forms.gle/myxeudb1XLXuZy2f7"
                 className="inline-flex items-center px-3 py-2 text-md font-body font-medium text-center text-white bg-blue-prime rounded-lg shadow-md focus:ring-1 focus:outline-none focus:ring-gray-300"
               >
                 Get Quote
@@ -253,7 +264,7 @@ const Services = () => {
       <div className="h-[0.12rem] w-full bg-gray-200"></div>
 
       {/* Office Equipments */}
-      <section className="py-[6rem] bg-background">
+      <section id="office-equipments" className="py-[6rem] bg-background">
         <div className="container mx-auto ">
           <div className="text-center">
             <span className="text-xl font-heading font-bold text-primary mb-3">

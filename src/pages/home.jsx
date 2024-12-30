@@ -8,10 +8,12 @@ import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
 
   useEffect(() => {
     AOS.init({
@@ -359,17 +361,17 @@ const Home = () => {
             </div>
             <div
               className="mt-[4rem] flex flex-col md:grid gap-4"
-              data-aos="fade-up"
+              
             >
-              <div className="col-span-1">
+              {/* Rent Printers */}
+              <div className="col-span-1" data-aos="fade-up">
                 <div className="max-w-full flex flex-col md:flex-row md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
-                  <a href="#">
-                    <img
-                      className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
-                      src="/images/Home/rent-printer.png"
-                      alt=""
-                    />
-                  </a>
+                  <img
+                    className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
+                    src="/images/Home/rent-printer.png"
+                    alt=""
+                  />
+
                   <div className="p-5 xl:p-6 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
                     <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
                       Rent Printers
@@ -408,54 +410,96 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4">
-                <div className="mb-5 md:mb-0">
-                  <div className="max-w-full bg-white border-2 border-white rounded-2xl shadow-md">
-                    <a href="#">
-                      <img
-                        className="rounded-3xl p-3"
-                        src="/images/Home/amc.png"
-                        alt=""
-                      />
-                    </a>
-                    <div className="p-5">
-                      <a href="#">
-                        <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                          AMC
-                        </h5>
-                      </a>
-                      <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                        Annual Maintenance Contracts Designed to Ensure Seamless
-                        Operations - Providing Expert Support, Regular
-                        Servicing, Timely Prompt Repairs, and Proactive
-                        Solutions for Residential, Commercial, and Industrial
-                        Needs Across Various Sectors.
-                      </p>
-                    </div>
+              {/* AMC */}
+              <div className="col-span-1" data-aos="fade-up">
+                <div className="max-w-full flex flex-col md:flex-row-reverse md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
+                  <img
+                    className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
+                    src="/images/Home/amc.png"
+                    alt=""
+                  />
+
+                  <div className="p-5 xl:p-6 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
+                    <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
+                      AMC
+                    </h5>
+                    <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-snug lg:text-white">
+                      Annual Maintenance Contracts Designed to Ensure Seamless
+                      Operations - Providing Expert Support, Regular Servicing,
+                      Timely Prompt Repairs, and Proactive Solutions for
+                      Residential, Commercial, and Industrial Needs Across
+                      Various Sectors.
+                    </p>
+                    <NavLink to="/services#amc">
+                      <button
+                        type="button"
+                        className="flex md:hidden lg:flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
+                      >
+                        Know more{" "}
+                        <svg
+                          className="rtl:rotate-180 w-3.5 h-3.5 ms-2 my-[0.1rem]"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 14 10"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9"
+                          />
+                        </svg>
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
+              </div>
 
-                <div>
-                  <div className=" max-w-full bg-white border-2 border-white  rounded-2xl shadow-md">
-                    <a href="#">
-                      <img
-                        className="rounded-3xl p-3"
-                        src="/images/Home/office-equipments.png"
-                        alt=""
-                      />
-                    </a>
-                    <div className="p-5">
-                      <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
-                        Office Essentials
-                      </h5>
-                      <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                        Transform Your Workspace with Premium Supplies -
-                        Offering a Comprehensive Range of Office Products
-                        including Furniture, Stationery, Technology Accessories,
-                        and Organizational Tools to Create a Comfortable and
-                        Productive Environment.
-                      </p>
-                    </div>
+              {/* Office essentials */}
+              <div className="col-span-1"  data-aos="fade-up">
+                <div className="max-w-full flex flex-col md:flex-row md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
+                  <img
+                    className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
+                    src="/images/Home/office-equipments.png"
+                    alt=""
+                  />
+
+                  <div className="p-5 xl:p-6 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
+                    <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
+                      Office Essentials
+                    </h5>
+                    <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-snug lg:text-white">
+                      Transform Your Workspace with Premium Supplies - Offering
+                      a Comprehensive Range of Office Products including
+                      Furniture, Stationery, Technology Accessories, and
+                      Organizational Tools to Create a Comfortable and
+                      Productive Environment.
+                    </p>
+                    <NavLink to="/services#office-equipments">
+                      <button
+                        type="button"
+                        className="flex md:hidden lg:flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
+                      >
+                        Know more{" "}
+                        <svg
+                          className="rtl:rotate-180 w-3.5 h-3.5 ms-2 my-[0.1rem]"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 14 10"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9"
+                          />
+                        </svg>
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
               </div>
