@@ -6,6 +6,10 @@ import "aos/dist/aos.css";
 
 const About = () => {
   useEffect(() => {
+    document.title = " About | Carbon Craft";
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
@@ -14,7 +18,7 @@ const About = () => {
       duration: 900, // Animation duration in milliseconds
       once: false, // Whether animation should happen only once
       offset: 50, // Offset (in pixels) from the original trigger point
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
     });
     AOS.refresh();
   }, []);
@@ -23,7 +27,10 @@ const About = () => {
     <main className="mt-[3.5rem]">
       <div className="w-full h-screen flex items-end justify-center bg-about-bg-mob md:bg-about-bg bg-cover md:bg-bottom ">
         <div className=" flex flex-col items-center">
-          <h1 className="text-4xl font-medium font-heading text-gray-800 leading-tight mb-[7rem] mx-6 md:mx-0" data-aos="fade-up">
+          <h1
+            className="text-4xl font-medium font-heading text-gray-800 leading-tight mb-[7rem] mx-6 md:mx-0"
+            data-aos="fade-up"
+          >
             Elevate your workspace effortlessly
           </h1>
         </div>
@@ -81,10 +88,13 @@ const About = () => {
             </h1>
           </div>
 
-          <div className="mt-[4rem] sm:flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4" data-aos="fade-up">
+          <div
+            className="mt-[4rem] sm:flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4"
+            data-aos="fade-up"
+          >
             <div className="mb-5 md:pb-0">
               <a href="tel:+971 543917731">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400 h-full lg:h-52 xl:h-full">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +123,7 @@ const About = () => {
             </div>
             <div className="mb-5 md:pb-0">
               <a href="mailto:info@carboncraftuae.com">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400 h-full lg:h-52 xl:h-full">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -130,8 +140,8 @@ const About = () => {
                       />
                     </svg>
 
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      Chat support
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 leading-tight">
+                      Customer support
                     </h5>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                       We&#39;re here to help.
@@ -142,7 +152,7 @@ const About = () => {
             </div>
             <div className="mb-5 md:pb-0">
               <a href="https://www.google.com/maps/d/u/4/viewer?mid=1i25rbWlSZtvGYkvabvAx68JF_xnD8MI&ll=24.73145818186758%2C55.01983265&z=8">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400 h-full lg:h-52 xl:h-full">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +187,7 @@ const About = () => {
             </div>
             <div className="mb-5 md:pb-0">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLScqe3xOvEcJEmmolElbsGHHRPqCJLCaMV4L5VxVUx1ZZ8XqvA/viewform">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400 h-full lg:h-52 xl:h-full">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +205,7 @@ const About = () => {
                     </svg>
 
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      Join with us
+                      Work with us
                     </h5>
 
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">

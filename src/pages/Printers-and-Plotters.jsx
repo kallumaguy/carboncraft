@@ -8,6 +8,10 @@ import { NavLink } from "react-router-dom";
 
 const PrintPlot = () => {
   useEffect(() => {
+    document.title = " Printers-and-Plotters | Carbon Craft";
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

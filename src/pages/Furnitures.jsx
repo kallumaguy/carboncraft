@@ -5,6 +5,10 @@ import { NavLink } from "react-router-dom";
 
 const Furnitures = () => {
   useEffect(() => {
+    document.title = " Furnitures | Carbon Craft";
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

@@ -9,6 +9,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Services = () => {
+
+  useEffect(() => {
+      document.title = " Services | Carbon Craft";
+    }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -5,6 +5,10 @@ import { NavLink } from "react-router-dom";
 
 const DeskLap = () => {
   useEffect(() => {
+    document.title = " Desktops-and-Laptops | Carbon Craft";
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

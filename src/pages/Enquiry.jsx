@@ -29,6 +29,10 @@ const Enquiry = () => {
   const [uploadError, setUploadError] = useState(""); // State to store upload errors
 
   useEffect(() => {
+    document.title = " Enquiry | Carbon Craft";
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
@@ -410,6 +414,8 @@ const Enquiry = () => {
             <input
               type="text"
               required
+              name="name"
+              onChange={handleChange}
               placeholder="Enter your name"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
@@ -418,6 +424,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Organization</span>
             <input
               type="text"
+              name="organization"
+              onChange={handleChange}
               required
               placeholder="Enter your organization"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -431,6 +439,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Email</span>
             <input
               type="email"
+              name="email"
+              onChange={handleChange}
               placeholder="Enter your email"
               required
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -440,6 +450,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Phone</span>
             <input
               type="text"
+              name="phone"
+              onChange={handleChange}
               required
               placeholder="Enter your phone number"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -448,7 +460,7 @@ const Enquiry = () => {
         </div>
 
         {/* Emirate */}
-        <label className="block">
+        <div className="block">
           <span className="text-gray-800 font-semibold">Emirate</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
@@ -465,37 +477,47 @@ const Enquiry = () => {
                 <input
                   type="checkbox"
                   id={`emirate-${index}`}
+                  name="emirate"
+                  onChange={handleChange}
+                  value={emirate}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`emirate-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`emirate-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {emirate}
                 </label>
               </div>
             ))}
           </div>
-        </label>
+        </div>
 
         {/* Rental Period */}
-        <label className="block mt-4">
+        <div className="block mt-4">
           <span className="text-gray-800 font-semibold">Rental Period</span>
-          <div className="flex items-center space-x-4 mt-2">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {["Short Term", "Long Term", "Purchase"].map((period, index) => (
               <div key={index} className="flex items-center">
                 <input
                   type="checkbox"
                   id={`rental-${index}`}
+                  name="rentalPeriod"
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`rental-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`rental-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {period}
                 </label>
               </div>
             ))}
           </div>
-        </label>
+        </div>
 
         {/* Product */}
-        <label className="block mt-4">
+        <div className="block mt-4">
           <span className="text-gray-800 font-semibold">Product</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
@@ -510,9 +532,13 @@ const Enquiry = () => {
                 <input
                   type="checkbox"
                   id={`product-${index}`}
+                  name="product"
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`product-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`product-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {product}
                 </label>
               </div>
@@ -523,6 +549,7 @@ const Enquiry = () => {
               <input
                 type="checkbox"
                 id="product-other"
+                name="product"
                 className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 onChange={(e) => {
                   const otherInput = document.getElementById(
@@ -533,7 +560,7 @@ const Enquiry = () => {
                     : "none";
                 }}
               />
-              <label htmlFor="product-other" className="text-gray-700">
+              <label htmlFor="product-other" className="ml-2 text-gray-700">
                 Other
               </label>
             </div>
@@ -547,18 +574,12 @@ const Enquiry = () => {
             className="block w-full mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             style={{ display: "none" }} // Initially hidden
           />
-        </label>
+        </div>
 
         {/* Preferred Brands */}
-        <label className="block mt-4">
+        <div className="block mt-4">
           <span className="text-gray-800 font-semibold">Preferred Brands</span>
-          <select
-            className="block  mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-            required
-          >
-            <option value="" disabled selected>
-              Select your preferred brand
-            </option>
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Apple",
               "Samsung",
@@ -568,12 +589,25 @@ const Enquiry = () => {
               "Microsoft",
               "Asus",
             ].map((brand, index) => (
-              <option key={index} value={brand}>
-                {brand}
-              </option>
+              <div key={index} className="flex items-center">
+                <input
+                  type="checkbox"
+                  id={`brand-${index}`}
+                  name="preferredBrands"
+                  onChange={handleChange}
+                  value={brand}
+                  className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                />
+                <label
+                  htmlFor={`brand-${index}`}
+                  className="ml-2 text-gray-700"
+                >
+                  {brand}
+                </label>
+              </div>
             ))}
-          </select>
-        </label>
+          </div>
+        </div>
 
         {/* Special Requirements */}
         <label className="block">
@@ -582,35 +616,66 @@ const Enquiry = () => {
           </span>
           <textarea
             placeholder="Enter any special requirements here"
+            name="specialRequirements"
+            onChange={handleChange}
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
         </label>
 
-        {/* Third Section: File Upload */}
+        {/* File Upload */}
         <label className="block">
           <span className="text-gray-800 font-semibold">
             Upload your Trade License & TRN Certificate
           </span>
           <p className="text-sm text-gray-500 mb-2">
-            Upload up to 5 supported files: PDF, document, or image. Max 10 MB
-            per file.
+            Upload supported image files (JPEG, PNG), Max size 5 MB per file.
           </p>
           <input
             type="file"
-            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+            name="files"
+            accept=".jpg,.jpeg,.png,.pdf"
+            onChange={handleChange}
             multiple
             className="block w-full mt-1 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
         </label>
 
+        {/* Loading UI while file is uploading */}
+        {isUploading && (
+          <div className="mt-4 text-center">
+            <div className="spinner-border animate-spin" role="status">
+              <span className="sr-only">Uploading...</span>
+            </div>
+            <p className="text-sm text-gray-600">Uploading...</p>
+          </div>
+        )}
+
+        {/* Success: Show tick icon after file is uploaded */}
+        {fileUrl && !isUploading && (
+          <div className="mt-2 flex items-center space-x-2">
+            <IoIosCheckmarkCircle className="text-green-500 w-9 h-9 " />
+            <p className="text-sm text-gray-600">File selected!</p>
+          </div>
+        )}
+
+        {/* Error message */}
+        {uploadError && (
+          <div className="mt-2">
+            <p className="text-sm text-red-600">{uploadError}</p>
+          </div>
+        )}
+
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow hover:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
         >
           Submit
         </button>
+        {showToast && (
+          <Toast message={toastMessage} onClose={() => setShowToast(false)} />
+        )}
       </form>
     ),
     Furnitures: (
@@ -623,6 +688,8 @@ const Enquiry = () => {
             <input
               type="text"
               required
+              name="name"
+              onChange={handleChange}
               placeholder="Enter your name"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
@@ -631,6 +698,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Organization</span>
             <input
               type="text"
+              name="organization"
+              onChange={handleChange}
               required
               placeholder="Enter your organization"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -644,6 +713,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Email</span>
             <input
               type="email"
+              name="email"
+              onChange={handleChange}
               placeholder="Enter your email"
               required
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -653,6 +724,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Phone</span>
             <input
               type="text"
+              name="phone"
+              onChange={handleChange}
               required
               placeholder="Enter your phone number"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -661,7 +734,7 @@ const Enquiry = () => {
         </div>
 
         {/* Emirate */}
-        <label className="block">
+        <div className="block">
           <span className="text-gray-800 font-semibold">Emirate</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
@@ -678,34 +751,45 @@ const Enquiry = () => {
                 <input
                   type="checkbox"
                   id={`emirate-${index}`}
+                  name="emirate"
+                  onChange={handleChange}
+                  value={emirate}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`emirate-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`emirate-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {emirate}
                 </label>
               </div>
             ))}
           </div>
-        </label>
+        </div>
 
         {/* Enquire for */}
-        <label className="block mt-4">
+        <div className="block mt-4">
           <span className="text-gray-800 font-semibold">Enquire for</span>
-          <div className="flex items-center space-x-4 mt-2">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {["Rental", "Purchase"].map((period, index) => (
               <div key={index} className="flex items-center">
                 <input
-                  type="checkbox"
-                  id={`rental-${index}`}
-                  className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                  type="radio"
+                  id={`enquire-${index}`}
+                  name="enquireFor"
+                  value={period}
+                  className="mr-2 rounded-full border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`rental-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`enquire-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {period}
                 </label>
               </div>
             ))}
           </div>
-        </label>
+        </div>
 
         {/* Furniture Type */}
         <label className="block mt-4">
@@ -813,6 +897,8 @@ const Enquiry = () => {
             <input
               type="text"
               required
+              name="name"
+              onChange={handleChange}
               placeholder="Enter your name"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
@@ -821,6 +907,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Organization</span>
             <input
               type="text"
+              name="organization"
+              onChange={handleChange}
               required
               placeholder="Enter your organization"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -834,6 +922,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Email</span>
             <input
               type="email"
+              name="email"
+              onChange={handleChange}
               placeholder="Enter your email"
               required
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -843,6 +933,8 @@ const Enquiry = () => {
             <span className="text-gray-800 font-semibold">Phone</span>
             <input
               type="text"
+              name="phone"
+              onChange={handleChange}
               required
               placeholder="Enter your phone number"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -851,7 +943,7 @@ const Enquiry = () => {
         </div>
 
         {/* Emirate */}
-        <label className="block">
+        <div className="block">
           <span className="text-gray-800 font-semibold">Emirate</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
@@ -868,52 +960,89 @@ const Enquiry = () => {
                 <input
                   type="checkbox"
                   id={`emirate-${index}`}
+                  name="emirate"
+                  onChange={handleChange}
+                  value={emirate}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
-                <label htmlFor={`emirate-${index}`} className="text-gray-700">
+                <label
+                  htmlFor={`emirate-${index}`}
+                  className="ml-2 text-gray-700"
+                >
                   {emirate}
                 </label>
               </div>
             ))}
           </div>
-        </label>
+        </div>
 
-        {/* Specify Requirements */}
+        {/* Special Requirements */}
         <label className="block">
           <span className="text-gray-800 font-semibold">
-            Specify Requirements
+            Special Requirements
           </span>
           <textarea
-            placeholder="Specify office Requirements"
+            placeholder="Enter any special requirements here"
+            name="specialRequirements"
+            onChange={handleChange}
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
         </label>
-
-        {/* Third Section: File Upload */}
+   
+        {/* File Upload */}
         <label className="block">
           <span className="text-gray-800 font-semibold">
             Upload your Trade License & TRN Certificate
           </span>
           <p className="text-sm text-gray-500 mb-2">
-            Upload up to 5 supported files: PDF, document, or image. Max 10 MB
-            per file.
+            Upload supported image files (JPEG, PNG), Max size 5 MB per file.
           </p>
           <input
             type="file"
-            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+            name="files"
+            accept=".jpg,.jpeg,.png,.pdf"
+            onChange={handleChange}
             multiple
             className="block w-full mt-1 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
         </label>
 
+        {/* Loading UI while file is uploading */}
+        {isUploading && (
+          <div className="mt-4 text-center">
+            <div className="spinner-border animate-spin" role="status">
+              <span className="sr-only">Uploading...</span>
+            </div>
+            <p className="text-sm text-gray-600">Uploading...</p>
+          </div>
+        )}
+
+        {/* Success: Show tick icon after file is uploaded */}
+        {fileUrl && !isUploading && (
+          <div className="mt-2 flex items-center space-x-2">
+            <IoIosCheckmarkCircle className="text-green-500 w-9 h-9 " />
+            <p className="text-sm text-gray-600">File selected!</p>
+          </div>
+        )}
+
+        {/* Error message */}
+        {uploadError && (
+          <div className="mt-2">
+            <p className="text-sm text-red-600">{uploadError}</p>
+          </div>
+        )}
+
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white bg-primary rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow hover:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
         >
           Submit
         </button>
+        {showToast && (
+          <Toast message={toastMessage} onClose={() => setShowToast(false)} />
+        )}
       </form>
     ),
   };

@@ -10,6 +10,11 @@ import "aos/dist/aos.css";
 
 
 const Home = () => {
+
+  useEffect(() => {
+    document.title = "Home | Carbon Craft";
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
