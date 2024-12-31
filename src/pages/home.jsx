@@ -173,7 +173,7 @@ const Home = () => {
                 <NavLink to="/Enquiry">
                   <button
                     type="button"
-                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-2.5 me-2 mt-5"
+                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-3 me-2 mt-5 transition-colors duration-400"
                   >
                     Enquire Now{" "}
                     <svg

@@ -4,7 +4,7 @@ import "flowbite";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { IoIosCheckmarkCircle } from "react-icons/io"; // Tick icon
 
@@ -111,21 +111,51 @@ const Enquiry = () => {
 
   console.log(formData);
 
+  // eslint-disable-next-line react/prop-types
+  const Toast = ({ message, onClose }) => (
+    <div className="fixed top-5 right-5 bg-green-500 text-white px-5 py-2.5 rounded shadow-lg z-50 flex items-center">
+      {message}
+      <button
+        onClick={onClose}
+        className="ml-2 bg-transparent border-none text-white cursor-pointer"
+      >
+        ✖
+      </button>
+    </div>
+  );
+
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const navigate = useNavigate();
+
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Send the form data to the backend (Node.js with SendGrid)
+      // Send the form data to the backend
       await axios.post("http://localhost:5000/send-email", {
         formName: selectedItem,
         formData: formData,
       });
 
-      alert("Email sent successfully!");
+      // Set the toast message
+      setToastMessage("Form submitted successfully!");
+      setShowToast(true);
+
+      // Redirect after a delay
+      setTimeout(() => {
+        navigate("/");
+        setShowToast(false); // Hide toast
+      }, 3000);
     } catch (error) {
       console.error("Error sending email:", error);
-      alert("Failed to send email.");
+
+      setToastMessage("Failed to submit the form. Please try again.");
+      setShowToast(true);
+
+      // Automatically close toast after 3 seconds
+      setTimeout(() => setShowToast(false), 3000);
     }
   };
 
@@ -365,6 +395,9 @@ const Enquiry = () => {
         >
           Submit
         </button>
+        {showToast && (
+          <Toast message={toastMessage} onClose={() => setShowToast(false)} />
+        )}
       </form>
     ),
     Systems: (
@@ -770,7 +803,7 @@ const Enquiry = () => {
         </button>
       </form>
     ),
-    item4: (
+    other: (
       //Other form
       <form className="space-y-4 font-body p-4 ">
         {/* First Row: Name and Organization */}
@@ -890,7 +923,7 @@ const Enquiry = () => {
     Printers: "Printers",
     Systems: "Desktops/Laptops",
     Furnitures: "Furnitures",
-    item4: "Other Equipments",
+    other: "Other Equipments",
   };
 
   useEffect(() => {

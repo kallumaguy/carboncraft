@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className=" relative z-20">
-      <section className="bg-blue-prime hover:bg-[#1e3a8a]">
+      <section className="bg-blue-prime hover:bg-[#1e3a8a] transition-colors duration-450">
         <a href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0">
           <div className="container mx-auto px-4 py-[4.8rem] md:py-[6rem]">
             <div className="flex items-center">
@@ -44,34 +44,49 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-3 md:mb-0">
               <ul className="flex md:space-x-4 justify-center space-x-2 font-heading text-background">
-                <li className="font-medium hover:text-gray-800">
+                <li className="font-medium hover:text-gray-800 transition-colors duration-400">
                   <NavLink to="/">Home</NavLink>
                 </li>
-                <li className="font-medium hover:text-gray-800">
+                <li className="font-medium hover:text-gray-800 transition-colors duration-400">
                   <NavLink to="/Services">Services</NavLink>
                 </li>
-                <li className="font-medium hover:text-gray-800">
+                <li className="font-medium hover:text-gray-800 transition-colors duration-400">
                   <NavLink to="/About">About</NavLink>
                 </li>
-                <li className="font-medium hover:text-gray-800">
+                <li className="font-medium hover:text-gray-800 transition-colors duration-400">
                   <NavLink to="/Enquiry">Enquire</NavLink>
                 </li>
               </ul>
             </div>
             <div className="flex space-x-5 text-background">
-              <a href="https://www.linkedin.com/company/carboncraftequipments" className="hover:text-gray-800">
+              <a
+                href="https://www.linkedin.com/company/carboncraftequipments"
+                className="hover:text-gray-800 transition-colors duration-400"
+              >
                 <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
               </a>
-              <a href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0" className="hover:text-gray-800">
+              <a
+                href="https://api.whatsapp.com/send/?phone=%2B971543917731&text&type=phone_number&app_absent=0"
+                className="hover:text-gray-800 transition-colors duration-400"
+              >
                 <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6" />
               </a>
-              <a href="https://www.facebook.com/people/Carbon-Craft-Equipments-Trading/61563072509008/?mibextid=ZbWKwL" className="hover:text-gray-800">
+              <a
+                href="https://www.facebook.com/people/Carbon-Craft-Equipments-Trading/61563072509008/?mibextid=ZbWKwL"
+                className="hover:text-gray-800 transition-colors duration-400"
+              >
                 <FontAwesomeIcon icon={faFacebook} className="w-6 h-6" />
               </a>
-              <a href="https://www.instagram.com/carboncraft_uae/" className="hover:text-gray-800">
+              <a
+                href="https://www.instagram.com/carboncraft_uae/"
+                className="hover:text-gray-800 transition-colors duration-400"
+              >
                 <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
               </a>
-              <a href="https://x.com/CarbonCraft_UAE" className="hover:text-gray-800">
+              <a
+                href="https://x.com/CarbonCraft_UAE"
+                className="hover:text-gray-800 transition-colors duration-400"
+              >
                 <FontAwesomeIcon icon={faXTwitter} className="w-6 h-6" />
               </a>
             </div>

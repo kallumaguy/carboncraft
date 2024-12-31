@@ -1,14 +1,24 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "flowbite";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NavLink, useLocation } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Services = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 900, // Animation duration in milliseconds
+      once: false, // Whether animation should happen only once
+      offset: 50, // Offset (in pixels) from the original trigger point
+    });
   }, []);
 
   const { hash } = useLocation();
@@ -39,13 +49,16 @@ const Services = () => {
       <section className="py-[6rem] bg-background">
         <div className="container mx-auto ">
           <div className="text-center">
-            <span className="text-xl font-heading font-bold text-primary mb-3">
+            <span
+              className="text-xl font-heading font-bold text-primary mb-3"
+              data-aos="fade-up"
+            >
               Rent Printers
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
               Printer Rentals Made Easy
             </h1>
-            <p className="text-xl font-heading text-gray-600 my-3 md:px-6">
+            <p className="text-xl font-heading text-gray-600 my-3 md:px-6" data-aos="fade-up">
               Explore how CarbonCraft can enhance your office environment or
               event setup with our comprehensive range of services. Contact us
               today to discuss your needs and discover why we are the preferred
@@ -55,7 +68,7 @@ const Services = () => {
 
           <div className="flex justify-center items-center mt-[4rem]">
             <div className="flex flex-col md:grid grid-cols-2 gap-4">
-              <div className="mb-5 md:pb-0">
+              <div className="mb-5 md:pb-0" data-aos="fade-up">
                 <div className="max-w-xl bg-orange-gradient rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
@@ -98,7 +111,7 @@ const Services = () => {
                 </div>
               </div>
 
-              <div className="mb-5 md:pb-0">
+              <div className="mb-5 md:pb-0" data-aos="fade-up">
                 <div className="max-w-xl bg-orange-gradient rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3 "
@@ -150,15 +163,15 @@ const Services = () => {
       <section id="amc" className="py-[6rem] bg-secondary">
         <div className="container mx-auto ">
           <div className="text-center mb-6">
-            <span className="text-xl font-heading font-bold text-primary mb-3">
+            <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
               AMC
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
               Contracted care for your printers and copiers.
             </h1>
           </div>
 
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]" data-aos="fade-up">
             <div className="p-3 md:p-5">
               <img
                 className="lg:max-w-lg rounded-2xl"
@@ -203,10 +216,10 @@ const Services = () => {
           </div>
 
           <div className="my-[4rem] text-center">
-            <h1 className="text-4xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            <h1 className="text-4xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
               Why Choose an AMC with us?
             </h1>
-            <p className="text-xl font-normal font-heading text-gray-600 py-5">
+            <p className="text-xl font-normal font-heading text-gray-600 py-5" data-aos="fade-up">
               Choose CarbonCraft for expert support, cost-effective solutions,
               and reliable performance for your printers and copiers. Our
               proactive servicing reduces the risk of breakdowns, extends
@@ -217,7 +230,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]">
+          <div className="flex flex-col lg:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]" data-aos="fade-up">
             <a href="#" className="p-3 md:p-5">
               <img
                 className="lg:max-w-lg rounded-2xl"
@@ -267,16 +280,16 @@ const Services = () => {
       <section id="office-equipments" className="py-[6rem] bg-background">
         <div className="container mx-auto ">
           <div className="text-center">
-            <span className="text-xl font-heading font-bold text-primary mb-3">
+            <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
               Office Essentials
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
               Hassle-free Equipments Leasing
             </h1>
           </div>
 
           <div className="mt-[4rem] flex flex-col md:grid grid-cols-2 xl:grid-cols-4 gap-4">
-            <div className="mb-5 md:pb-0">
+            <div className="mb-5 md:pb-0" data-aos="fade-up">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <NavLink to="/Desktops-and-Laptops">
                   <img
@@ -300,7 +313,7 @@ const Services = () => {
               </div>
             </div>
 
-            <div className="mb-5 md:pb-0">
+            <div className="mb-5 md:pb-0" data-aos="fade-up">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <NavLink to="/Furnitures">
                   <img
@@ -323,7 +336,7 @@ const Services = () => {
               </div>
             </div>
 
-            <div className="mb-5 md:pb-0">
+            <div className="mb-5 md:pb-0" data-aos="fade-up">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <a href="#">
                   <img
@@ -348,7 +361,7 @@ const Services = () => {
               </div>
             </div>
 
-            <div className="mb-5 md:pb-0">
+            <div className="mb-5 md:pb-0" data-aos="fade-up">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <a href="#">
                   <img

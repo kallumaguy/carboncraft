@@ -137,7 +137,7 @@ const Header = () => {
                   {link.submenu ? (
                     <>
                       <button
-                        className={`flex items-center px-3 py-2 transition-all duration-200 ${
+                        className={`flex items-center px-3 py-2 transition-all duration-300 ${
                           activeSubMenu === index ||
                           link.submenu.some((subLink) =>
                             window.location.pathname.startsWith(subLink.path)
@@ -173,7 +173,7 @@ const Header = () => {
                               className={(navClass) =>
                                 navClass.isActive
                                   ? "block px-4 py-2 text-[.9rem] font-body bg-primary text-white"
-                                  : "block px-4 py-2 text-[.9rem] font-body text-text hover:bg-primary hover:text-white"
+                                  : "block px-4 py-2 text-[.9rem] font-body text-text hover:bg-primary hover:text-white transition-all duration-400"
                               }
                               onClick={handleMenuItemClick}
                             >

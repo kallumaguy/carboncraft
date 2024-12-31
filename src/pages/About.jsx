@@ -84,7 +84,7 @@ const About = () => {
           <div className="mt-[4rem] sm:flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4" data-aos="fade-up">
             <div className="mb-5 md:pb-0">
               <a href="tel:+971 543917731">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ const About = () => {
             </div>
             <div className="mb-5 md:pb-0">
               <a href="mailto:info@carboncraftuae.com">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +142,7 @@ const About = () => {
             </div>
             <div className="mb-5 md:pb-0">
               <a href="https://www.google.com/maps/d/u/4/viewer?mid=1i25rbWlSZtvGYkvabvAx68JF_xnD8MI&ll=24.73145818186758%2C55.01983265&z=8">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +177,7 @@ const About = () => {
             </div>
             <div className="mb-5 md:pb-0">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLScqe3xOvEcJEmmolElbsGHHRPqCJLCaMV4L5VxVUx1ZZ8XqvA/viewform">
-                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md">
+                <div className="max-w-sm bg-white border-2 border-gray-100 hover:border-primary rounded-2xl shadow-md transition-colors duration-400">
                   <div className="p-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
