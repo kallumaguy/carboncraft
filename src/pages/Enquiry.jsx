@@ -226,17 +226,17 @@ const Enquiry = () => {
       let payload;
 
       // Check which form is selected and set the appropriate payload
-      if (selectedItem === "Printer Form") {
+      if (selectedItem === "Printers") {
         payload = {
           formName: selectedItem,
           formData: FormData, // Replace with your actual printer form data state
         };
-      } else if (selectedItem === "System Form") {
+      } else if (selectedItem === "Systems") {
         payload = {
           formName: selectedItem,
           formData: systemFormData, // Replace with your actual system form data state
         };
-      } else if (selectedItem === "Furniture Form") {
+      } else if (selectedItem === "Furnitures") {
         payload = {
           formName: selectedItem,
           formData: furnitureFormData, // Replace with your actual furniture form data state
@@ -244,7 +244,7 @@ const Enquiry = () => {
       } else {
         payload = {
           formName: selectedItem,
-          formData, // Default to the existing formData state
+          formData: FormData // Default to the existing formData state
         };
       }
 
