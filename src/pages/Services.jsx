@@ -9,10 +9,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Services = () => {
-
   useEffect(() => {
-      document.title = " Services | Carbon Craft";
-    }, []);
+    document.title = " Services | Carbon Craft";
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -60,10 +59,16 @@ const Services = () => {
             >
               Rent Printers
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
+            <h1
+              className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              data-aos="fade-up"
+            >
               Printer Rentals Made Easy
             </h1>
-            <p className="text-xl font-heading text-gray-600 my-3 md:px-6" data-aos="fade-up">
+            <p
+              className="text-xl font-heading text-gray-600 my-3 md:px-6"
+              data-aos="fade-up"
+            >
               Explore how CarbonCraft can enhance your office environment or
               event setup with our comprehensive range of services. Contact us
               today to discuss your needs and discover why we are the preferred
@@ -168,15 +173,24 @@ const Services = () => {
       <section id="amc" className="py-[6rem] bg-secondary">
         <div className="container mx-auto ">
           <div className="text-center mb-6">
-            <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
+            <span
+              className="text-xl font-heading font-bold text-primary mb-3"
+              data-aos="fade-up"
+            >
               AMC
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
+            <h1
+              className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              data-aos="fade-up"
+            >
               Contracted care for your printers and copiers.
             </h1>
           </div>
 
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]" data-aos="fade-up">
+          <div
+            className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]"
+            data-aos="fade-up"
+          >
             <div className="p-3 md:p-5">
               <img
                 className="lg:max-w-lg rounded-2xl"
@@ -221,10 +235,16 @@ const Services = () => {
           </div>
 
           <div className="my-[4rem] text-center">
-            <h1 className="text-4xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
+            <h1
+              className="text-4xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              data-aos="fade-up"
+            >
               Why Choose an AMC with us?
             </h1>
-            <p className="text-xl font-normal font-heading text-gray-600 py-5" data-aos="fade-up">
+            <p
+              className="text-xl font-normal font-heading text-gray-600 py-5"
+              data-aos="fade-up"
+            >
               Choose CarbonCraft for expert support, cost-effective solutions,
               and reliable performance for your printers and copiers. Our
               proactive servicing reduces the risk of breakdowns, extends
@@ -235,19 +255,23 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]" data-aos="fade-up">
-            <a href="#" className="p-3 md:p-5">
-              <img
-                className="lg:max-w-lg rounded-2xl"
-                src="/images/Services/contract-info.png"
-                alt="Rent Printer"
-              />
-            </a>
+          <div
+            className="flex flex-col lg:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]"
+            data-aos="fade-up"
+          >
+            <div className="p-3 md:p-5">
+            <img
+              className="lg:max-w-lg rounded-2xl"
+              src="/images/Services/contract-info.png"
+              alt="Rent Printer"
+            />
+            </div>
+
             <div className="p-5">
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Contract Info
               </span>
-              <h1 className="text-2xl md:text-4xl font-bold font-heading  text-gray-800 leading-tight my-3">
+              <h1 className="text-2xl md:text-4xl font-bold font-heading text-gray-800 leading-tight my-3">
                 Our AMC includes
               </h1>
               <p className="text-xl font-body font-normal text-gray-700">
@@ -285,10 +309,16 @@ const Services = () => {
       <section id="office-equipments" className="py-[6rem] bg-background">
         <div className="container mx-auto ">
           <div className="text-center">
-            <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
+            <span
+              className="text-xl font-heading font-bold text-primary mb-3"
+              data-aos="fade-up"
+            >
               Office Essentials
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3" data-aos="fade-up">
+            <h1
+              className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              data-aos="fade-up"
+            >
               Hassle-free Equipments Leasing
             </h1>
           </div>
@@ -303,10 +333,10 @@ const Services = () => {
                     alt="Rent Printer"
                   />
                   <div className="p-5">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                       Desktops & Laptops
                     </h5>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                       Top-quality desktops and laptops for sale or rent,
                       customized to meet your business requirements. Whether you
                       need reliable devices for short-term projects or long-term
@@ -327,10 +357,10 @@ const Services = () => {
                     alt="Rent Printer"
                   />
                   <div className="p-5">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
                       Furnitures
                     </h5>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                       Discover our range of ergonomic chairs and modern desks,
                       thoughtfully designed to provide maximum comfort and
                       improve productivity. Perfect for creating a workspace
@@ -343,20 +373,18 @@ const Services = () => {
 
             <div className="mb-5 md:pb-0" data-aos="fade-up">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Services/office-stationary.png"
-                    alt="Rent Printer"
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Services/office-stationary.png"
+                  alt="Rent Printer"
+                />
+
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      Office Stationary
-                    </h5>
-                  </a>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Office Stationary
+                  </h5>
+
+                  <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     From pens and paper to binders and filing systems, we
                     provide high-quality office essentials to keep your
                     workspace organized and running efficiently. Stock up on
@@ -368,20 +396,17 @@ const Services = () => {
 
             <div className="mb-5 md:pb-0" data-aos="fade-up">
               <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
-                <a href="#">
-                  <img
-                    className="rounded-3xl p-3"
-                    src="/images/Services/printer-consumables.png"
-                    alt="Rent Printer"
-                  />
-                </a>
+                <img
+                  className="rounded-3xl p-3"
+                  src="/images/Services/printer-consumables.png"
+                  alt="Rent Printer"
+                />
+
                 <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      Printer Consumables
-                    </h5>
-                  </a>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  <h5 className="mb-2 text-2xl font-bold font-heading tracking-tight text-gray-900 dark:text-white">
+                    Printer Consumables
+                  </h5>
+                  <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
                     From cartridges and toner to premium paper and other
                     essential printer consumables, we offer reliable,
                     high-quality supplies to keep your printers running smoothly

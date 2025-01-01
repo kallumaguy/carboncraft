@@ -24,6 +24,32 @@ const Enquiry = () => {
     files: "",
   });
 
+  const [systemFormData, setSystemFormData] = useState({
+    name: "",
+    organization: "",
+    email: "",
+    phone: "",
+    rentalPeriod: [],
+    preferredBrands: "",
+    product: "",
+    otherProduct: "",
+    files: [],
+  });
+
+  const [furnitureFormData, setFurnitureFormData] = useState({
+    name: "",
+    organization: "",
+    email: "",
+    phone: "",
+    emirates: [], // Array to hold selected emirates
+    enquireFor: "", // Single value for rental or purchase
+    furnitureTypes: [], // Array to hold selected furniture types
+    furnitureOther: "", // For "Other" input
+    requirements: "", // Specify requirements textarea
+    specialRequests: "", // Special requests textarea
+    files: [], // For file uploads
+  });
+
   const [isUploading, setIsUploading] = useState(false); // State to track upload progress
   const [fileUrl, setFileUrl] = useState(""); // State to store the uploaded file URL
   const [uploadError, setUploadError] = useState(""); // State to store upload errors
@@ -113,7 +139,67 @@ const Enquiry = () => {
     }
   };
 
+  const handleSystemChange = (e) => {
+    // eslint-disable-next-line no-unused-vars
+    const { name, value, checked, type, files } = e.target;
+
+    if (type === "file") {
+      handleFileChange(e); // Handle file upload change
+    } else if (type === "checkbox") {
+      // Handling checkbox input
+      const currentValues = systemFormData[name] || [];
+      if (checked) {
+        setSystemFormData({
+          ...systemFormData,
+          [name]: [...currentValues, value],
+        });
+      } else {
+        setSystemFormData({
+          ...systemFormData,
+          [name]: currentValues.filter((v) => v !== value),
+        });
+      }
+    } else {
+      // Handling other input types (text, radio, etc.)
+      setSystemFormData({
+        ...systemFormData,
+        [name]: value,
+      });
+    }
+  };
+
+  const handleFurnitureChange = (e) => {
+    // eslint-disable-next-line no-unused-vars
+    const { name, value, checked, type, files } = e.target;
+
+    if (type === "file") {
+      handleFileChange(e); // Handle file upload change
+    } else if (type === "checkbox") {
+      // Handling checkbox input
+      const currentValues = furnitureFormData[name] || [];
+      if (checked) {
+        setFurnitureFormData({
+          ...furnitureFormData,
+          [name]: [...currentValues, value],
+        });
+      } else {
+        setFurnitureFormData({
+          ...furnitureFormData,
+          [name]: currentValues.filter((v) => v !== value),
+        });
+      }
+    } else {
+      // Handling other input types (text, radio, etc.)
+      setFurnitureFormData({
+        ...furnitureFormData,
+        [name]: value,
+      });
+    }
+  };
+
   console.log(formData);
+  console.log(systemFormData);
+  console.log(furnitureFormData);
 
   // eslint-disable-next-line react/prop-types
   const Toast = ({ message, onClose }) => (
@@ -137,13 +223,35 @@ const Enquiry = () => {
     e.preventDefault();
 
     try {
-      // Send the form data to the backend
-      await axios.post("http://localhost:5000/send-email", {
-        formName: selectedItem,
-        formData: formData,
-      });
+      let payload;
 
-      // Set the toast message
+      // Check which form is selected and set the appropriate payload
+      if (selectedItem === "Printer Form") {
+        payload = {
+          formName: selectedItem,
+          formData: FormData, // Replace with your actual printer form data state
+        };
+      } else if (selectedItem === "System Form") {
+        payload = {
+          formName: selectedItem,
+          formData: systemFormData, // Replace with your actual system form data state
+        };
+      } else if (selectedItem === "Furniture Form") {
+        payload = {
+          formName: selectedItem,
+          formData: furnitureFormData, // Replace with your actual furniture form data state
+        };
+      } else {
+        payload = {
+          formName: selectedItem,
+          formData, // Default to the existing formData state
+        };
+      }
+
+      // Send the selected form data to the backend
+      await axios.post("http://localhost:5000/send-email", payload);
+
+      // Set the toast message for success
       setToastMessage("Form submitted successfully!");
       setShowToast(true);
 
@@ -173,7 +281,7 @@ const Enquiry = () => {
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
-            <span className="text-gray-800 font-semibold">Name</span>
+            <span className="text-gray-800 font-semibold">Name *</span>
             <input
               type="text"
               required
@@ -184,7 +292,7 @@ const Enquiry = () => {
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Organization</span>
+            <span className="text-gray-800 font-semibold">Organization *</span>
             <input
               type="text"
               name="organization"
@@ -199,7 +307,7 @@ const Enquiry = () => {
         {/* Second Row: Email and Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-800 font-semibold">Email</span>
+            <span className="text-gray-800 font-semibold">Email *</span>
             <input
               type="email"
               name="email"
@@ -210,7 +318,7 @@ const Enquiry = () => {
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Phone</span>
+            <span className="text-gray-800 font-semibold">Phone *</span>
             <input
               type="text"
               name="phone"
@@ -224,7 +332,7 @@ const Enquiry = () => {
 
         {/* Emirate */}
         <div className="block">
-          <span className="text-gray-800 font-semibold">Emirate</span>
+          <span className="text-gray-800 font-semibold">Emirate *</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
@@ -257,34 +365,34 @@ const Enquiry = () => {
         </div>
 
         {/* Purpose of Leasing */}
-        <label className="block font-semibold text-gray-800">
-          Purpose of Leasing Machine *
-        </label>
-        <div className="flex items-center space-x-4">
-          <label className="inline-flex items-center">
-            <input
-              type="radio"
-              name="leasingPurpose"
-              onChange={handleChange}
-              value="Office Use"
-              className="form-radio text-gray-700 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-              required
-            />
-            <span className="ml-2 text-gray-700">
-              For Office use (Long Term)
-            </span>
-          </label>
-          <label className="inline-flex items-center">
-            <input
-              type="radio"
-              name="leasingPurpose"
-              value="Event use"
-              onChange={handleChange}
-              className="form-radio text-gray-700 border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-              required
-            />
-            <span className="ml-2 text-gray-700">For Events (Short Term)</span>
-          </label>
+        <div className="block mt-4">
+          <span className="text-gray-800 font-semibold">
+            Purpose of Leasing Machine *
+          </span>
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
+            {[
+              { label: "For Office use (Long Term)", value: "Office Use" },
+              { label: "For Events (Short Term)", value: "Event use" },
+            ].map((purpose, index) => (
+              <div key={index} className="flex items-center">
+                <input
+                  type="radio"
+                  id={`leasing-purpose-${index}`}
+                  name="leasingPurpose"
+                  value={purpose.value}
+                  onChange={handleChange}
+                  className="mr-2 rounded-full border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                  required
+                />
+                <label
+                  htmlFor={`leasing-purpose-${index}`}
+                  className="ml-2 text-gray-700"
+                >
+                  {purpose.label}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Equipment Brand */}
@@ -395,7 +503,7 @@ const Enquiry = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow hover:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow focus:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
         >
           Submit
         </button>
@@ -410,22 +518,22 @@ const Enquiry = () => {
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
-            <span className="text-gray-800 font-semibold">Name</span>
+            <span className="text-gray-800 font-semibold">Name *</span>
             <input
               type="text"
               required
               name="name"
-              onChange={handleChange}
+              onChange={handleSystemChange}
               placeholder="Enter your name"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Organization</span>
+            <span className="text-gray-800 font-semibold">Organization *</span>
             <input
               type="text"
               name="organization"
-              onChange={handleChange}
+              onChange={handleSystemChange}
               required
               placeholder="Enter your organization"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -436,22 +544,22 @@ const Enquiry = () => {
         {/* Second Row: Email and Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-800 font-semibold">Email</span>
+            <span className="text-gray-800 font-semibold">Email *</span>
             <input
               type="email"
               name="email"
-              onChange={handleChange}
+              onChange={handleSystemChange}
               placeholder="Enter your email"
               required
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Phone</span>
+            <span className="text-gray-800 font-semibold">Phone *</span>
             <input
               type="text"
               name="phone"
-              onChange={handleChange}
+              onChange={handleSystemChange}
               required
               placeholder="Enter your phone number"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -461,7 +569,7 @@ const Enquiry = () => {
 
         {/* Emirate */}
         <div className="block">
-          <span className="text-gray-800 font-semibold">Emirate</span>
+          <span className="text-gray-800 font-semibold">Emirate *</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
@@ -478,7 +586,7 @@ const Enquiry = () => {
                   type="checkbox"
                   id={`emirate-${index}`}
                   name="emirate"
-                  onChange={handleChange}
+                  onChange={handleSystemChange}
                   value={emirate}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
@@ -500,10 +608,12 @@ const Enquiry = () => {
             {["Short Term", "Long Term", "Purchase"].map((period, index) => (
               <div key={index} className="flex items-center">
                 <input
-                  type="checkbox"
+                  type="radio"
                   id={`rental-${index}`}
                   name="rentalPeriod"
-                  className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                  value={period}
+                  onChange={handleSystemChange}
+                  className="mr-2 rounded-full border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
                 <label
                   htmlFor={`rental-${index}`}
@@ -533,6 +643,7 @@ const Enquiry = () => {
                   type="checkbox"
                   id={`product-${index}`}
                   name="product"
+                  onChange={handleSystemChange}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
                 <label
@@ -594,7 +705,7 @@ const Enquiry = () => {
                   type="checkbox"
                   id={`brand-${index}`}
                   name="preferredBrands"
-                  onChange={handleChange}
+                  onChange={handleSystemChange}
                   value={brand}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
@@ -617,7 +728,7 @@ const Enquiry = () => {
           <textarea
             placeholder="Enter any special requirements here"
             name="specialRequirements"
-            onChange={handleChange}
+            onChange={handleSystemChange}
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
@@ -635,7 +746,7 @@ const Enquiry = () => {
             type="file"
             name="files"
             accept=".jpg,.jpeg,.png,.pdf"
-            onChange={handleChange}
+            onChange={handleSystemChange}
             multiple
             className="block w-full mt-1 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
@@ -669,7 +780,7 @@ const Enquiry = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow hover:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow focus:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
         >
           Submit
         </button>
@@ -684,22 +795,22 @@ const Enquiry = () => {
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
-            <span className="text-gray-800 font-semibold">Name</span>
+            <span className="text-gray-800 font-semibold">Name *</span>
             <input
               type="text"
               required
               name="name"
-              onChange={handleChange}
+              onChange={handleFurnitureChange}
               placeholder="Enter your name"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Organization</span>
+            <span className="text-gray-800 font-semibold">Organization *</span>
             <input
               type="text"
               name="organization"
-              onChange={handleChange}
+              onChange={handleFurnitureChange}
               required
               placeholder="Enter your organization"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -710,22 +821,22 @@ const Enquiry = () => {
         {/* Second Row: Email and Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-800 font-semibold">Email</span>
+            <span className="text-gray-800 font-semibold">Email *</span>
             <input
               type="email"
               name="email"
-              onChange={handleChange}
+              onChange={handleFurnitureChange}
               placeholder="Enter your email"
               required
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Phone</span>
+            <span className="text-gray-800 font-semibold">Phone *</span>
             <input
               type="text"
               name="phone"
-              onChange={handleChange}
+              onChange={handleFurnitureChange}
               required
               placeholder="Enter your phone number"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -735,7 +846,7 @@ const Enquiry = () => {
 
         {/* Emirate */}
         <div className="block">
-          <span className="text-gray-800 font-semibold">Emirate</span>
+          <span className="text-gray-800 font-semibold">Emirate *</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
@@ -752,7 +863,7 @@ const Enquiry = () => {
                   type="checkbox"
                   id={`emirate-${index}`}
                   name="emirate"
-                  onChange={handleChange}
+                  onChange={handleFurnitureChange}
                   value={emirate}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
@@ -778,6 +889,7 @@ const Enquiry = () => {
                   id={`enquire-${index}`}
                   name="enquireFor"
                   value={period}
+                  onChange={handleFurnitureChange}
                   className="mr-2 rounded-full border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
                 <label
@@ -800,6 +912,8 @@ const Enquiry = () => {
                 <input
                   type="checkbox"
                   id={`furniture-${index}`}
+                  name="furnitureType"
+                  onChange={handleFurnitureChange}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
                 <label htmlFor={`furniture-${index}`} className="text-gray-700">
@@ -813,6 +927,8 @@ const Enquiry = () => {
               <input
                 type="checkbox"
                 id="furniture-other"
+
+                
                 className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 onChange={(e) => {
                   const otherInput = document.getElementById(
@@ -846,6 +962,8 @@ const Enquiry = () => {
           </span>
           <textarea
             placeholder="Specify your requirements here"
+            name="requirements"
+            onChange={handleFurnitureChange}
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
@@ -856,12 +974,14 @@ const Enquiry = () => {
           <span className="text-gray-800 font-semibold">Special Requests</span>
           <textarea
             placeholder="Special Requests for furniture"
+            name="specialRequests"
+            onChange={handleFurnitureChange}
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
         </label>
 
-        {/* Third Section: File Upload */}
+        {/* File Upload */}
         <label className="block">
           <span className="text-gray-800 font-semibold">
             Upload your Trade License & TRN Certificate
@@ -893,7 +1013,7 @@ const Enquiry = () => {
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
-            <span className="text-gray-800 font-semibold">Name</span>
+            <span className="text-gray-800 font-semibold">Name *</span>
             <input
               type="text"
               required
@@ -904,7 +1024,7 @@ const Enquiry = () => {
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Organization</span>
+            <span className="text-gray-800 font-semibold">Organization *</span>
             <input
               type="text"
               name="organization"
@@ -919,7 +1039,7 @@ const Enquiry = () => {
         {/* Second Row: Email and Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-800 font-semibold">Email</span>
+            <span className="text-gray-800 font-semibold">Email *</span>
             <input
               type="email"
               name="email"
@@ -930,7 +1050,7 @@ const Enquiry = () => {
             />
           </label>
           <label className="block">
-            <span className="text-gray-800 font-semibold">Phone</span>
+            <span className="text-gray-800 font-semibold">Phone *</span>
             <input
               type="text"
               name="phone"
@@ -944,7 +1064,7 @@ const Enquiry = () => {
 
         {/* Emirate */}
         <div className="block">
-          <span className="text-gray-800 font-semibold">Emirate</span>
+          <span className="text-gray-800 font-semibold">Emirate *</span>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-2">
             {[
               "Abu Dhabi",
@@ -989,7 +1109,7 @@ const Enquiry = () => {
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
         </label>
-   
+
         {/* File Upload */}
         <label className="block">
           <span className="text-gray-800 font-semibold">

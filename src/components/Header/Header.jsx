@@ -123,10 +123,10 @@ const Header = () => {
           <div
             ref={menuRef}
             className={`${
-              showMenu ? "block" : "hidden"
-            } md:block w-full md:w-auto`}
+              showMenu ? "max-h-screen sm:max-h-screen" : "max-h-0  md:max-h-32"    
+            } md:block overflow-hidden md:overflow-visible transition-all duration-400 ease-in-out w-full md:w-auto`}
           >
-            <ul className="flex-col md:flex-row flex md:space-x-4 mt-4 md:mt-0 font-body text-md font-medium">
+            <ul className="flex-col md:flex-row flex md:space-x-4 mt-4 md:mt-0 font-body text-md font-medium ">
               {navLinks.map((link, index) => (
                 <li
                   key={index}

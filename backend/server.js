@@ -62,8 +62,8 @@ app.post("/send-email", async (req, res) => {
         .join("\n");
 
     const msg = {
-        to: "adilahmed.aa786@gmail.com",
-        from: { name: "Adil Ahmed", email: "adilahmed.aa786@gmail.com" },
+        to: "shazman@carboncraftuae.com",
+        from: { name: "Shazman P", email: "shazman@carboncraftuae.com" },
         subject: `Form Submission: ${formName}`,
         text: emailContent,
         attachments: attachments,
