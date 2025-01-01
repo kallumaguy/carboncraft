@@ -63,7 +63,7 @@ app.post("/send-email", async (req, res) => {
 
     const msg = {
         to: "shazman@carboncraftuae.com",
-        from: { name: "Shazman P", email: "shazman@carboncraftuae.com" },
+        from: { name: "Shazman", email: "shazman@carboncraftuae.com" },
         subject: `Form Submission: ${formName}`,
         text: emailContent,
         attachments: attachments,

@@ -223,7 +223,7 @@ const Enquiry = () => {
     e.preventDefault();
 
     try {
-      let payload;
+      let payload = {};
 
       // Check which form is selected and set the appropriate payload
       if (selectedItem === "Printers") {
@@ -514,7 +514,7 @@ const Enquiry = () => {
     ),
     Systems: (
       //Desktop/laptop form
-      <form className="space-y-4 font-body p-4 ">
+      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -791,7 +791,7 @@ const Enquiry = () => {
     ),
     Furnitures: (
       // Furniture Form
-      <form className="space-y-4 font-body p-4 ">
+      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -998,10 +998,11 @@ const Enquiry = () => {
           />
         </label>
 
+       
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white bg-primary rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow focus:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
         >
           Submit
         </button>
@@ -1009,7 +1010,7 @@ const Enquiry = () => {
     ),
     other: (
       //Other form
-      <form className="space-y-4 font-body p-4 ">
+      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
