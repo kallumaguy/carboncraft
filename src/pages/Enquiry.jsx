@@ -225,13 +225,7 @@ const Enquiry = () => {
     try {
       let payload = {};
 
-      // Check which form is selected and set the appropriate payload
-      if (selectedItem === "Printers") {
-        payload = {
-          formName: selectedItem,
-          formData: FormData, // Replace with your actual printer form data state
-        };
-      } else if (selectedItem === "Systems") {
+      if (selectedItem === "Systems") {
         payload = {
           formName: selectedItem,
           formData: systemFormData, // Replace with your actual system form data state
@@ -244,7 +238,7 @@ const Enquiry = () => {
       } else {
         payload = {
           formName: selectedItem,
-          formData: FormData // Default to the existing formData state
+          formData, // Default to the existing formData state
         };
       }
 
@@ -477,10 +471,10 @@ const Enquiry = () => {
 
         {/* Loading UI while file is uploading */}
         {isUploading && (
-          <div className="mt-4 text-center">
-            <div className="spinner-border animate-spin" role="status">
+          <div className="mt-4 ">
+            <output className="spinner-border animate-spin">
               <span className="sr-only">Uploading...</span>
-            </div>
+            </output>
             <p className="text-sm text-gray-600">Uploading...</p>
           </div>
         )}
@@ -514,7 +508,10 @@ const Enquiry = () => {
     ),
     Systems: (
       //Desktop/laptop form
-      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
+      <form
+        className="space-y-4 font-body p-4 "
+        onSubmit={(e) => handleSubmit(e)}
+      >
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -791,7 +788,10 @@ const Enquiry = () => {
     ),
     Furnitures: (
       // Furniture Form
-      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
+      <form
+        className="space-y-4 font-body p-4 "
+        onSubmit={(e) => handleSubmit(e)}
+      >
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
@@ -927,8 +927,6 @@ const Enquiry = () => {
               <input
                 type="checkbox"
                 id="furniture-other"
-
-                
                 className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 onChange={(e) => {
                   const otherInput = document.getElementById(
@@ -998,7 +996,6 @@ const Enquiry = () => {
           />
         </label>
 
-       
         {/* Submit Button */}
         <button
           type="submit"
@@ -1010,7 +1007,10 @@ const Enquiry = () => {
     ),
     other: (
       //Other form
-      <form className="space-y-4 font-body p-4 " onSubmit={(e) => handleSubmit(e)}>
+      <form
+        className="space-y-4 font-body p-4 "
+        onSubmit={(e) => handleSubmit(e)}
+      >
         {/* First Row: Name and Organization */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">

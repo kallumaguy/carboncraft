@@ -63,22 +63,27 @@ export default {
           "linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 98.2% )",
         "orange-gradient":
           "linear-gradient(90deg, rgba(235,138,63,1) 0%, rgba(214,96,59,1) 80%)",
-        services: "url('/images/Services/service-bg.png')",
-        printplot: "url('/images/Printers-Plotters/printplot-bg.png')",
-        desklap: "url('/images/Desktops-Laptops/desklap-bg.png')",
-        "furniture-bg": "url('/images/Furnitures/furniture-bg.png')",
-        "about-bg": "url('/images/About/about-bg.jpg')",
-        "about-bg-mob": "url('/images/About/about-bg-mob.jpg')",
-        "enquiry-bg": "url('/images/Enquiry/enquiry-bg.png')",
+        services: "url('/images/Services/service-bg.webp')",
+        printplot: "url('/images/Printers-Plotters/printplot-bg.webp')",
+        desklap: "url('/images/Desktops-Laptops/desklap-bg.webp')",
+        "furniture-bg": "url('/images/Furnitures/furniture-bg.webp')",
+        "about-bg": "url('/images/About/about-bg.webp')",
+        "about-bg-mob": "url('/images/About/about-bg-mob.webp')",
+        "enquiry-bg": "url('/images/Enquiry/enquiry-bg.webp')",
       },
 
       animation: {
         fadeIn: 'fadeIn 1s ease-in-out forwards',
+        'spin-3d': 'spin-3d 6s linear infinite',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
+        },
+        'spin-3d': {
+          '0%': { transform: 'rotateX(0deg) rotateY(0deg)' },
+          '100%': { transform: 'rotateX(360deg) rotateY(360deg)' },
         },
       },
     },

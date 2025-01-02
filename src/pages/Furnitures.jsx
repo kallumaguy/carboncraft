@@ -35,12 +35,12 @@ const Furnitures = () => {
             <div className="p-3 md:p-5">
               <img
                 className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/office-furnitures.png"
+                src="/images/Furnitures/office-furnitures.webp"
                 alt="Rent Printer"
               />
               <img
                 className="block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/office-furnitures-mob.png"
+                src="/images/Furnitures/office-furnitures-mob.webp"
                 alt=""
               />
             </div>
@@ -117,13 +117,13 @@ const Furnitures = () => {
             <div className="p-3 md:p-5">
               <img
                 className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/outdoor-furnitures-lg.png"
+                src="/images/Furnitures/outdoor-furnitures-lg.webp"
                 alt="Rent Printer"
               />
 
               <img
                 className=" block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/outdoor-furnitures.png"
+                src="/images/Furnitures/outdoor-furnitures.webp"
                 alt=""
               />
             </div>
@@ -133,12 +133,12 @@ const Furnitures = () => {
             <div className="p-3 md:p-5">
               <img
                 className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/customized-furnitures-lg.png"
+                src="/images/Furnitures/customized-furnitures-lg.webp"
                 alt="Rent Printer"
               />
               <img
                 className=" block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/customized-furnitures.png"
+                src="/images/Furnitures/customized-furnitures.webp"
                 alt=""
               />
             </div>

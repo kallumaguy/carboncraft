@@ -49,7 +49,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/C256-C356.png"
+                    src="/images/Printers-Plotters/C256-C356.webp"
                     alt=""
                   />
 
@@ -86,7 +86,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/eC5500.png"
+                    src="/images/Printers-Plotters/eC5500.webp"
                     alt=""
                   />
                   <div className="flex flex-col items-center lg:items-start p-5 pt-1">
@@ -122,7 +122,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/C5200.png"
+                    src="/images/Printers-Plotters/C5200.webp"
                     alt=""
                   />
 
@@ -159,7 +159,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/C554-C654-C754.png"
+                    src="/images/Printers-Plotters/C554-C654-C754.webp"
                     alt=""
                   />
 
@@ -197,7 +197,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/C7100s-C7110s.png"
+                    src="/images/Printers-Plotters/C7100s-C7110s.webp"
                     alt=""
                   />
 
@@ -235,7 +235,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/MFC-L3760.png"
+                    src="/images/Printers-Plotters/MFC-L3760.webp"
                     alt=""
                   />
 
@@ -272,7 +272,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/MFP-M477.png"
+                    src="/images/Printers-Plotters/MFP-M477.webp"
                     alt=""
                   />
 
@@ -309,7 +309,7 @@ const PrintPlot = () => {
                 <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Printers-Plotters/5003i-5004i.png"
+                    src="/images/Printers-Plotters/5003i-5004i.webp"
                     alt=""
                   />
 

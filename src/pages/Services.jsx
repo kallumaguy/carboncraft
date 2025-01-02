@@ -82,7 +82,7 @@ const Services = () => {
                 <div className="max-w-xl bg-orange-gradient rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Services/for-office.png"
+                    src="/images/Services/for-office.webp"
                     alt="Rent Printer"
                   />
                   <div className="p-5">
@@ -125,7 +125,7 @@ const Services = () => {
                 <div className="max-w-xl bg-orange-gradient rounded-2xl shadow-md">
                   <img
                     className="rounded-3xl p-3 "
-                    src="/images/Services/for-events.png"
+                    src="/images/Services/for-events.webp"
                     alt="AMC"
                   />
                   <div className="p-5">
@@ -193,9 +193,14 @@ const Services = () => {
           >
             <div className="p-3 md:p-5">
               <img
-                className="lg:max-w-lg rounded-2xl"
-                src="/images/Services/AMC.png"
+                className=" block lg:hidden xl:block lg:max-w-lg rounded-2xl"
+                src="/images/Services/AMC.webp"
                 alt="Rent Printer"
+              />
+              <img 
+              className="hidden lg:block xl:hidden lg:max-w-md rounded-2xl"
+              src="/images/Services/AMC-lg.png"
+              alt="Rent Printer"
               />
             </div>
             <div className="p-5 lg:p-6">
@@ -212,7 +217,7 @@ const Services = () => {
               </p>
               <a
                 href="https://forms.gle/myxeudb1XLXuZy2f7"
-                className="inline-flex items-center px-3 py-2 text-md font-body font-medium text-center text-white bg-blue-prime rounded-lg shadow-md focus:ring-1 focus:outline-none focus:ring-gray-300"
+                className="inline-flex items-center px-3 py-2 mb-3 text-md font-body font-medium text-center text-white bg-blue-prime rounded-lg shadow-md focus:ring-1 focus:outline-none focus:ring-gray-300"
               >
                 Get Quote
                 <svg
@@ -260,11 +265,15 @@ const Services = () => {
             data-aos="fade-up"
           >
             <div className="p-3 md:p-5">
-            <img
-              className="lg:max-w-lg rounded-2xl"
-              src="/images/Services/contract-info.png"
-              alt="Rent Printer"
-            />
+              <img
+                className="block lg:hidden xl:block lg:max-w-lg rounded-2xl"
+                src="/images/Services/contract-info.webp"
+                alt="Rent Printer"
+              />
+              <img 
+              className="hidden lg:block xl:hidden lg:max-w-md rounded-2xl"
+              src="/images/Services/contract-info-lg.png"
+              alt="Rent Printer"/>
             </div>
 
             <div className="p-5">
@@ -274,7 +283,7 @@ const Services = () => {
               <h1 className="text-2xl md:text-4xl font-bold font-heading text-gray-800 leading-tight my-3">
                 Our AMC includes
               </h1>
-              <p className="text-xl font-body font-normal text-gray-700">
+              <p className="text-base md:text-xl font-body font-normal text-gray-700">
                 <ul className=" mt-2 space-y-2">
                   {[
                     "Periodic check-up to ensure trouble-free operation.",
@@ -323,13 +332,13 @@ const Services = () => {
             </h1>
           </div>
 
-          <div className="mt-[4rem] flex flex-col md:grid grid-cols-2 xl:grid-cols-4 gap-4">
+          <div className="mt-[4rem] flex flex-col md:grid grid-cols-2 xl:grid-cols-2 gap-4 ">
             <div className="mb-5 md:pb-0" data-aos="fade-up">
-              <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
+              <div className=" bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <NavLink to="/Desktops-and-Laptops">
                   <img
                     className="rounded-3xl p-3"
-                    src="/images/Services/desktops-and-laptops.png"
+                    src="/images/Services/desktops-and-laptops.webp"
                     alt="Rent Printer"
                   />
                   <div className="p-5">
@@ -349,11 +358,11 @@ const Services = () => {
             </div>
 
             <div className="mb-5 md:pb-0" data-aos="fade-up">
-              <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
+              <div className=" bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <NavLink to="/Furnitures">
                   <img
-                    className="rounded-3xl p-3"
-                    src="/images/Services/furnitures.png"
+                    className="rounded-3xl p-3 "
+                    src="/images/Services/furnitures.webp"
                     alt="Rent Printer"
                   />
                   <div className="p-5">
@@ -361,10 +370,11 @@ const Services = () => {
                       Furnitures
                     </h5>
                     <p className="mb-3 font-normal font-body text-gray-700 dark:text-gray-400">
-                      Discover our range of ergonomic chairs and modern desks,
-                      thoughtfully designed to provide maximum comfort and
-                      improve productivity. Perfect for creating a workspace
-                      that supports focus, efficiency, and overall well-being.
+                      Discover our extensive range of ergonomic chairs and
+                      modern desks, thoughtfully designed to provide maximum
+                      comfort and significantly improve productivity. Perfect
+                      for creating a workspace that supports focus, efficiency,
+                      and overall well-being.
                     </p>
                   </div>
                 </NavLink>
@@ -372,10 +382,10 @@ const Services = () => {
             </div>
 
             <div className="mb-5 md:pb-0" data-aos="fade-up">
-              <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
+              <div className=" bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Services/office-stationary.png"
+                  src="/images/Services/office-stationary.webp"
                   alt="Rent Printer"
                 />
 
@@ -395,10 +405,10 @@ const Services = () => {
             </div>
 
             <div className="mb-5 md:pb-0" data-aos="fade-up">
-              <div className="lg:max-w-xl bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
+              <div className=" bg-white border-2 border-primary rounded-2xl shadow-md min-h-[350px]">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Services/printer-consumables.png"
+                  src="/images/Services/printer-consumables.webp"
                   alt="Rent Printer"
                 />
 

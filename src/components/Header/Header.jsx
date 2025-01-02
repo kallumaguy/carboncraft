@@ -85,20 +85,20 @@ const Header = () => {
   return (
     <div className="fixed top-0 left-0 right-0 bg-white z-50">
       <nav className="border-b border-gray-200 p-3 rounded">
-        <div className="mx-auto flex flex-wrap items-center justify-between">
+        <div className="mx-5 flex flex-wrap items-center justify-between">
           <NavLink to="/" className="flex">
             <img
               className="img"
               loading="lazy"
               decoding="async"
-              src="images/Header/navbar-icon.png"
-              width={50}
+              src="images/Header/carboncraft-navlogo.png"
+              width={160}
               height={40}
               alt=""
             />
-            <span className="self-center text-lg font-heading font-semibold whitespace-nowrap">
+            {/* <span className="self-center text-lg font-heading font-semibold whitespace-nowrap">
               CarbonCraft
-            </span>
+            </span> */}
           </NavLink>
           <button
             ref={buttonRef}

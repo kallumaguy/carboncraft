@@ -44,7 +44,7 @@ const DeskLap = () => {
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Desktops-Laptops/laptop-pc.png"
+                  src="/images/Desktops-Laptops/laptop-pc.webp"
                   alt=""
                 />
 
@@ -87,7 +87,7 @@ const DeskLap = () => {
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Desktops-Laptops/desktop-pc.png"
+                  src="/images/Desktops-Laptops/desktop-pc.webp"
                   alt=""
                 />
 
@@ -130,7 +130,7 @@ const DeskLap = () => {
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Desktops-Laptops/gaming-system.png"
+                  src="/images/Desktops-Laptops/gaming-system.webp"
                   alt=""
                 />
 
@@ -177,7 +177,7 @@ const DeskLap = () => {
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Desktops-Laptops/chromebook.png"
+                  src="/images/Desktops-Laptops/chromebook.webp"
                   alt=""
                 />
                 <div className="p-5">
@@ -219,7 +219,7 @@ const DeskLap = () => {
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Desktops-Laptops/tablets.png"
+                  src="/images/Desktops-Laptops/tablets.webp"
                   alt=""
                 />
 
@@ -262,7 +262,7 @@ const DeskLap = () => {
               <div className="max-w-sm bg-white border-2 border-white rounded-2xl shadow-md">
                 <img
                   className="rounded-3xl p-3"
-                  src="/images/Desktops-Laptops/server-systems.png"
+                  src="/images/Desktops-Laptops/server-systems.webp"
                   alt=""
                 />
 

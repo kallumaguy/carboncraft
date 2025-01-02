@@ -19,6 +19,7 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
   
+    
 
   useEffect(() => {
     AOS.init({
@@ -202,12 +203,13 @@ const Home = () => {
 
             {/* Right Section */}
             <div className="relative w-full md:w-1/2 mt-10 md:mt-0 hidden lg:flex items-center justify-center">
+            
               <div className="relative w-[27rem] h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
                 {/* Image for 3D effect */}
                 <img
                   className=" bottom-8 max-w-[42rem] "
                   src="/images/Home/hero-3d.png"
-                  alt="Office Image"
+                  alt="Office 3d"
                 />
               </div>
             </div>
@@ -271,7 +273,7 @@ const Home = () => {
             data-aos="fade-up"
           >
             <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
-              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
+              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -298,7 +300,7 @@ const Home = () => {
             </div>
 
             <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
-              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
+              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -323,7 +325,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
-              <div className="mx-4 xl:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
+              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
