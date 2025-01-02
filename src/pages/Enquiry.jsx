@@ -243,7 +243,7 @@ const Enquiry = () => {
       }
 
       // Send the selected form data to the backend
-      await axios.post("http://localhost:5000/send-email", payload);
+      await axios.post("https://carboncraft.onrender.com/send-email", payload);
 
       // Set the toast message for success
       setToastMessage("Form submitted successfully!");
