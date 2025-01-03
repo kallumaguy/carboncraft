@@ -29,11 +29,13 @@ const Enquiry = () => {
     organization: "",
     email: "",
     phone: "",
-    rentalPeriod: [],
-    preferredBrands: "",
-    product: "",
+    emirate:[],
+    rentalPeriod: "",
+    product: [],
+    preferredBrands: [],
     otherProduct: "",
-    files: [],
+    specialRequirements:"",
+    files: "",
   });
 
   const [furnitureFormData, setFurnitureFormData] = useState({
@@ -41,13 +43,23 @@ const Enquiry = () => {
     organization: "",
     email: "",
     phone: "",
-    emirates: [], // Array to hold selected emirates
+    emirate: [], // Array to hold selected emirates
     enquireFor: "", // Single value for rental or purchase
     furnitureTypes: [], // Array to hold selected furniture types
     furnitureOther: "", // For "Other" input
     requirements: "", // Specify requirements textarea
     specialRequests: "", // Special requests textarea
-    files: [], // For file uploads
+    files: "", // For file uploads
+  });
+
+  const [otherFormData, setOtherFormData] = useState({
+    name: "",
+    organization: "",
+    email: "",
+    phone: "",
+    emirate: [],
+    Requirements: "",
+    files: ""
   });
 
   const [isUploading, setIsUploading] = useState(false); // State to track upload progress
@@ -197,9 +209,39 @@ const Enquiry = () => {
     }
   };
 
-  console.log(formData);
-  console.log(systemFormData);
-  console.log(furnitureFormData);
+  const handleOtherChange = (e) => {
+    // eslint-disable-next-line no-unused-vars
+    const { name, value, checked, type, files } = e.target;
+
+    if (type === "file") {
+      handleFileChange(e); // Handle file upload change
+    } else if (type === "checkbox") {
+      // Handling checkbox input
+      const currentValues = otherFormData[name] || [];
+      if (checked) {
+        setOtherFormData({
+          ...otherFormData,
+          [name]: [...currentValues, value],
+        });
+      } else {
+        setOtherFormData({
+          ...otherFormData,
+          [name]: currentValues.filter((v) => v !== value),
+        });
+      }
+    } else {
+      // Handling other input types (text, radio, etc.)
+      setOtherFormData({
+        ...otherFormData,
+        [name]: value,
+      });
+    }
+  };
+
+  // console.log(formData);
+  // console.log(systemFormData);
+  // console.log(furnitureFormData);
+  // console.log(otherFormData);
 
   // eslint-disable-next-line react/prop-types
   const Toast = ({ message, onClose }) => (
@@ -228,17 +270,24 @@ const Enquiry = () => {
       if (selectedItem === "Systems") {
         payload = {
           formName: selectedItem,
-          formData: systemFormData, // Replace with your actual system form data state
+          formData: systemFormData, //  your actual system form data state
         };
       } else if (selectedItem === "Furnitures") {
         payload = {
           formName: selectedItem,
-          formData: furnitureFormData, // Replace with your actual furniture form data state
+          formData: furnitureFormData, //  your actual furniture form data state
         };
-      } else {
+      } 
+      else if (selectedItem === "other"){
         payload = {
           formName: selectedItem,
-          formData, // Default to the existing formData state
+          formData: otherFormData, 
+        };
+      }
+      else {
+        payload = {
+          formName: selectedItem,
+          formData, // Default to the printer formData state
         };
       }
 
@@ -512,8 +561,8 @@ const Enquiry = () => {
         className="space-y-4 font-body p-4 "
         onSubmit={(e) => handleSubmit(e)}
       >
-        {/* First Row: Name and Organization */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+         {/* First Row: Name and Organization */}
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
             <span className="text-gray-800 font-semibold">Name *</span>
             <input
@@ -641,6 +690,7 @@ const Enquiry = () => {
                   id={`product-${index}`}
                   name="product"
                   onChange={handleSystemChange}
+                  value={product}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
                 <label
@@ -658,6 +708,7 @@ const Enquiry = () => {
                 type="checkbox"
                 id="product-other"
                 name="product"
+                
                 className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 onChange={(e) => {
                   const otherInput = document.getElementById(
@@ -912,8 +963,9 @@ const Enquiry = () => {
                 <input
                   type="checkbox"
                   id={`furniture-${index}`}
-                  name="furnitureType"
+                  name="furnitureTypes"
                   onChange={handleFurnitureChange}
+                  value={furniture}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
                 <label htmlFor={`furniture-${index}`} className="text-gray-700">
@@ -985,16 +1037,42 @@ const Enquiry = () => {
             Upload your Trade License & TRN Certificate
           </span>
           <p className="text-sm text-gray-500 mb-2">
-            Upload up to 5 supported files: PDF, document, or image. Max 10 MB
-            per file.
+            Upload supported image files (JPEG, PNG), Max size 5 MB per file.
           </p>
           <input
             type="file"
-            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+            name="files"
+            accept=".jpg,.jpeg,.png,.pdf"
+            onChange={handleFurnitureChange}
             multiple
             className="block w-full mt-1 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
         </label>
+
+        {/* Loading UI while file is uploading */}
+        {isUploading && (
+          <div className="mt-4 ">
+            <output className="spinner-border animate-spin">
+              <span className="sr-only">Uploading...</span>
+            </output>
+            <p className="text-sm text-gray-600">Uploading...</p>
+          </div>
+        )}
+
+        {/* Success: Show tick icon after file is uploaded */}
+        {fileUrl && !isUploading && (
+          <div className="mt-2 flex items-center space-x-2">
+            <IoIosCheckmarkCircle className="text-green-500 w-9 h-9 " />
+            <p className="text-sm text-gray-600">File selected!</p>
+          </div>
+        )}
+
+        {/* Error message */}
+        {uploadError && (
+          <div className="mt-2">
+            <p className="text-sm text-red-600">{uploadError}</p>
+          </div>
+        )}
 
         {/* Submit Button */}
         <button
@@ -1019,7 +1097,7 @@ const Enquiry = () => {
               type="text"
               required
               name="name"
-              onChange={handleChange}
+              onChange={handleOtherChange}
               placeholder="Enter your name"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             />
@@ -1029,7 +1107,7 @@ const Enquiry = () => {
             <input
               type="text"
               name="organization"
-              onChange={handleChange}
+              onChange={handleOtherChange}
               required
               placeholder="Enter your organization"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -1044,7 +1122,7 @@ const Enquiry = () => {
             <input
               type="email"
               name="email"
-              onChange={handleChange}
+              onChange={handleOtherChange}
               placeholder="Enter your email"
               required
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -1055,7 +1133,7 @@ const Enquiry = () => {
             <input
               type="text"
               name="phone"
-              onChange={handleChange}
+              onChange={handleOtherChange}
               required
               placeholder="Enter your phone number"
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -1082,7 +1160,7 @@ const Enquiry = () => {
                   type="checkbox"
                   id={`emirate-${index}`}
                   name="emirate"
-                  onChange={handleChange}
+                  onChange={handleOtherChange}
                   value={emirate}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 />
@@ -1097,15 +1175,13 @@ const Enquiry = () => {
           </div>
         </div>
 
-        {/* Special Requirements */}
+        {/* Requirements */}
         <label className="block">
-          <span className="text-gray-800 font-semibold">
-            Special Requirements
-          </span>
+          <span className="text-gray-800 font-semibold">Requirements</span>
           <textarea
-            placeholder="Enter any special requirements here"
-            name="specialRequirements"
-            onChange={handleChange}
+            placeholder="Enter any requirements here"
+            name="Requirements"
+            onChange={handleOtherChange}
             rows="4"
             className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 resize-none"
           ></textarea>
@@ -1123,7 +1199,7 @@ const Enquiry = () => {
             type="file"
             name="files"
             accept=".jpg,.jpeg,.png,.pdf"
-            onChange={handleChange}
+            onChange={handleOtherChange}
             multiple
             className="block w-full mt-1 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
