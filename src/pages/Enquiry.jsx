@@ -108,10 +108,27 @@ const Enquiry = () => {
         );
         const fileUrl = response.data.secure_url;
 
-        setFormData((prevFormData) => ({
-          ...prevFormData,
-          files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
-        }));
+        if (selectedItem === "Printers") {
+          setFormData((prevFormData) => ({
+            ...prevFormData,
+            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+          }));
+        } else if (selectedItem === "Systems") {
+          setSystemFormData((prevFormData) => ({
+            ...prevFormData,
+            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+          }));
+        } else if (selectedItem === "Furnitures") {
+          setFurnitureFormData((prevFormData) => ({
+            ...prevFormData,
+            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+          }));
+        } else {
+          setOtherFormData((prevFormData) => ({
+            ...prevFormData,
+            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+          }));
+        }
 
         setFileUrl(fileUrl); // Save the uploaded file URL
         setIsUploading(false); // Stop the loading UI after upload
@@ -242,7 +259,7 @@ const Enquiry = () => {
   // console.log(formData);
   // console.log(systemFormData);
   // console.log(furnitureFormData);
-  // console.log(otherFormData);
+  console.log(otherFormData);
 
   // eslint-disable-next-line react/prop-types
   const Toast = ({ message, onClose }) => (
@@ -715,6 +732,7 @@ const Enquiry = () => {
                 type="checkbox"
                 id="product-other"
                 name="product"
+                value="Other"
                 className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 onChange={(e) => {
                   const otherInput = document.getElementById(
@@ -723,6 +741,9 @@ const Enquiry = () => {
                   otherInput.style.display = e.target.checked
                     ? "block"
                     : "none";
+                  if (!e.target.checked) {
+                    otherInput.value = ""; // Clear the input value when unchecked
+                  }
                 }}
               />
               <label htmlFor="product-other" className="ml-2 text-gray-700">
@@ -738,6 +759,22 @@ const Enquiry = () => {
             placeholder="Please specify"
             className="block w-full mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             style={{ display: "none" }} // Initially hidden
+            onBlur={(e) => {
+              const value = e.target.value.trim();
+              const otherCheckbox = document.getElementById("product-other");
+              if (value && otherCheckbox.checked) {
+                // Dynamically update the checkbox value
+                otherCheckbox.value = value;
+                handleSystemChange({
+                  target: {
+                    name: "product",
+                    value,
+                    checked: true,
+                    type: "checkbox",
+                  },
+                });
+              }
+            }}
           />
         </div>
 
@@ -990,6 +1027,8 @@ const Enquiry = () => {
               <input
                 type="checkbox"
                 id="furniture-other"
+                name="furnitureTypes"
+                value="Other"
                 className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 onChange={(e) => {
                   const otherInput = document.getElementById(
@@ -998,6 +1037,9 @@ const Enquiry = () => {
                   otherInput.style.display = e.target.checked
                     ? "block"
                     : "none";
+                  if (!e.target.checked) {
+                    otherInput.value = ""; // Clear the input value when unchecked
+                  }
                 }}
               />
               <label htmlFor="furniture-other" className="text-gray-700">
@@ -1013,6 +1055,22 @@ const Enquiry = () => {
             placeholder="Please specify"
             className="block w-full mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             style={{ display: "none" }} // Initially hidden
+            onBlur={(e) => {
+              const value = e.target.value.trim();
+              const otherCheckbox = document.getElementById("furniture-other");
+              if (value && otherCheckbox.checked) {
+                // Dynamically update the checkbox value
+                otherCheckbox.value = value;
+                handleFurnitureChange({
+                  target: {
+                    name: "furnitureTypes",
+                    value,
+                    checked: true,
+                    type: "checkbox",
+                  },
+                });
+              }
+            }}
           />
         </label>
 
@@ -1249,8 +1307,8 @@ const Enquiry = () => {
           </div>
         )}
 
-         {/* Submit Button */}
-         <button
+        {/* Submit Button */}
+        <button
           type="submit"
           disabled={loading} // Disable button when loading
           className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
