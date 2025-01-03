@@ -29,12 +29,12 @@ const Enquiry = () => {
     organization: "",
     email: "",
     phone: "",
-    emirate:[],
+    emirate: [],
     rentalPeriod: "",
     product: [],
-    preferredBrands: [],
+    brand: [],
     otherProduct: "",
-    specialRequirements:"",
+    specialRequirements: "",
     files: "",
   });
 
@@ -59,12 +59,13 @@ const Enquiry = () => {
     phone: "",
     emirate: [],
     Requirements: "",
-    files: ""
+    files: "",
   });
 
   const [isUploading, setIsUploading] = useState(false); // State to track upload progress
   const [fileUrl, setFileUrl] = useState(""); // State to store the uploaded file URL
   const [uploadError, setUploadError] = useState(""); // State to store upload errors
+  const [loading, setLoading] = useState(false); // State to manage loading
 
   useEffect(() => {
     document.title = " Enquiry | Carbon Craft";
@@ -260,9 +261,9 @@ const Enquiry = () => {
   const [toastMessage, setToastMessage] = useState("");
   const navigate = useNavigate();
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state to true when submission starts
 
     try {
       let payload = {};
@@ -270,21 +271,19 @@ const Enquiry = () => {
       if (selectedItem === "Systems") {
         payload = {
           formName: selectedItem,
-          formData: systemFormData, //  your actual system form data state
+          formData: systemFormData, // Your actual system form data state
         };
       } else if (selectedItem === "Furnitures") {
         payload = {
           formName: selectedItem,
-          formData: furnitureFormData, //  your actual furniture form data state
+          formData: furnitureFormData, // Your actual furniture form data state
         };
-      } 
-      else if (selectedItem === "other"){
+      } else if (selectedItem === "other") {
         payload = {
           formName: selectedItem,
-          formData: otherFormData, 
+          formData: otherFormData,
         };
-      }
-      else {
+      } else {
         payload = {
           formName: selectedItem,
           formData, // Default to the printer formData state
@@ -311,6 +310,8 @@ const Enquiry = () => {
 
       // Automatically close toast after 3 seconds
       setTimeout(() => setShowToast(false), 3000);
+    } finally {
+      setLoading(false); // Reset loading state once the operation is complete
     }
   };
 
@@ -546,10 +547,16 @@ const Enquiry = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow focus:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          disabled={loading} // Disable button when loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
+              : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
+          }`}
         >
-          Submit
+          {loading ? "Submitting..." : "Submit"}
         </button>
+
         {showToast && (
           <Toast message={toastMessage} onClose={() => setShowToast(false)} />
         )}
@@ -561,8 +568,8 @@ const Enquiry = () => {
         className="space-y-4 font-body p-4 "
         onSubmit={(e) => handleSubmit(e)}
       >
-         {/* First Row: Name and Organization */}
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* First Row: Name and Organization */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="block ">
             <span className="text-gray-800 font-semibold">Name *</span>
             <input
@@ -708,7 +715,6 @@ const Enquiry = () => {
                 type="checkbox"
                 id="product-other"
                 name="product"
-                
                 className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 onChange={(e) => {
                   const otherInput = document.getElementById(
@@ -752,7 +758,7 @@ const Enquiry = () => {
                 <input
                   type="checkbox"
                   id={`brand-${index}`}
-                  name="preferredBrands"
+                  name="brand"
                   onChange={handleSystemChange}
                   value={brand}
                   className="mr-2 rounded border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -828,9 +834,14 @@ const Enquiry = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow focus:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          disabled={loading} // Disable button when loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
+              : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
+          }`}
         >
-          Submit
+          {loading ? "Submitting..." : "Submit"}
         </button>
         {showToast && (
           <Toast message={toastMessage} onClose={() => setShowToast(false)} />
@@ -1077,10 +1088,18 @@ const Enquiry = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow focus:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          disabled={loading} // Disable button when loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
+              : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
+          }`}
         >
-          Submit
+          {loading ? "Submitting..." : "Submit"}
         </button>
+        {showToast && (
+          <Toast message={toastMessage} onClose={() => setShowToast(false)} />
+        )}
       </form>
     ),
     other: (
@@ -1230,12 +1249,17 @@ const Enquiry = () => {
           </div>
         )}
 
-        {/* Submit Button */}
-        <button
+         {/* Submit Button */}
+         <button
           type="submit"
-          className="px-6 py-2 text-white font-body bg-primary rounded-md shadow hover:bg-orange-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          disabled={loading} // Disable button when loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
+              : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
+          }`}
         >
-          Submit
+          {loading ? "Submitting..." : "Submit"}
         </button>
         {showToast && (
           <Toast message={toastMessage} onClose={() => setShowToast(false)} />
