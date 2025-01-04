@@ -33,7 +33,6 @@ const Enquiry = () => {
     rentalPeriod: "",
     product: [],
     brand: [],
-    otherProduct: "",
     specialRequirements: "",
     files: "",
   });
@@ -46,7 +45,6 @@ const Enquiry = () => {
     emirate: [], // Array to hold selected emirates
     enquireFor: "", // Single value for rental or purchase
     furnitureTypes: [], // Array to hold selected furniture types
-    furnitureOther: "", // For "Other" input
     requirements: "", // Specify requirements textarea
     specialRequests: "", // Special requests textarea
     files: "", // For file uploads
@@ -108,27 +106,10 @@ const Enquiry = () => {
         );
         const fileUrl = response.data.secure_url;
 
-        if (selectedItem === "Printers") {
-          setFormData((prevFormData) => ({
-            ...prevFormData,
-            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
-          }));
-        } else if (selectedItem === "Systems") {
-          setSystemFormData((prevFormData) => ({
-            ...prevFormData,
-            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
-          }));
-        } else if (selectedItem === "Furnitures") {
-          setFurnitureFormData((prevFormData) => ({
-            ...prevFormData,
-            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
-          }));
-        } else {
-          setOtherFormData((prevFormData) => ({
-            ...prevFormData,
-            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
-          }));
-        }
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+        }));
 
         setFileUrl(fileUrl); // Save the uploaded file URL
         setIsUploading(false); // Stop the loading UI after upload
@@ -169,12 +150,56 @@ const Enquiry = () => {
     }
   };
 
-  const handleSystemChange = (e) => {
-    // eslint-disable-next-line no-unused-vars
+  const handleSystemChange = async (e) => {
     const { name, value, checked, type, files } = e.target;
-
+  
     if (type === "file") {
-      handleFileChange(e); // Handle file upload change
+      // Handle file uploads
+      const selectedFiles = Array.from(files); // Convert FileList to Array
+      const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+  
+      setIsUploading(true); // Set uploading state to true to show loading UI
+  
+      for (const file of selectedFiles) {
+        if (!allowedTypes.includes(file.type)) {
+          alert(
+            `Invalid file type: ${file.name}. Only images and PDFs are allowed.`
+          );
+          setIsUploading(false); // Stop loading spinner on error
+          return;
+        }
+  
+        if (file.size > maxSize) {
+          alert(`File size exceeds the 5MB limit: ${file.name}`);
+          setIsUploading(false); // Stop loading spinner on error
+          return;
+        }
+  
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "carbon_preset");
+  
+        try {
+          const response = await axios.post(
+            "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload",
+            formData
+          );
+          const fileUrl = response.data.secure_url;
+  
+          setSystemFormData((prevFormData) => ({
+            ...prevFormData,
+            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+          }));
+  
+          setFileUrl(fileUrl); // Save the uploaded file URL
+        } catch (error) {
+          console.error(`Error uploading ${file.name}:`, error);
+          setUploadError(`Failed to upload ${file.name}.`);
+        } finally {
+          setIsUploading(false); // Stop the loading UI after upload or error
+        }
+      }
     } else if (type === "checkbox") {
       // Handling checkbox input
       const currentValues = systemFormData[name] || [];
@@ -197,13 +222,58 @@ const Enquiry = () => {
       });
     }
   };
+  
 
-  const handleFurnitureChange = (e) => {
-    // eslint-disable-next-line no-unused-vars
+  const handleFurnitureChange = async (e) => {
     const { name, value, checked, type, files } = e.target;
-
+  
     if (type === "file") {
-      handleFileChange(e); // Handle file upload change
+      // Handle file uploads
+      const selectedFiles = Array.from(files); // Convert FileList to Array
+      const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+  
+      setIsUploading(true); // Set uploading state to true to show loading UI
+  
+      for (const file of selectedFiles) {
+        if (!allowedTypes.includes(file.type)) {
+          alert(
+            `Invalid file type: ${file.name}. Only images and PDFs are allowed.`
+          );
+          setIsUploading(false); // Stop loading spinner on error
+          return;
+        }
+  
+        if (file.size > maxSize) {
+          alert(`File size exceeds the 5MB limit: ${file.name}`);
+          setIsUploading(false); // Stop loading spinner on error
+          return;
+        }
+  
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "carbon_preset");
+  
+        try {
+          const response = await axios.post(
+            "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload",
+            formData
+          );
+          const fileUrl = response.data.secure_url;
+  
+          setFurnitureFormData((prevFormData) => ({
+            ...prevFormData,
+            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+          }));
+  
+          setFileUrl(fileUrl); // Save the uploaded file URL
+        } catch (error) {
+          console.error(`Error uploading ${file.name}:`, error);
+          setUploadError(`Failed to upload ${file.name}.`);
+        } finally {
+          setIsUploading(false); // Stop the loading UI after upload or error
+        }
+      }
     } else if (type === "checkbox") {
       // Handling checkbox input
       const currentValues = furnitureFormData[name] || [];
@@ -226,13 +296,58 @@ const Enquiry = () => {
       });
     }
   };
+  
 
-  const handleOtherChange = (e) => {
-    // eslint-disable-next-line no-unused-vars
+  const handleOtherChange = async (e) => {
     const { name, value, checked, type, files } = e.target;
-
+  
     if (type === "file") {
-      handleFileChange(e); // Handle file upload change
+      // Handle file uploads
+      const selectedFiles = Array.from(files); // Convert FileList to Array
+      const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+  
+      setIsUploading(true); // Set uploading state to true to show loading UI
+  
+      for (const file of selectedFiles) {
+        if (!allowedTypes.includes(file.type)) {
+          alert(
+            `Invalid file type: ${file.name}. Only images and PDFs are allowed.`
+          );
+          setIsUploading(false); // Stop loading spinner on error
+          return;
+        }
+  
+        if (file.size > maxSize) {
+          alert(`File size exceeds the 5MB limit: ${file.name}`);
+          setIsUploading(false); // Stop loading spinner on error
+          return;
+        }
+  
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "carbon_preset");
+  
+        try {
+          const response = await axios.post(
+            "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload",
+            formData
+          );
+          const fileUrl = response.data.secure_url;
+  
+          setOtherFormData((prevFormData) => ({
+            ...prevFormData,
+            files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
+          }));
+  
+          setFileUrl(fileUrl); // Save the uploaded file URL
+        } catch (error) {
+          console.error(`Error uploading ${file.name}:`, error);
+          setUploadError(`Failed to upload ${file.name}.`);
+        } finally {
+          setIsUploading(false); // Stop the loading UI after upload or error
+        }
+      }
     } else if (type === "checkbox") {
       // Handling checkbox input
       const currentValues = otherFormData[name] || [];
@@ -255,6 +370,7 @@ const Enquiry = () => {
       });
     }
   };
+  
 
   // console.log(formData);
   // console.log(systemFormData);

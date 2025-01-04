@@ -91,7 +91,7 @@ const Header = () => {
               className="img"
               loading="lazy"
               decoding="async"
-              src="images/Header/carboncraft-navlogo.png"
+              src="images/Header/carboncraft-navlogo.webp"
               width={190}
               height={40}
               alt=""
