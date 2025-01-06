@@ -152,15 +152,15 @@ const Enquiry = () => {
 
   const handleSystemChange = async (e) => {
     const { name, value, checked, type, files } = e.target;
-  
+
     if (type === "file") {
       // Handle file uploads
       const selectedFiles = Array.from(files); // Convert FileList to Array
       const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
       const maxSize = 5 * 1024 * 1024; // 5MB
-  
+
       setIsUploading(true); // Set uploading state to true to show loading UI
-  
+
       for (const file of selectedFiles) {
         if (!allowedTypes.includes(file.type)) {
           alert(
@@ -169,29 +169,29 @@ const Enquiry = () => {
           setIsUploading(false); // Stop loading spinner on error
           return;
         }
-  
+
         if (file.size > maxSize) {
           alert(`File size exceeds the 5MB limit: ${file.name}`);
           setIsUploading(false); // Stop loading spinner on error
           return;
         }
-  
+
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", "carbon_preset");
-  
+
         try {
           const response = await axios.post(
             "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload",
             formData
           );
           const fileUrl = response.data.secure_url;
-  
+
           setSystemFormData((prevFormData) => ({
             ...prevFormData,
             files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
           }));
-  
+
           setFileUrl(fileUrl); // Save the uploaded file URL
         } catch (error) {
           console.error(`Error uploading ${file.name}:`, error);
@@ -222,19 +222,18 @@ const Enquiry = () => {
       });
     }
   };
-  
 
   const handleFurnitureChange = async (e) => {
     const { name, value, checked, type, files } = e.target;
-  
+
     if (type === "file") {
       // Handle file uploads
       const selectedFiles = Array.from(files); // Convert FileList to Array
       const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
       const maxSize = 5 * 1024 * 1024; // 5MB
-  
+
       setIsUploading(true); // Set uploading state to true to show loading UI
-  
+
       for (const file of selectedFiles) {
         if (!allowedTypes.includes(file.type)) {
           alert(
@@ -243,29 +242,29 @@ const Enquiry = () => {
           setIsUploading(false); // Stop loading spinner on error
           return;
         }
-  
+
         if (file.size > maxSize) {
           alert(`File size exceeds the 5MB limit: ${file.name}`);
           setIsUploading(false); // Stop loading spinner on error
           return;
         }
-  
+
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", "carbon_preset");
-  
+
         try {
           const response = await axios.post(
             "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload",
             formData
           );
           const fileUrl = response.data.secure_url;
-  
+
           setFurnitureFormData((prevFormData) => ({
             ...prevFormData,
             files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
           }));
-  
+
           setFileUrl(fileUrl); // Save the uploaded file URL
         } catch (error) {
           console.error(`Error uploading ${file.name}:`, error);
@@ -296,19 +295,18 @@ const Enquiry = () => {
       });
     }
   };
-  
 
   const handleOtherChange = async (e) => {
     const { name, value, checked, type, files } = e.target;
-  
+
     if (type === "file") {
       // Handle file uploads
       const selectedFiles = Array.from(files); // Convert FileList to Array
       const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
       const maxSize = 5 * 1024 * 1024; // 5MB
-  
+
       setIsUploading(true); // Set uploading state to true to show loading UI
-  
+
       for (const file of selectedFiles) {
         if (!allowedTypes.includes(file.type)) {
           alert(
@@ -317,29 +315,29 @@ const Enquiry = () => {
           setIsUploading(false); // Stop loading spinner on error
           return;
         }
-  
+
         if (file.size > maxSize) {
           alert(`File size exceeds the 5MB limit: ${file.name}`);
           setIsUploading(false); // Stop loading spinner on error
           return;
         }
-  
+
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", "carbon_preset");
-  
+
         try {
           const response = await axios.post(
             "https://api.cloudinary.com/v1_1/dw4cqeetr/image/upload",
             formData
           );
           const fileUrl = response.data.secure_url;
-  
+
           setOtherFormData((prevFormData) => ({
             ...prevFormData,
             files: [...(prevFormData.files || []), fileUrl], // Update formData with file URL
           }));
-  
+
           setFileUrl(fileUrl); // Save the uploaded file URL
         } catch (error) {
           console.error(`Error uploading ${file.name}:`, error);
@@ -370,12 +368,11 @@ const Enquiry = () => {
       });
     }
   };
-  
 
   // console.log(formData);
   // console.log(systemFormData);
   // console.log(furnitureFormData);
-  console.log(otherFormData);
+  // console.log(otherFormData);
 
   // eslint-disable-next-line react/prop-types
   const Toast = ({ message, onClose }) => (
@@ -654,10 +651,8 @@ const Enquiry = () => {
 
         {/* Loading UI while file is uploading */}
         {isUploading && (
-          <div className="mt-4 ">
-            <output className="spinner-border animate-spin">
-              <span className="sr-only">Uploading...</span>
-            </output>
+          <div className="mt-4 flex items-center space-x-2">
+            <div className="spinner-border animate-spin border-blue-500 border-2 border-t-transparent rounded-full h-6 w-6" />
             <p className="text-sm text-gray-600">Uploading...</p>
           </div>
         )}
@@ -961,10 +956,8 @@ const Enquiry = () => {
 
         {/* Loading UI while file is uploading */}
         {isUploading && (
-          <div className="mt-4 text-center">
-            <div className="spinner-border animate-spin" role="status">
-              <span className="sr-only">Uploading...</span>
-            </div>
+          <div className="mt-4 flex items-center space-x-2">
+            <div className="spinner-border animate-spin border-blue-500 border-2 border-t-transparent rounded-full h-6 w-6" />
             <p className="text-sm text-gray-600">Uploading...</p>
           </div>
         )}
@@ -1236,10 +1229,8 @@ const Enquiry = () => {
 
         {/* Loading UI while file is uploading */}
         {isUploading && (
-          <div className="mt-4 ">
-            <output className="spinner-border animate-spin">
-              <span className="sr-only">Uploading...</span>
-            </output>
+          <div className="mt-4 flex items-center space-x-2">
+            <div className="spinner-border animate-spin border-blue-500 border-2 border-t-transparent rounded-full h-6 w-6" />
             <p className="text-sm text-gray-600">Uploading...</p>
           </div>
         )}
@@ -1400,10 +1391,8 @@ const Enquiry = () => {
 
         {/* Loading UI while file is uploading */}
         {isUploading && (
-          <div className="mt-4 text-center">
-            <div className="spinner-border animate-spin" role="status">
-              <span className="sr-only">Uploading...</span>
-            </div>
+          <div className="mt-4 flex items-center space-x-2">
+            <div className="spinner-border animate-spin border-blue-500 border-2 border-t-transparent rounded-full h-6 w-6" />
             <p className="text-sm text-gray-600">Uploading...</p>
           </div>
         )}

@@ -8,9 +8,7 @@ import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const Home = () => {
-
   useEffect(() => {
     document.title = "Home | Carbon Craft";
   }, []);
@@ -18,8 +16,6 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
-    
 
   useEffect(() => {
     AOS.init({
@@ -127,6 +123,7 @@ const Home = () => {
             <div className="absolute top-1/2 left-1/2 w-40 h-40 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-24 h-24 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-1"></div>
           </div>
+          
           <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between z-10">
             {/* Left Section */}
             <div className="w-full md:w-1/2 text-center lg:text-left font-heading">
@@ -200,12 +197,9 @@ const Home = () => {
                 </NavLink>
               </ul>
             </div>
-
             {/* Right Section */}
             <div className="relative w-full md:w-1/2 mt-10 md:mt-0 hidden lg:flex items-center justify-center">
-            
               <div className="relative w-[27rem] h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
-                {/* Image for 3D effect */}
                 <img
                   className=" bottom-8 max-w-[42rem] "
                   src="/images/Home/hero-3d.png"
@@ -270,9 +264,9 @@ const Home = () => {
           </div>
           <div
             className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]"
-            data-aos="fade-up"
+            
           >
-            <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
+            <div className="col-span-1 transition-all duration-650 hover:scale-105 group" data-aos="fade-up">
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -299,7 +293,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
+            <div className="col-span-1 transition-all duration-650 hover:scale-105 group" data-aos="fade-up">
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +318,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="col-span-1 transition-all duration-650 hover:scale-105 group">
+            <div className="col-span-1 transition-all duration-650 hover:scale-105 group" data-aos="fade-up">
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -366,10 +360,7 @@ const Home = () => {
                 Discover what we can do for you
               </h1>
             </div>
-            <div
-              className="mt-[4rem] flex flex-col md:grid gap-4"
-              
-            >
+            <div className="mt-[4rem] flex flex-col md:grid gap-4">
               {/* Rent Printers */}
               <div className="col-span-1" data-aos="fade-up">
                 <div className="max-w-full flex flex-col md:flex-row md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
@@ -465,7 +456,7 @@ const Home = () => {
               </div>
 
               {/* Office essentials */}
-              <div className="col-span-1"  data-aos="fade-up">
+              <div className="col-span-1" data-aos="fade-up">
                 <div className="max-w-full flex flex-col md:flex-row md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
                   <img
                     className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
@@ -534,9 +525,9 @@ const Home = () => {
           </div>
           <div
             className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4"
-            data-aos="fade-up"
+            
           >
-            <div className="sm:mb-5 md:pb-0">
+            <div className="sm:mb-5 md:pb-0" data-aos="fade-up">
               <NavLink to="/Printers-and-Plotters">
                 <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
@@ -556,7 +547,7 @@ const Home = () => {
               </NavLink>
             </div>
 
-            <div className="sm:mb-5 md:pb-0">
+            <div className="sm:mb-5 md:pb-0" data-aos="fade-up">
               <NavLink to="/Desktops-and-Laptops">
                 <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
@@ -577,7 +568,7 @@ const Home = () => {
               </NavLink>
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <NavLink to="/Furnitures">
                 <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
