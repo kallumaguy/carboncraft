@@ -124,22 +124,22 @@ const Home = () => {
             <div className="absolute top-1/2 left-1/2 w-24 h-24 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-1"></div>
           </div>
           
-          <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-10 z-10">
+          <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 z-10">
             {/* Left Section */}
-            <div className="w-full md:w-1/2 text-center lg:text-left font-heading">
+            <div className="w-full md:w-1/2 text-center md:text-left font-heading">
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Office Solutions
               </span>
-              <h1 className="text-4xl md:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight">
+              <h1 className="text-3xl md:text-[2.2rem] lg:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight">
                 Rent Equipments, <br />
                 Enhance Your Workspace
               </h1>
-              <p className="text-xl text-gray-600 my-3">
+              <p className="text-base md:text-xl text-gray-600 my-3 leading-tight">
                 Our dedication to quality ensures the highest standards in all
                 our offerings.
               </p>
-              <ul className="text-lg mx-5 lg:mx-0 text-gray-600 leading-tight flex flex-col items-center justify-center lg:items-start">
-                <li className="hidden md:flex justify-center md:justify-start">
+              <ul className="text-lg mx-5 md:mx-0 text-gray-600 leading-tight flex flex-col items-center justify-center md:items-start">
+                <li className="hidden lg:flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -156,7 +156,7 @@ const Home = () => {
                   </svg>{" "}
                   Trusted Provider of Quality Services
                 </li>
-                <li className="hidden md:flex justify-center md:justify-start">
+                <li className="hidden lg:flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -176,7 +176,7 @@ const Home = () => {
                 <NavLink to="/Enquiry">
                   <button
                     type="button"
-                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-3 me-2 mt-5 transition-colors duration-400"
+                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-3 me-2 mt-1 md:mt-5 transition-colors duration-400"
                   >
                     Enquire Now{" "}
                     <svg
@@ -199,9 +199,9 @@ const Home = () => {
             </div>
             {/* Right Section */}
             <div className="relative w-full md:w-1/2 mt-10 md:mt-0 flex items-center justify-center">
-              <div className="relative w-[18rem] h-[18rem] md:w-[27rem] md:h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
+              <div className="relative w-48 h-48 md:w-[18rem] md:h-[18rem] lg:w-[27rem] lg:h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
                 <img
-                  className=" bottom-8 max-w-[28rem] md:max-w-[42rem] "
+                  className=" bottom-8 max-w-80 md:max-w-[28rem] lg:max-w-[42rem] "
                   src="/images/Home/hero-3d.png"
                   alt="Office 3d"
                   rel="preload"
