@@ -204,7 +204,7 @@ const Services = () => {
               />
             </div>
             <div className="p-5 lg:p-6">
-              <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight text-white">
+              <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight leading-tight text-white">
                 Annual Maintainance Contract
               </h5>
               <p className="mb-2 text-lg font-body font-normal text-white leading-normal">

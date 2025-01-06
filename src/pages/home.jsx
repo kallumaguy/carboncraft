@@ -202,7 +202,7 @@ const Home = () => {
               <div className="relative w-48 h-48 md:w-[18rem] md:h-[18rem] lg:w-[27rem] lg:h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
                 <img
                   className=" bottom-8 max-w-80 md:max-w-[28rem] lg:max-w-[42rem] "
-                  src="/images/Home/hero-3d.png"
+                  src="/images/Home/hero-3d.webp"
                   alt="Office 3d"
                   rel="preload"
                 />
