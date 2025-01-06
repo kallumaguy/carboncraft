@@ -204,6 +204,7 @@ const Home = () => {
                   className=" bottom-8 max-w-[42rem] "
                   src="/images/Home/hero-3d.png"
                   alt="Office 3d"
+                  rel="preload"
                 />
               </div>
             </div>
@@ -220,6 +221,7 @@ const Home = () => {
                 <img
                   className="img rounded-2xl h-[26rem] w-full shrink-0 overflow-hidden object-cover lg:h-[30rem] lg:max-w-[30rem]"
                   src="/images/Home/Carboncraft-office.png"
+                  rel="preload"
                   loading="lazy"
                   decoding="async"
                   alt="img"
