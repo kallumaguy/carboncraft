@@ -124,7 +124,7 @@ const Home = () => {
             <div className="absolute top-1/2 left-1/2 w-24 h-24 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-1"></div>
           </div>
           
-          <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between z-10">
+          <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-10 z-10">
             {/* Left Section */}
             <div className="w-full md:w-1/2 text-center lg:text-left font-heading">
               <span className="text-xl font-heading font-bold text-primary mb-3">
@@ -139,7 +139,7 @@ const Home = () => {
                 our offerings.
               </p>
               <ul className="text-lg mx-5 lg:mx-0 text-gray-600 leading-tight flex flex-col items-center justify-center lg:items-start">
-                <li className="flex justify-center md:justify-start">
+                <li className="hidden md:flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -156,7 +156,7 @@ const Home = () => {
                   </svg>{" "}
                   Trusted Provider of Quality Services
                 </li>
-                <li className="flex justify-center md:justify-start">
+                <li className="hidden md:flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -198,10 +198,10 @@ const Home = () => {
               </ul>
             </div>
             {/* Right Section */}
-            <div className="relative w-full md:w-1/2 mt-10 md:mt-0 hidden lg:flex items-center justify-center">
-              <div className="relative w-[27rem] h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
+            <div className="relative w-full md:w-1/2 mt-10 md:mt-0 flex items-center justify-center">
+              <div className="relative w-[18rem] h-[18rem] md:w-[27rem] md:h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
                 <img
-                  className=" bottom-8 max-w-[42rem] "
+                  className=" bottom-8 max-w-[28rem] md:max-w-[42rem] "
                   src="/images/Home/hero-3d.png"
                   alt="Office 3d"
                   rel="preload"
