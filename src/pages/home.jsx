@@ -386,7 +386,7 @@ const Home = () => {
                     <NavLink to="/services">
                       <button
                         type="button"
-                        className="flex md:hidden lg:flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
+                        className="flex md:hidden lg:flex text-white bg-primary lg:bg-blue-prime border-2 border-primary lg:border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
                       >
                         Know more{" "}
                         <svg
@@ -433,7 +433,7 @@ const Home = () => {
                     <NavLink to="/services#amc">
                       <button
                         type="button"
-                        className="flex md:hidden lg:flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
+                        className="flex md:hidden lg:flex text-white bg-primary lg:bg-blue-prime border-2 border-primary lg:border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
                       >
                         Know more{" "}
                         <svg
@@ -480,7 +480,7 @@ const Home = () => {
                     <NavLink to="/services#office-equipments">
                       <button
                         type="button"
-                        className="flex md:hidden lg:flex text-white bg-blue-prime border-2 border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
+                        className="flex md:hidden lg:flex text-white bg-primary lg:bg-blue-prime border-2 border-primary lg:border-blue-prime focus:outline-none focus:ring-1 focus:ring-gray-100 font-medium font-body rounded-xl shadow-md text-sm px-4 py-2.5 me-2 transition-all duration-250 ease-in-out hover:shadow-lg hover:scale-105"
                       >
                         Know more{" "}
                         <svg
