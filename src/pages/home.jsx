@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "Home | Carbon Craft";
+    document.title = "Printer Rentals UAE | Office Equipments | Carbon Craft";
   }, []);
 
   useEffect(() => {
