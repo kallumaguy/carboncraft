@@ -18,9 +18,27 @@ const PrintPlot = () => {
   return (
     <div className="mt-[3.6rem]">
       <section className="bg-printplot bg-cover">
+      <style>
+          {`
+           /* Keyframe for fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+       .animate-fadeIn {
+        animation: fadeIn 0.8s ease-in-out forwards;
+        opacity: 0;
+      }
+          `}
+        </style>
         <div className="py-[6rem] ">
           <div className="container mx-auto ">
-            <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading  text-background leading-tight my-3">
+            <h1 className="text-4xl md:text-[3.3rem] font-medium font-heading  text-background leading-tight my-3 animate-fadeIn">
               Printers and <br />
               Plotters
             </h1>

@@ -114,6 +114,41 @@ const Home = () => {
       <div className="mt-[3.6rem]">
         {/* Hero section */}
         <section className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-background z-10">
+          <style>
+            {`
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+              
+      /* Keyframe for fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.5s ease-in-out forwards;
+        opacity: 0;
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 0.8s ease-in-out forwards;
+        opacity: 0;
+      }
+    `}
+          </style>
           <div className="absolute top-10 right-0 z-0">
             <div className="absolute top-1/2 left-1/2 w-[30rem] h-[30rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-[26rem] h-[26rem] border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
@@ -123,23 +158,35 @@ const Home = () => {
             <div className="absolute top-1/2 left-1/2 w-40 h-40 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-3"></div>
             <div className="absolute top-1/2 left-1/2 w-24 h-24 border-2 border-gray-300 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-1"></div>
           </div>
-          
+
           <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 z-10">
             {/* Left Section */}
             <div className="w-full md:w-1/2 text-center md:text-left font-heading">
-              <span className="text-xl font-heading font-bold text-primary mb-3">
+              <span
+                className="text-xl font-heading font-bold text-primary mb-3 animate-fadeInUp"
+                style={{ animationDelay: "0.2s" }}
+              >
                 Office Solutions
               </span>
-              <h1 className="text-3xl md:text-[2.2rem] lg:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight">
+              <h1
+                className="text-3xl md:text-[2.2rem] lg:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight animate-fadeInUp"
+                style={{ animationDelay: "0.4s" }}
+              >
                 Rent Equipments, <br />
                 Enhance Your Workspace
               </h1>
-              <p className="text-base md:text-xl text-gray-600 my-3 leading-tight">
+              <p
+                className="text-base md:text-xl text-gray-600 my-3 leading-tight animate-fadeInUp"
+                style={{ animationDelay: "0.6s" }}
+              >
                 Our dedication to quality ensures the highest standards in all
                 our offerings.
               </p>
               <ul className="text-lg mx-5 md:mx-0 text-gray-600 leading-tight flex flex-col items-center justify-center md:items-start">
-                <li className="hidden lg:flex justify-center md:justify-start">
+                <li
+                  className="hidden lg:flex justify-center md:justify-start animate-fadeInUp"
+                  style={{ animationDelay: "0.8s" }}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -156,7 +203,10 @@ const Home = () => {
                   </svg>{" "}
                   Trusted Provider of Quality Services
                 </li>
-                <li className="hidden lg:flex justify-center md:justify-start">
+                <li
+                  className="hidden lg:flex justify-center md:justify-start animate-fadeInUp"
+                  style={{ animationDelay: "1s" }}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -176,7 +226,8 @@ const Home = () => {
                 <NavLink to="/Enquiry">
                   <button
                     type="button"
-                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-3 me-2 mt-1 md:mt-5 transition-colors duration-400"
+                    className="flex text-white bg-primary border border-gray-300 focus:outline-none hover:bg-blue-prime focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-3 me-2 mt-1 md:mt-5 transition-colors duration-400 animate-fadeInUp"
+                    style={{ animationDelay: "1.2s" }}
                   >
                     Enquire Now{" "}
                     <svg
@@ -199,9 +250,12 @@ const Home = () => {
             </div>
             {/* Right Section */}
             <div className="relative w-full md:w-1/2 mt-10 md:mt-0 flex items-center justify-center">
-              <div className="relative w-48 h-48 md:w-[18rem] md:h-[18rem] lg:w-[27rem] lg:h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg ">
+              <div
+                className="relative w-48 h-48 md:w-[18rem] md:h-[18rem] lg:w-[27rem] lg:h-[27rem] bg-gray-200 border border-gray-300 rounded-full flex items-center justify-center shadow-lg animate-fadeIn"
+                style={{ animationDelay: "0.5s" }}
+              >
                 <img
-                  className=" bottom-8 max-w-80 md:max-w-[28rem] lg:max-w-[42rem] "
+                  className="bottom-8 max-w-80 md:max-w-[28rem] lg:max-w-[42rem]"
                   src="/images/Home/hero-3d.webp"
                   alt="Office 3d"
                   rel="preload"
@@ -232,13 +286,13 @@ const Home = () => {
               <div className="relative w-full px-4 m my-5 md:my-0">
                 {/* Title Section */}
                 <div className="relative inline-block">
-                  <span className="text-xl font-heading font-bold text-primary mb-3">
+                  <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
                     Get to Know us!
                   </span>
-                  <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3">
+                  <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3" data-aos="fade-up">
                     We’re UAE Based Office Solutions Company
                   </h1>
-                  <p className="font-heading text-xl md:text-base xl:text-xl text-background">
+                  <p className="font-heading text-xl md:text-base xl:text-xl text-background" data-aos="fade-up">
                     Welcome to Carbon Craft, your trusted partner for office and
                     event solutions across the UAE. We are dedicated to
                     excellence and customer satisfaction, providing high-quality
@@ -264,11 +318,11 @@ const Home = () => {
               Best Choice For Rentals
             </h1>
           </div>
-          <div
-            className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]"
-            
-          >
-            <div className="col-span-1 transition-all duration-650 hover:scale-105 group" data-aos="fade-up">
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]">
+            <div
+              className="col-span-1 transition-all duration-650 hover:scale-105 group"
+              data-aos="fade-up"
+            >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -295,7 +349,10 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-span-1 transition-all duration-650 hover:scale-105 group" data-aos="fade-up">
+            <div
+              className="col-span-1 transition-all duration-650 hover:scale-105 group"
+              data-aos="fade-up"
+            >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -320,7 +377,10 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="col-span-1 transition-all duration-650 hover:scale-105 group" data-aos="fade-up">
+            <div
+              className="col-span-1 transition-all duration-650 hover:scale-105 group"
+              data-aos="fade-up"
+            >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -525,10 +585,7 @@ const Home = () => {
               Check out various items
             </h1>
           </div>
-          <div
-            className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4"
-            
-          >
+          <div className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="sm:mb-5 md:pb-0" data-aos="fade-up">
               <NavLink to="/Printers-and-Plotters">
                 <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
