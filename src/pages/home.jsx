@@ -127,7 +127,6 @@ const Home = () => {
         }
       }
 
-              
       /* Keyframe for fade-in animation */
       @keyframes fadeIn {
         from {
@@ -318,12 +317,12 @@ const Home = () => {
               Best Choice For Rentals
             </h1>
           </div>
-          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]">
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]" >
             <div
-              className="col-span-1 transition-all duration-650 hover:scale-105 group"
-              data-aos="fade-up"
+              className="col-span-1 transition-all duration-650 hover:scale-105 group "
+              
             >
-              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
+              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -351,9 +350,9 @@ const Home = () => {
 
             <div
               className="col-span-1 transition-all duration-650 hover:scale-105 group"
-              data-aos="fade-up"
+             
             >
-              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
+              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -379,9 +378,9 @@ const Home = () => {
             </div>
             <div
               className="col-span-1 transition-all duration-650 hover:scale-105 group"
-              data-aos="fade-up"
+          
             >
-              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]">
+              <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

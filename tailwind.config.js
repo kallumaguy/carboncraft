@@ -73,7 +73,7 @@ export default {
       },
 
       animation: {
-        fadeIn: 'fadeIn 1s ease-in-out forwards',
+        fadeIn: 'fadeIn 1.4s ease-in-out forwards',
         'spin-3d': 'spin-3d 6s linear infinite',
       },
       keyframes: {
