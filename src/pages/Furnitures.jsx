@@ -45,7 +45,7 @@ const Furnitures = () => {
       <section className="py-[6rem]">
         <div className="container mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
+            <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
               Find your perfect workstation
             </h1>
           </div>

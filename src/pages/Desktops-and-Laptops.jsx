@@ -52,7 +52,7 @@ const DeskLap = () => {
           </div>
 
           <div className="mt-[2.5rem]">
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
+            <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
               High Performance Computer Devices
             </h1>
           </div>

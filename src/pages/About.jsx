@@ -84,7 +84,7 @@ const About = () => {
               className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
-              Let us know how we can help
+              Let us know how <br className="block md:hidden" /> we can help
             </h1>
           </div>
 

@@ -78,7 +78,7 @@ const Services = () => {
               Rent Printers
             </span>
             <h1
-              className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Printer Rentals Made Easy
@@ -198,7 +198,7 @@ const Services = () => {
               AMC
             </span>
             <h1
-              className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Contracted care for your printers and copiers.
@@ -259,7 +259,7 @@ const Services = () => {
 
           <div className="my-[4rem] text-center">
             <h1
-              className="text-4xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Why Choose an AMC with us?
@@ -343,7 +343,7 @@ const Services = () => {
               Office Essentials
             </span>
             <h1
-              className="text-4xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Hassle-free Equipments Leasing
