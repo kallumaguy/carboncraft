@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import "flowbite";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -111,6 +112,37 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Printer Rentals UAE | Office Equipments | Carbon Craft</title>
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Welcome to our printer rental services. Affordable, high-quality printers for rent to meet all your business and personal needs."
+        />
+
+        {/* Keywords (Optional) */}
+        <meta name="keywords" content="printer rental UAE, affordable printer hire, office printer renta, office solutions UAE, furniture rental UAE" />
+
+        {/* Robots Meta Tag */}
+        <meta name="robots" content="index, follow" />
+
+        {/* Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Open Graph (OG) Tags for Social Sharing */}
+        <meta property="og:title" content="Affordable Printer Rentals" />
+        <meta
+          property="og:description"
+          content="Discover our affordable printer rental services. High-quality printers, fast delivery, and competitive rates."
+        />
+        <meta property="og:image" content="https://carboncraftuae.com/images/Home/rent-printer.png" />
+        <meta property="og:url" content="https://carboncraftuae.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://carboncraftuae.com/" />
+      </Helmet>
+
       <div className="mt-[3.6rem]">
         {/* Hero section */}
         <section className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-background z-10">
