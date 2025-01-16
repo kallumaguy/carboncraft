@@ -288,7 +288,7 @@ const Home = () => {
                   <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
                     Get to Know us!
                   </span>
-                  <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3" data-aos="fade-up">
+                  <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3" data-aos="fade-up">
                     We’re UAE Based Office Solutions Company
                   </h1>
                   <p className="font-heading text-xl md:text-base xl:text-xl text-background" data-aos="fade-up">
@@ -314,7 +314,7 @@ const Home = () => {
               What set&#39;s us apart
             </span>
             <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-              Best Choice For Rentals
+              Best Choice <br className="block md:hidden" /> For Rentals
             </h1>
           </div>
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]" >
@@ -417,8 +417,8 @@ const Home = () => {
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Latest Services
               </span>
-              <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-white leading-tight my-3">
-                Discover what we can do for you
+              <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-white leading-tight my-3">
+                Discover what we <br className="block md:hidden" /> can do for you
               </h1>
             </div>
             <div className="mt-[4rem] flex flex-col md:grid gap-4">
@@ -578,7 +578,7 @@ const Home = () => {
               Our Products
             </span>
             <h1
-              className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Check out various items
@@ -657,7 +657,7 @@ const Home = () => {
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Brands
               </span>
-              <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
+              <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
                 Top Brands We Provide
               </h1>
             </div>

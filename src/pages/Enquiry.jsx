@@ -676,11 +676,10 @@ const Enquiry = () => {
         <button
           type="submit"
           disabled={loading} // Disable button when loading
-          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
-            loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${loading
               ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
               : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
-          }`}
+            }`}
         >
           {loading ? "Submitting..." : "Submit"}
         </button>
@@ -981,11 +980,10 @@ const Enquiry = () => {
         <button
           type="submit"
           disabled={loading} // Disable button when loading
-          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
-            loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${loading
               ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
               : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
-          }`}
+            }`}
         >
           {loading ? "Submitting..." : "Submit"}
         </button>
@@ -1254,11 +1252,10 @@ const Enquiry = () => {
         <button
           type="submit"
           disabled={loading} // Disable button when loading
-          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
-            loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${loading
               ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
               : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
-          }`}
+            }`}
         >
           {loading ? "Submitting..." : "Submit"}
         </button>
@@ -1416,11 +1413,10 @@ const Enquiry = () => {
         <button
           type="submit"
           disabled={loading} // Disable button when loading
-          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${
-            loading
+          className={`px-6 py-2 text-white font-body rounded-md shadow focus:outline-none focus:ring ${loading
               ? "bg-gray-400 cursor-not-allowed" // Styles for loading state
               : "bg-primary focus:bg-orange-700 focus:ring-blue-300 focus:ring-opacity-50"
-          }`}
+            }`}
         >
           {loading ? "Submitting..." : "Submit"}
         </button>
@@ -1451,7 +1447,7 @@ const Enquiry = () => {
   return (
     <div className="mt-[3.6rem]">
       <section className="bg-enquiry-bg bg-center bg-cover">
-      <style>
+        <style>
           {`
            /* Keyframe for fade-in animation */
       @keyframes fadeIn {
