@@ -352,7 +352,7 @@ const Home = () => {
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]" >
             <div
               className="col-span-1 transition-all duration-650 hover:scale-105 group "
-              
+
             >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
                 <svg
@@ -382,7 +382,7 @@ const Home = () => {
 
             <div
               className="col-span-1 transition-all duration-650 hover:scale-105 group"
-             
+
             >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
                 <svg
@@ -410,7 +410,7 @@ const Home = () => {
             </div>
             <div
               className="col-span-1 transition-all duration-650 hover:scale-105 group"
-          
+
             >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
                 <svg
@@ -613,7 +613,7 @@ const Home = () => {
               className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
-              Check out various items
+              Check out <br className="block md:hidden" /> various items
             </h1>
           </div>
           <div className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -648,11 +648,11 @@ const Home = () => {
                     }}
                   ></div>
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a href="#">
-                      <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
-                        Desktops & Laptops
-                      </h5>
-                    </a>
+
+                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
+                      Desktops & Laptops
+                    </h5>
+
                   </div>
                 </div>
               </NavLink>
@@ -690,7 +690,7 @@ const Home = () => {
                 Brands
               </span>
               <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-                Top Brands We Provide
+                Top Brands <br className="block md:hidden"/> We Provide
               </h1>
             </div>
             <div>

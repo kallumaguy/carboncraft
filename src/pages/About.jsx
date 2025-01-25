@@ -25,7 +25,7 @@ const About = () => {
 
   return (
     <main className="mt-[3.5rem]">
-      <div className="w-full h-screen flex items-end justify-center bg-about-bg-mob md:bg-about-bg bg-cover md:bg-bottom ">
+      <div className="w-full h-svh lg:h-screen flex items-end justify-center bg-about-bg-mob md:bg-about-bg bg-cover md:bg-bottom ">
         <div className=" flex flex-col items-center">
           <h1
             className="text-4xl font-medium font-heading text-gray-800 leading-tight mb-[7rem] mx-6 md:mx-0"

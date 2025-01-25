@@ -81,7 +81,7 @@ const Services = () => {
               className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
-              Printer Rentals Made Easy
+              Printer Rentals <br className="block md:hidden"/> Made Easy
             </h1>
             <p
               className="text-xl font-heading text-gray-600 my-3 md:px-6"
@@ -262,7 +262,7 @@ const Services = () => {
               className="text-3xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
-              Why Choose an AMC with us?
+              Why Choose an <br className="block md:hidden"/> AMC with us?
             </h1>
             <p
               className="text-xl font-normal font-heading text-gray-600 py-5"
@@ -346,7 +346,7 @@ const Services = () => {
               className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
-              Hassle-free Equipments Leasing
+              Hassle-free <br className="block md:hidden"/> Equipments Leasing
             </h1>
           </div>
 
