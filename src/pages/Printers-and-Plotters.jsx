@@ -52,9 +52,7 @@ const PrintPlot = () => {
             <span className="text-xl font-heading font-bold text-primary mb-3">
               Printers
             </span>
-            {/* <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-              Printer Rentals Made Easy
-            </h1> */}
+            
           </div>
 
           <div className="mt-[2.5rem]">
