@@ -305,7 +305,7 @@ const Home = () => {
               <div className="rounded-2xl">
                 <img
                   className="img rounded-2xl h-[26rem] w-full shrink-0 overflow-hidden object-cover lg:h-[30rem] lg:max-w-[30rem]"
-                  src="/images/Home/Carboncraft-office.png"
+                  src="/images/Home/Carboncraft-office.webp"
                   rel="preload"
                   loading="lazy"
                   decoding="async"
@@ -459,7 +459,7 @@ const Home = () => {
                 <div className="max-w-full flex flex-col md:flex-row md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
                   <img
                     className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
-                    src="/images/Home/rent-printer.png"
+                    src="/images/Home/rent-printer.webp"
                     alt=""
                   />
 
@@ -506,7 +506,7 @@ const Home = () => {
                 <div className="max-w-full flex flex-col md:flex-row-reverse md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
                   <img
                     className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
-                    src="/images/Home/amc.png"
+                    src="/images/Home/amc.webp"
                     alt=""
                   />
 
@@ -553,7 +553,7 @@ const Home = () => {
                 <div className="max-w-full flex flex-col md:flex-row md:items-center lg:items-stretch lg:gap-4 bg-white lg:bg-transparent border-2 border-white rounded-2xl lg:border-0 ">
                   <img
                     className="rounded-3xl md:max-w-sm lg:max-w-md xl:max-w-lg p-3 lg:p-0"
-                    src="/images/Home/office-equipments.png"
+                    src="/images/Home/office-equipments.webp"
                     alt=""
                   />
 
@@ -624,7 +624,7 @@ const Home = () => {
                     className="bg-cover bg-center h-64"
                     style={{
                       backgroundImage:
-                        "url('images/Home/printers-plotters.png')",
+                        "url('images/Home/printers-plotters.webp')",
                     }}
                   ></div>
 
@@ -644,7 +644,7 @@ const Home = () => {
                     className="bg-cover bg-center h-64"
                     style={{
                       backgroundImage:
-                        "url('images/Home/Desktops-Laptops.png')",
+                        "url('images/Home/Desktops-Laptops.webp')",
                     }}
                   ></div>
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -664,7 +664,7 @@ const Home = () => {
                   <div
                     className="bg-cover bg-center h-64"
                     style={{
-                      backgroundImage: "url('images/Home/Furnitures.png')",
+                      backgroundImage: "url('images/Home/Furnitures.webp')",
                     }}
                   ></div>
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
