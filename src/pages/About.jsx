@@ -83,7 +83,7 @@ const About = () => {
           </h1>
           <p
             id="scroll-text"
-            className="text-lg md:text-xl font-heading leading-7"
+            className="text-lg md:text-xl font-heading "
           >
             {fullText.split("").map((char, index) => {
               const colorProgress = index / fullText.length; // Each letter gets revealed progressively
