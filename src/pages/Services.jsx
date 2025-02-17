@@ -73,19 +73,16 @@ const Services = () => {
           <div className="text-center">
             <span
               className="text-xl font-heading font-bold text-primary mb-3"
-              data-aos="fade-up"
             >
               Rent Printers
             </span>
             <h1
               className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
-              data-aos="fade-up"
             >
               Printer Rentals <br className="block md:hidden"/> Made Easy
             </h1>
             <p
               className="text-xl font-heading text-gray-600 my-3 md:px-6"
-              data-aos="fade-up"
             >
               Explore how CarbonCraft can enhance your office environment or
               event setup with our comprehensive range of services. Contact us

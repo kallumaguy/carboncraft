@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "flowbite";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -23,6 +23,37 @@ const About = () => {
     AOS.refresh();
   }, []);
 
+  const fullText = `Our mission is to eliminate downtime and the stress of equipment 
+  ownership by offering hassle-free contracts that include free 
+  maintenance, spare parts, and toners. We are dedicated to enhancing 
+  business productivity by streamlining office operations with 
+  reliable, top-quality solutions. With Carbon Craft, you can focus on 
+  what truly matters—your work—while we take care of your equipment 
+  needs. Choose us for seamless, efficient office solutions that let 
+  you work without interruptions.`;
+
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("scroll-text");
+      if (!element) return;
+
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const start = windowHeight * 0.8; // Start revealing when 70% into viewport
+      const end = windowHeight * 0.4; // Fully revealed at 20% viewport
+
+      let progress = 1 - (rect.top - end) / (start - end);
+      progress = Math.min(1, Math.max(0, progress)); // Clamp between 0 and 1
+
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="mt-[3.5rem]">
       <div className="w-full h-svh lg:h-screen flex items-end justify-center bg-about-bg-mob md:bg-about-bg bg-cover md:bg-bottom ">
@@ -41,30 +72,37 @@ const About = () => {
         <div className="">
           <span
             className="text-xl font-heading font-bold text-primary mb-3"
-            data-aos="fade-up"
           >
             About us
           </span>
           <h1
             className="text-2xl md:text-[2.5rem] font-bold font-heading text-gray-800 leading-tight my-3"
-            data-aos="fade-up"
           >
             We simplify your workspace needs with comprehensive rental services
             for printers, copiers and other office equipments.
           </h1>
           <p
-            className="text-lg md:text-xl text-gray-700 font-heading"
-            data-aos="fade-up"
+            id="scroll-text"
+            className="text-lg md:text-xl font-heading leading-7"
           >
-            Our mission is to eliminate downtime and the stress of equipment
-            ownership by offering hassle-free contracts that include free
-            maintenance, spare parts, and toners. We are dedicated to enhancing
-            business productivity by streamlining office operations with
-            reliable, top-quality solutions. With Carbon Craft, you can focus on
-            what truly matters—your work—while we take care of your equipment
-            needs. Choose us for seamless, efficient office solutions that let
-            you work without interruptions.
+            {fullText.split("").map((char, index) => {
+              const colorProgress = index / fullText.length; // Each letter gets revealed progressively
+              const opacity = scrollProgress >= colorProgress ? 1 : 0.3; // Text appears dynamically
+
+              return (
+                <span
+                  key={index}
+                  style={{
+                    color: `rgba(55, 65, 81, ${opacity})`, // Transition from light gray to gray-700
+                    transition: "color 0.1s ease",
+                  }}
+                >
+                  {char}
+                </span>
+              );
+            })}
           </p>
+
         </div>
       </section>
 
@@ -76,13 +114,11 @@ const About = () => {
           <div className="text-center">
             <span
               className="text-xl font-heading font-bold text-primary mb-3"
-              data-aos="fade-up"
             >
               Contact us
             </span>
             <h1
               className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
-              data-aos="fade-up"
             >
               Let us know how <br className="block md:hidden" /> we can help
             </h1>

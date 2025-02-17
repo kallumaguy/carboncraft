@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import "flowbite";
@@ -8,6 +8,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
+// import { motion, useAnimation } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
+
 
 const Home = () => {
   useEffect(() => {
@@ -24,6 +27,35 @@ const Home = () => {
       once: false, // Whether animation should happen only once
       offset: 50, // Offset (in pixels) from the original trigger point
     });
+  }, []);
+
+  const fullText = `Welcome to Carbon Craft, your trusted partner for office and 
+  event solutions across the UAE. We are dedicated to 
+  excellence and customer satisfaction, providing high-quality 
+  equipment and services for businesses and events in Dubai, 
+  Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, 
+  and Fujairah.`;
+
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("text-reveal");
+      if (!element) return;
+
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const start = windowHeight * 0.8; // Start revealing when 70% into viewport
+      const end = windowHeight * 0.45; // Fully revealed when 20% remains
+
+      let progress = 1 - (rect.top - end) / (start - end);
+      progress = Math.min(1, Math.max(0, progress)); // Clamp between 0 and 1
+
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const settings = {
@@ -317,20 +349,33 @@ const Home = () => {
               <div className="relative w-full px-4 m my-5 md:my-0">
                 {/* Title Section */}
                 <div className="relative inline-block">
-                  <span className="text-xl font-heading font-bold text-primary mb-3" data-aos="fade-up">
+                  <span className="text-xl font-heading font-bold text-primary mb-3">
                     Get to Know us!
                   </span>
-                  <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3" data-aos="fade-up">
+                  <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3" >
                     We’re UAE Based Office Solutions Company
                   </h1>
-                  <p className="font-heading text-xl md:text-base xl:text-xl text-background" data-aos="fade-up">
-                    Welcome to Carbon Craft, your trusted partner for office and
-                    event solutions across the UAE. We are dedicated to
-                    excellence and customer satisfaction, providing high-quality
-                    equipment and services for businesses and events in Dubai,
-                    Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah,
-                    and Fujairah.
+                  <p
+                    id="text-reveal"
+                    className="font-heading text-xl md:text-base xl:text-xl leading-7 text-gray-500"
+                  >
+                    {fullText.split("").map((char, index) => {
+                      const colorProgress = index / fullText.length; // Determine when each letter should change color
+                      const opacity = scrollProgress >= colorProgress ? 1 : 0.3; // Fade letters progressively
+                      return (
+                        <span
+                          key={index}
+                          style={{
+                            transition: "color 0.2s ease",
+                            color: `rgba(255, 255, 255, ${opacity})`, // Lighten text from gray to white
+                          }}
+                        >
+                          {char}
+                        </span>
+                      );
+                    })}
                   </p>
+
                 </div>
               </div>
             </div>
@@ -341,7 +386,7 @@ const Home = () => {
 
         {/* Specialities */}
         <section className="py-[6rem]">
-          <div className="text-center" data-aos="fade-up">
+          <div className="text-center" >
             <span className="text-xl font-heading font-bold text-primary mb-3">
               What set&#39;s us apart
             </span>
@@ -445,7 +490,7 @@ const Home = () => {
         {/* Our Services */}
         <section className="py-[6rem] bg-blue-gradient">
           <div className="container mx-auto">
-            <div className="text-center" data-aos="fade-up">
+            <div className="text-center">
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Latest Services
               </span>
@@ -605,13 +650,11 @@ const Home = () => {
           <div className="text-center">
             <span
               className="text-xl font-heading font-bold text-primary mb-3"
-              data-aos="fade-up"
             >
               Our Products
             </span>
             <h1
               className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3"
-              data-aos="fade-up"
             >
               Check out <br className="block md:hidden" /> various items
             </h1>
@@ -690,7 +733,7 @@ const Home = () => {
                 Brands
               </span>
               <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
-                Top Brands <br className="block md:hidden"/> We Provide
+                Top Brands <br className="block md:hidden" /> We Provide
               </h1>
             </div>
             <div>
