@@ -77,12 +77,12 @@ const Services = () => {
               Rent Printers
             </span>
             <h1
-              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
             >
               Printer Rentals <br className="block md:hidden"/> Made Easy
             </h1>
             <p
-              className="text-xl font-heading text-gray-600 my-3 md:px-6"
+              className="text-lg md:text-xl font-heading text-gray-600 my-3 md:px-6"
             >
               Explore how CarbonCraft can enhance your office environment or
               event setup with our comprehensive range of services. Contact us
@@ -195,7 +195,7 @@ const Services = () => {
               AMC
             </span>
             <h1
-              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Contracted care for your printers and copiers.
@@ -203,7 +203,7 @@ const Services = () => {
           </div>
 
           <div
-            className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-orange-gradient rounded-3xl shadow-md my-[4rem]"
+            className="flex flex-col lg:flex-row-reverse items-center gap-1 bg-orange-gradient rounded-2xl md:rounded-3xl shadow-md my-[4rem]"
             data-aos="fade-up"
           >
             <div className="p-3 md:p-5">
@@ -256,13 +256,13 @@ const Services = () => {
 
           <div className="my-[4rem] text-center">
             <h1
-              className="text-3xl md:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-4xl xl:text-[2.5rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Why Choose an <br className="block md:hidden"/> AMC with us?
             </h1>
             <p
-              className="text-xl font-normal font-heading text-gray-600 py-5"
+              className="text-lg md:text-xl font-normal font-heading text-gray-600 py-5"
               data-aos="fade-up"
             >
               Choose CarbonCraft for expert support, cost-effective solutions,
@@ -276,7 +276,7 @@ const Services = () => {
           </div>
 
           <div
-            className="flex flex-col lg:flex-row items-center gap-1 bg-white border-2 border-primary rounded-3xl shadow-lg my-[4rem]"
+            className="flex flex-col lg:flex-row items-center gap-1 bg-white border-2 border-primary rounded-2xl md:rounded-3xl shadow-lg my-[4rem]"
             data-aos="fade-up"
           >
             <div className="p-3 md:p-5">
@@ -340,7 +340,7 @@ const Services = () => {
               Office Essentials
             </span>
             <h1
-              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
               data-aos="fade-up"
             >
               Hassle-free <br className="block md:hidden"/> Equipments Leasing

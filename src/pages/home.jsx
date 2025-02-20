@@ -232,7 +232,7 @@ const Home = () => {
                 Office Solutions
               </span>
               <h1
-                className="text-3xl md:text-[2.2rem] lg:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight animate-fadeInUp"
+                className="text-3xl md:text-[2.2rem] xl:text-[2.9rem] font-bold font-heading text-gray-800 leading-tight animate-fadeInUp"
                 style={{ animationDelay: "0.4s" }}
               >
                 Rent Equipments, <br />
@@ -352,12 +352,12 @@ const Home = () => {
                   <span className="text-xl font-heading font-bold text-primary mb-3">
                     Get to Know us!
                   </span>
-                  <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-background leading-tight my-3" >
+                  <h1 className="text-2xl md:text-4xl xl:text-[3.3rem] font-bold font-heading text-background leading-tight my-3" >
                     We’re UAE Based Office Solutions Company
                   </h1>
                   <p
                     id="text-reveal"
-                    className="font-heading text-xl md:text-base xl:text-xl leading-7 text-gray-500"
+                    className="font-heading text-base md:text-base xl:text-xl text-gray-500"
                   >
                     {fullText.split("").map((char, index) => {
                       const colorProgress = index / fullText.length; // Determine when each letter should change color
@@ -390,7 +390,7 @@ const Home = () => {
             <span className="text-xl font-heading font-bold text-primary mb-3">
               What set&#39;s us apart
             </span>
-            <h1 className="text-4xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
+            <h1 className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
               Best Choice <br className="block md:hidden" /> For Rentals
             </h1>
           </div>
@@ -414,7 +414,7 @@ const Home = () => {
                     d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                   />
                 </svg>
-                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary">
+                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary leading-tight">
                   All-in-One
                 </h3>
                 <p className="font-body text-white">
@@ -443,7 +443,7 @@ const Home = () => {
                     d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
                   />
                 </svg>
-                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary">
+                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary leading-tight">
                   Premium Products
                 </h3>
                 <p className="font-body text-white">
@@ -453,6 +453,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
+
             <div
               className="col-span-1 transition-all duration-650 hover:scale-105 group"
 
@@ -471,7 +472,7 @@ const Home = () => {
                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
                   />
                 </svg>
-                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary">
+                <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary leading-tight">
                   Customer-Centric
                 </h3>
                 <p className="font-body text-white">
@@ -494,7 +495,7 @@ const Home = () => {
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Latest Services
               </span>
-              <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-white leading-tight my-3">
+              <h1 className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading text-white leading-tight my-3">
                 Discover what we <br className="block md:hidden" /> can do for you
               </h1>
             </div>
@@ -509,7 +510,7 @@ const Home = () => {
                   />
 
                   <div className="p-5 xl:p-6 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
-                    <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
+                    <h5 className="mb-2 text-2xl md:text-3xl xl:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
                       Rent Printers
                     </h5>
                     <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-snug lg:text-white">
@@ -556,7 +557,7 @@ const Home = () => {
                   />
 
                   <div className="p-5 xl:p-6 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
-                    <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
+                    <h5 className="mb-2 text-2xl md:text-3xl xl:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
                       AMC
                     </h5>
                     <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-snug lg:text-white">
@@ -603,7 +604,7 @@ const Home = () => {
                   />
 
                   <div className="p-5 xl:p-6 bg-white lg:bg-orange-gradient  rounded-2xl lg:shadow-md flex flex-col justify-center">
-                    <h5 className="mb-2 text-2xl lg:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
+                    <h5 className="mb-2 text-2xl md:text-3xl xl:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
                       Office Essentials
                     </h5>
                     <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-snug lg:text-white">
@@ -654,7 +655,7 @@ const Home = () => {
               Our Products
             </span>
             <h1
-              className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3"
             >
               Check out <br className="block md:hidden" /> various items
             </h1>
@@ -732,7 +733,7 @@ const Home = () => {
               <span className="text-xl font-heading font-bold text-primary mb-3">
                 Brands
               </span>
-              <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
+              <h1 className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3">
                 Top Brands <br className="block md:hidden" /> We Provide
               </h1>
             </div>

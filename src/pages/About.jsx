@@ -76,7 +76,7 @@ const About = () => {
             About us
           </span>
           <h1
-            className="text-2xl md:text-[2.5rem] font-bold font-heading text-gray-800 leading-tight my-3"
+            className="text-2xl md:text-3xl xl:text-[2.5rem] font-bold font-heading text-gray-800 leading-tight my-3"
           >
             We simplify your workspace needs with comprehensive rental services
             for printers, copiers and other office equipments.
@@ -118,7 +118,7 @@ const About = () => {
               Contact us
             </span>
             <h1
-              className="text-3xl md:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
+              className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3"
             >
               Let us know how <br className="block md:hidden" /> we can help
             </h1>
@@ -144,7 +144,7 @@ const About = () => {
                       />
                     </svg>
 
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="mb-2 text-2xl md:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Call us
                     </h5>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -173,7 +173,7 @@ const About = () => {
                       />
                     </svg>
 
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 leading-tight">
+                    <h5 className="mb-2 text-2xl md:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
                       Customer support
                     </h5>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -207,7 +207,7 @@ const About = () => {
                       />
                     </svg>
 
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="mb-2 text-2xl md:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Our Premises
                     </h5>
 
@@ -237,7 +237,7 @@ const About = () => {
                       />
                     </svg>
 
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="mb-2 text-2xl md:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Work with us
                     </h5>
 

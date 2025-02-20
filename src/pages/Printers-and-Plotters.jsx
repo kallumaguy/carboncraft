@@ -53,12 +53,12 @@ const PrintPlot = () => {
               Printers
             </span>
             
+            <h1 className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3 ">
+              Best in Class MFP&#39;s for Offices and Events
+            </h1>
           </div>
 
           <div className="mt-[2.5rem]">
-            <h1 className="text-3xl md:text-[3.3rem] font-bold font-heading text-gray-800 leading-tight my-3 ">
-              Best in Class MFP&#39;s for Offices and Events
-            </h1>
 
             <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <div className="mb-5 md:pb-0">
