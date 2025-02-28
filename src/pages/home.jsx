@@ -8,8 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import { motion, useAnimation } from "framer-motion";
-// import { useInView } from "react-intersection-observer";
+
 
 
 const Home = () => {
