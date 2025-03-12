@@ -394,8 +394,9 @@ const Home = () => {
             </h1>
           </div>
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 xl:gap-4 text-left mt-[4rem]" >
+
             <div
-              className="col-span-1 transition-all duration-650 hover:scale-105 group "
+              className="col-span-1 transition-all duration-650 hover:scale-105 group select-none"
 
             >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
@@ -416,7 +417,7 @@ const Home = () => {
                 <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary leading-tight">
                   All-in-One
                 </h3>
-                <p className="font-body text-white">
+                <p className="font-body text-white mt-1 leading-snug">
                   We offer a broad range of solutions including printer, copier,
                   plotter, laptop, computer, and office furniture rentals and
                   sales, as well as annual maintenance contracts (AMC).
@@ -425,7 +426,7 @@ const Home = () => {
             </div>
 
             <div
-              className="col-span-1 transition-all duration-650 hover:scale-105 group"
+              className="col-span-1 transition-all duration-650 hover:scale-105 group select-none"
 
             >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
@@ -445,7 +446,7 @@ const Home = () => {
                 <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary leading-tight">
                   Premium Products
                 </h3>
-                <p className="font-body text-white">
+                <p className="font-body text-white mt-1 leading-snug">
                   Our inventory features top-tier printers, copiers, computers,
                   laptops, and office furniture from well-known brands, ensuring
                   dependable performance.
@@ -454,7 +455,7 @@ const Home = () => {
             </div>
 
             <div
-              className="col-span-1 transition-all duration-650 hover:scale-105 group"
+              className="col-span-1 transition-all duration-650 hover:scale-105 group select-none"
 
             >
               <div className="mx-4 lg:mx-3 bg-blue-prime rounded-2xl p-5 min-h-[250px] md:min-h-[210px] lg:min-h-[380px] xl:min-h-[260px]" data-aos="fade-up">
@@ -474,7 +475,7 @@ const Home = () => {
                 <h3 className="text-2xl lg:text-3xl font-bold font-heading text-primary leading-tight">
                   Customer-Centric
                 </h3>
-                <p className="font-body text-white">
+                <p className="font-body text-white mt-1 leading-snug">
                   Our expert team is focused on understanding your specific
                   needs and delivering customized solutions. We aim for
                   excellence in every interaction with service and continuous
@@ -606,7 +607,7 @@ const Home = () => {
                     <h5 className="mb-2 text-2xl md:text-3xl xl:text-4xl font-bold font-heading tracking-tight text-gray-900 lg:text-white">
                       Office Essentials
                     </h5>
-                    <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700 leading-snug lg:text-white">
+                    <p className="mb-2 font-normal md:text-base xl:text-[1.1rem] font-body text-gray-700  leading-snug lg:text-white">
                       Transform Your Workspace with Premium Supplies - Offering
                       a Comprehensive Range of Office Products including
                       Furniture, Stationery, Technology Accessories, and
@@ -662,7 +663,7 @@ const Home = () => {
           <div className="mt-[4rem] flex flex-col sm:grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="sm:mb-5 md:pb-0" data-aos="fade-up">
               <NavLink to="/Printers-and-Plotters">
-                <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div className="md:max-w-md border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
                     className="bg-cover bg-center h-64"
                     style={{
@@ -672,7 +673,7 @@ const Home = () => {
                   ></div>
 
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
+                    <h5 className="mb-2 text-2xl md:text-xl xl:text-2xl text-center font-semibold font-heading tracking-tight">
                       Printers & Plotters
                     </h5>
                   </div>
@@ -682,7 +683,7 @@ const Home = () => {
 
             <div className="sm:mb-5 md:pb-0" data-aos="fade-up">
               <NavLink to="/Desktops-and-Laptops">
-                <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div className="md:max-w-md border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
                     className="bg-cover bg-center h-64"
                     style={{
@@ -692,7 +693,7 @@ const Home = () => {
                   ></div>
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 
-                    <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
+                    <h5 className="mb-2 text-2xl md:text-xl xl:text-2xl text-center font-semibold font-heading tracking-tight">
                       Desktops & Laptops
                     </h5>
 
@@ -703,7 +704,7 @@ const Home = () => {
 
             <div data-aos="fade-up">
               <NavLink to="/Furnitures">
-                <div className="md:max-w-sm border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
+                <div className="md:max-w-md border border-gray-200 rounded-2xl shadow-md relative overflow-hidden group">
                   <div
                     className="bg-cover bg-center h-64"
                     style={{
@@ -711,11 +712,11 @@ const Home = () => {
                     }}
                   ></div>
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-5 bg-blue-prime/75 text-white opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a href="#">
-                      <h5 className="mb-2 text-2xl text-center font-semibold font-heading tracking-tight">
-                        Furnitures
-                      </h5>
-                    </a>
+
+                    <h5 className="mb-2 text-2xl md:text-xl xl:text-2xl text-center font-semibold font-heading tracking-tight">
+                      Furnitures
+                    </h5>
+
                   </div>
                 </div>
               </NavLink>
