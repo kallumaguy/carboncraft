@@ -176,7 +176,7 @@ const Home = () => {
 
       <div className="mt-[3.6rem]">
         {/* Hero section */}
-        <section className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-background z-10">
+        <section className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-secondary z-10">
           <style>
             {`
       @keyframes fadeInUp {

@@ -42,7 +42,7 @@ const Furnitures = () => {
         </div>
       </section>
 
-      <section className="py-[6rem]">
+      <section className="py-[6rem] bg-secondary">
         <div className="container mx-auto">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl xl:text-[3.3rem] font-bold font-heading  text-gray-800 leading-tight my-3">
