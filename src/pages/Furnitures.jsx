@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "flowbite";
 import { NavLink } from "react-router-dom";
 
@@ -12,7 +12,14 @@ const Furnitures = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const shimmerStyle = 'absolute top-0 left-0 w-full h-full rounded-2xl bg-[linear-gradient(to_right,#e0e0e0_0%,#f5f5f5_20%,#e0e0e0_40%,#e0e0e0_100%)] bg-[length:200%_100%] animate-[shimmer_1.2s_linear_infinite] z-0';
+
+  const [imgLoadedDesktop, setImgLoadedDesktop] = useState(false);
+  const [imgLoadedMobile, setImgLoadedMobile] = useState(false);
+
+
   return (
+
     <div className="mt-[3.6rem]">
       <section className="bg-furniture-bg bg-center bg-cover">
         <style>
@@ -49,28 +56,58 @@ const Furnitures = () => {
               Find your perfect workstation
             </h1>
           </div>
+
+          <style>
+            {`
+            @keyframes shimmer {
+            0% {
+              background-position: -200% 0;
+            }
+            100% {
+            background-position: 200% 0;
+            }
+            }
+          `}
+          </style>
+
           <div className="flex flex-col lg:flex-row items-center gap-1 bg-orange-gradient rounded-2xl md:rounded-3xl shadow-md my-[4rem]">
             <div className="p-3 md:p-5">
-              <img
-                className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/office-furnitures.webp"
-                alt="Rent Printer"
-              />
-              <img
-                className="block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2"
-                src="/images/Furnitures/office-furnitures-mob.webp"
-                alt=""
-              />
+              {/* Desktop Image */}
+              <div className="hidden lg:block xl:hidden relative">
+                {!imgLoadedDesktop && (
+                  <div className={shimmerStyle} />
+                )}
+                <img
+                  className="hidden lg:block xl:hidden lg:max-w-md xl:max-w-lg rounded-2xl border-2 relative z-10"
+                  src="/images/Furnitures/office-furnitures.webp"
+                  alt="Rent Printer"
+                  onLoad={() => setImgLoadedDesktop(true)}
+                />
+              </div>
+
+              {/* Mobile Image */}
+              <div className="block lg:hidden xl:block relative">
+                {!imgLoadedMobile && (
+                  <div className={shimmerStyle} />
+                )}
+                <img
+                  className="block lg:hidden xl:block xl:max-w-lg rounded-2xl border-2 relative z-10"
+                  src="/images/Furnitures/office-furnitures-mob.webp"
+                  alt=""
+                  onLoad={() => setImgLoadedMobile(true)}
+                />
+              </div>
             </div>
+
             <div className="p-5">
               <h5 className="mb-2 text-2xl lg:text-3xl font-heading font-bold tracking-tight text-white">
                 Office, Workspace Furnitures
               </h5>
-              <p className="text-lg font-normal text-white ">
+              <p className="text-lg font-normal text-white">
                 Enhance your office with our premium furniture collection. From
-                ergonomic chairs and sleek desks to versatile storage solutions,
-                we offer stylish and functional pieces designed to improve
-                comfort and productivity in any workspace.
+                ergonomic chairs and sleek desks to versatile storage solutions, we
+                offer stylish and functional pieces designed to improve comfort and
+                productivity in any workspace.
               </p>
               <NavLink to="/enquire/Furnitures">
                 <button
